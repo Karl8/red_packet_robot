@@ -66,7 +66,7 @@ set_location_assignment PIN_AC7 -to LED[0]
 set_location_assignment PIN_U1 -to vga_blue[2]
 set_location_assignment PIN_U3 -to vga_hsync
 set_location_assignment PIN_U4 -to vga_vsync
-set_location_assignment PIN_R4 -to vga_red[2]
+set_location_assignment PIN_T3 -to vga_red[2]
 set_location_assignment PIN_D14 -to OV7670_SIOC
 set_location_assignment PIN_B18 -to OV7670_VSYNC
 set_location_assignment PIN_A18 -to OV7670_PCLK
@@ -84,8 +84,9 @@ set_location_assignment PIN_B20 -to OV7670_D[2]
 set_location_assignment PIN_A20 -to OV7670_D[0]
 set_location_assignment PIN_C19 -to OV7670_PWDN
 set_location_assignment PIN_U2 -to vga_blue[1]
-set_location_assignment PIN_T3 -to vga_green[2]
-set_location_assignment PIN_T2 -to vga_green[1]
-set_location_assignment PIN_R5 -to vga_green[0]
-set_location_assignment PIN_R3 -to vga_red[1]
-set_location_assignment PIN_R2 -to vga_red[0]
+set_location_assignment PIN_R4 -to vga_green[2]
+set_location_assignment PIN_R3 -to vga_green[1]
+set_location_assignment PIN_R2 -to vga_green[0]
+set_location_assignment PIN_T2 -to vga_red[1]
+set_location_assignment PIN_R5 -to vga_red[0]
+set_global_assignment -name MISC_FILE "D:/code/vhdl/red_packet_robot/camera/ov7670_top.dpf"

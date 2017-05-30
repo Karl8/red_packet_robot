@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ov7670_top
-Wed May 24 18:30:42 2017
+Tue May 30 19:29:28 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -18,8 +18,8 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
  10. Inverted Register Statistics
  11. Registers Packed Into Inferred Megafunctions
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated
- 14. Source assignments for frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated|altsyncram_pes1:altsyncram1
+ 13. Source assignments for frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated
+ 14. Source assignments for frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1
  15. Source assignments for ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_aov:auto_generated
  16. Parameter Settings for User Entity Instance: frame_buffer:fb|altsyncram:altsyncram_component
  17. Parameter Settings for Inferred Entity Instance: ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0
@@ -51,18 +51,18 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May 24 18:30:42 2017    ;
+; Analysis & Synthesis Status        ; Successful - Tue May 30 19:29:28 2017    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; ov7670_top                               ;
 ; Top-level Entity Name              ; ov7670_top                               ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 318                                      ;
-;     Total combinational functions  ; 289                                      ;
-;     Dedicated logic registers      ; 203                                      ;
-; Total registers                    ; 203                                      ;
+; Total logic elements               ; 364                                      ;
+;     Total combinational functions  ; 327                                      ;
+;     Dedicated logic registers      ; 221                                      ;
+; Total registers                    ; 221                                      ;
 ; Total pins                         ; 36                                       ;
 ; Total virtual pins                 ; 0                                        ;
-; Total memory bits                  ; 266,240                                  ;
+; Total memory bits                  ; 462,848                                  ;
 ; Embedded Multiplier 9-bit elements ; 0                                        ;
 ; Total PLLs                         ; 0                                        ;
 +------------------------------------+------------------------------------------+
@@ -143,66 +143,65 @@ applicable agreement for further details.
 +----------------------------------------------------------------+--------------------+--------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                              ;
-+----------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                           ;
-+----------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------+
-; frame_buffer.vhd                 ; yes             ; User Wizard-Generated File                            ; D:/code/vhdl/red_packet_robot/camera/frame_buffer.vhd                  ;
-; ov7670_top.vhd                   ; yes             ; Auto-Found VHDL File                                  ; D:/code/vhdl/red_packet_robot/camera/ov7670_top.vhd                    ;
-; debounce.vhd                     ; yes             ; Auto-Found VHDL File                                  ; D:/code/vhdl/red_packet_robot/camera/debounce.vhd                      ;
-; vga.vhd                          ; yes             ; Auto-Found VHDL File                                  ; D:/code/vhdl/red_packet_robot/camera/vga.vhd                           ;
-; altsyncram.tdf                   ; yes             ; Megafunction                                          ; d:/altera/90/quartus/libraries/megafunctions/altsyncram.tdf            ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                                          ; d:/altera/90/quartus/libraries/megafunctions/stratix_ram_block.inc     ;
-; lpm_mux.inc                      ; yes             ; Megafunction                                          ; d:/altera/90/quartus/libraries/megafunctions/lpm_mux.inc               ;
-; lpm_decode.inc                   ; yes             ; Megafunction                                          ; d:/altera/90/quartus/libraries/megafunctions/lpm_decode.inc            ;
-; aglobal90.inc                    ; yes             ; Megafunction                                          ; d:/altera/90/quartus/libraries/megafunctions/aglobal90.inc             ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                                          ; d:/altera/90/quartus/libraries/megafunctions/a_rdenreg.inc             ;
-; altrom.inc                       ; yes             ; Megafunction                                          ; d:/altera/90/quartus/libraries/megafunctions/altrom.inc                ;
-; altram.inc                       ; yes             ; Megafunction                                          ; d:/altera/90/quartus/libraries/megafunctions/altram.inc                ;
-; altdpram.inc                     ; yes             ; Megafunction                                          ; d:/altera/90/quartus/libraries/megafunctions/altdpram.inc              ;
-; altqpram.inc                     ; yes             ; Megafunction                                          ; d:/altera/90/quartus/libraries/megafunctions/altqpram.inc              ;
-; db/altsyncram_ejk1.tdf           ; yes             ; Auto-Generated Megafunction                           ; D:/code/vhdl/red_packet_robot/camera/db/altsyncram_ejk1.tdf            ;
-; db/altsyncram_pes1.tdf           ; yes             ; Auto-Generated Megafunction                           ; D:/code/vhdl/red_packet_robot/camera/db/altsyncram_pes1.tdf            ;
-; db/decode_9oa.tdf                ; yes             ; Auto-Generated Megafunction                           ; D:/code/vhdl/red_packet_robot/camera/db/decode_9oa.tdf                 ;
-; db/mux_pib.tdf                   ; yes             ; Auto-Generated Megafunction                           ; D:/code/vhdl/red_packet_robot/camera/db/mux_pib.tdf                    ;
-; ov7670_capture.vhd               ; yes             ; Auto-Found VHDL File                                  ; D:/code/vhdl/red_packet_robot/camera/ov7670_capture.vhd                ;
-; ov7670_controller.vhd            ; yes             ; Auto-Found VHDL File                                  ; D:/code/vhdl/red_packet_robot/camera/ov7670_controller.vhd             ;
-; i2c_sender.vhd                   ; yes             ; Auto-Found VHDL File                                  ; D:/code/vhdl/red_packet_robot/camera/i2c_sender.vhd                    ;
-; ov7670_registers.vhd             ; yes             ; Auto-Found VHDL File                                  ; D:/code/vhdl/red_packet_robot/camera/ov7670_registers.vhd              ;
-; db/altsyncram_aov.tdf            ; yes             ; Auto-Generated Megafunction                           ; D:/code/vhdl/red_packet_robot/camera/db/altsyncram_aov.tdf             ;
-; ov7670_top.ov7670_top0.rtl.mif   ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/code/vhdl/red_packet_robot/camera/db/ov7670_top.ov7670_top0.rtl.mif ;
-+----------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                       ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
+; frame_buffer.vhd                 ; yes             ; User Wizard-Generated File   ; D:/code/vhdl/red_packet_robot/camera/frame_buffer.vhd              ;
+; ov7670_top.vhd                   ; yes             ; Auto-Found VHDL File         ; D:/code/vhdl/red_packet_robot/camera/ov7670_top.vhd                ;
+; debounce.vhd                     ; yes             ; Auto-Found VHDL File         ; D:/code/vhdl/red_packet_robot/camera/debounce.vhd                  ;
+; vga.vhd                          ; yes             ; Auto-Found VHDL File         ; D:/code/vhdl/red_packet_robot/camera/vga.vhd                       ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/altsyncram.tdf        ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/stratix_ram_block.inc ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/lpm_mux.inc           ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/lpm_decode.inc        ;
+; aglobal90.inc                    ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/aglobal90.inc         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/a_rdenreg.inc         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/altrom.inc            ;
+; altram.inc                       ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/altram.inc            ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/altdpram.inc          ;
+; altqpram.inc                     ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/altqpram.inc          ;
+; db/altsyncram_cmk1.tdf           ; yes             ; Auto-Generated Megafunction  ; D:/code/vhdl/red_packet_robot/camera/db/altsyncram_cmk1.tdf        ;
+; db/altsyncram_nhs1.tdf           ; yes             ; Auto-Generated Megafunction  ; D:/code/vhdl/red_packet_robot/camera/db/altsyncram_nhs1.tdf        ;
+; db/decode_9oa.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/code/vhdl/red_packet_robot/camera/db/decode_9oa.tdf             ;
+; db/mux_akb.tdf                   ; yes             ; Auto-Generated Megafunction  ; D:/code/vhdl/red_packet_robot/camera/db/mux_akb.tdf                ;
+; ov7670_capture.vhd               ; yes             ; Auto-Found VHDL File         ; D:/code/vhdl/red_packet_robot/camera/ov7670_capture.vhd            ;
+; ov7670_controller.vhd            ; yes             ; Auto-Found VHDL File         ; D:/code/vhdl/red_packet_robot/camera/ov7670_controller.vhd         ;
+; i2c_sender.vhd                   ; yes             ; Auto-Found VHDL File         ; D:/code/vhdl/red_packet_robot/camera/i2c_sender.vhd                ;
+; ov7670_registers.vhd             ; yes             ; Auto-Found VHDL File         ; D:/code/vhdl/red_packet_robot/camera/ov7670_registers.vhd          ;
+; db/altsyncram_aov.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/code/vhdl/red_packet_robot/camera/db/altsyncram_aov.tdf         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
 
 
-+------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary          ;
-+---------------------------------------------+--------+
-; Resource                                    ; Usage  ;
-+---------------------------------------------+--------+
-; Estimated Total logic elements              ; 318    ;
-;                                             ;        ;
-; Total combinational functions               ; 289    ;
-; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 99     ;
-;     -- 3 input functions                    ; 54     ;
-;     -- <=2 input functions                  ; 136    ;
-;                                             ;        ;
-; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 204    ;
-;     -- arithmetic mode                      ; 85     ;
-;                                             ;        ;
-; Total registers                             ; 203    ;
-;     -- Dedicated logic registers            ; 203    ;
-;     -- I/O registers                        ; 0      ;
-;                                             ;        ;
-; I/O pins                                    ; 36     ;
-; Total memory bits                           ; 266240 ;
-; Maximum fan-out node                        ; clk50  ;
-; Maximum fan-out                             ; 242    ;
-; Total fan-out                               ; 3486   ;
-; Average fan-out                             ; 5.73   ;
-+---------------------------------------------+--------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 364         ;
+;                                             ;             ;
+; Total combinational functions               ; 327         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 114         ;
+;     -- 3 input functions                    ; 55          ;
+;     -- <=2 input functions                  ; 158         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 241         ;
+;     -- arithmetic mode                      ; 86          ;
+;                                             ;             ;
+; Total registers                             ; 221         ;
+;     -- Dedicated logic registers            ; 221         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 36          ;
+; Total memory bits                           ; 462848      ;
+; Maximum fan-out node                        ; OV7670_PCLK ;
+; Maximum fan-out                             ; 170         ;
+; Total fan-out                               ; 5075        ;
+; Average fan-out                             ; 7.13        ;
++---------------------------------------------+-------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -210,23 +209,23 @@ applicable agreement for further details.
 +------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                        ; Library Name ;
 +------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |ov7670_top                                    ; 289 (1)           ; 203 (1)      ; 266240      ; 0            ; 0       ; 0         ; 36   ; 0            ; |ov7670_top                                                                                                                                ; work         ;
+; |ov7670_top                                    ; 327 (2)           ; 221 (2)      ; 462848      ; 0            ; 0       ; 0         ; 36   ; 0            ; |ov7670_top                                                                                                                                ; work         ;
 ;    |debounce:btn_debounce|                     ; 32 (32)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|debounce:btn_debounce                                                                                                          ; work         ;
-;    |frame_buffer:fb|                           ; 56 (0)            ; 6 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb                                                                                                                ; work         ;
-;       |altsyncram:altsyncram_component|        ; 56 (0)            ; 6 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component                                                                                ; work         ;
-;          |altsyncram_ejk1:auto_generated|      ; 56 (0)            ; 6 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated                                                 ; work         ;
-;             |altsyncram_pes1:altsyncram1|      ; 56 (0)            ; 6 (6)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated|altsyncram_pes1:altsyncram1                     ; work         ;
-;                |decode_9oa:decode4|            ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated|altsyncram_pes1:altsyncram1|decode_9oa:decode4  ; work         ;
-;                |decode_9oa:decode_a|           ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated|altsyncram_pes1:altsyncram1|decode_9oa:decode_a ; work         ;
-;                |decode_9oa:decode_b|           ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated|altsyncram_pes1:altsyncram1|decode_9oa:decode_b ; work         ;
-;                |mux_pib:mux5|                  ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated|altsyncram_pes1:altsyncram1|mux_pib:mux5        ; work         ;
-;    |ov7670_capture:capture|                    ; 24 (24)           ; 41 (41)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|ov7670_capture:capture                                                                                                         ; work         ;
+;    |frame_buffer:fb|                           ; 64 (0)            ; 6 (0)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb                                                                                                                ; work         ;
+;       |altsyncram:altsyncram_component|        ; 64 (0)            ; 6 (0)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component                                                                                ; work         ;
+;          |altsyncram_cmk1:auto_generated|      ; 64 (0)            ; 6 (0)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated                                                 ; work         ;
+;             |altsyncram_nhs1:altsyncram1|      ; 64 (0)            ; 6 (6)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1                     ; work         ;
+;                |decode_9oa:decode4|            ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4  ; work         ;
+;                |decode_9oa:decode_a|           ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a ; work         ;
+;                |decode_9oa:decode_b|           ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b ; work         ;
+;                |mux_akb:mux5|                  ; 40 (40)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|mux_akb:mux5        ; work         ;
+;    |ov7670_capture:capture|                    ; 33 (33)           ; 58 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|ov7670_capture:capture                                                                                                         ; work         ;
 ;    |ov7670_controller:controller|              ; 102 (1)           ; 82 (1)       ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|ov7670_controller:controller                                                                                                   ; work         ;
 ;       |i2c_sender:Inst_i2c_sender|             ; 88 (88)           ; 73 (73)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender                                                                        ; work         ;
 ;       |ov7670_registers:Inst_ov7670_registers| ; 13 (13)           ; 8 (8)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers                                                            ; work         ;
 ;          |altsyncram:Mux0_rtl_0|               ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0                                      ; work         ;
 ;             |altsyncram_aov:auto_generated|    ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_aov:auto_generated        ; work         ;
-;    |vga:Inst_vga|                              ; 74 (74)           ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga                                                                                                                   ; work         ;
+;    |vga:Inst_vga|                              ; 94 (94)           ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga                                                                                                                   ; work         ;
 +------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -236,20 +235,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+--------------------------------+
 ; Name                                                                                                                               ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                            ;
 +------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+--------------------------------+
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated|altsyncram_pes1:altsyncram1|ALTSYNCRAM              ; AUTO ; True Dual Port ; 32768        ; 8            ; 32768        ; 8            ; 262144 ; None                           ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ALTSYNCRAM              ; AUTO ; True Dual Port ; 32768        ; 16           ; 32768        ; 16           ; 524288 ; None                           ;
 ; ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_aov:auto_generated|ALTSYNCRAM ; AUTO ; ROM            ; 256          ; 16           ; --           ; --           ; 4096   ; ov7670_top.ov7670_top0.rtl.mif ;
 +------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+--------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                    ;
-+--------------------------------------------------------------------+--------------------------------------------------+
-; Register name                                                      ; Reason for Removal                               ;
-+--------------------------------------------------------------------+--------------------------------------------------+
-; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[0] ; Stuck at VCC due to stuck port data_in           ;
-; vga:Inst_vga|hCounter[0]                                           ; Merged with ov7670_controller:controller|sys_clk ;
-; Total Number of Removed Registers = 2                              ;                                                  ;
-+--------------------------------------------------------------------+--------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                  ;
++--------------------------------------------------------------------+------------------------------------------------+
+; Register name                                                      ; Reason for Removal                             ;
++--------------------------------------------------------------------+------------------------------------------------+
+; ov7670_capture:capture|dout[5]                                     ; Lost fanout                                    ;
+; ov7670_capture:capture|dout[0]                                     ; Merged with ov7670_capture:capture|d_latch[8]  ;
+; ov7670_capture:capture|dout[1]                                     ; Merged with ov7670_capture:capture|d_latch[9]  ;
+; ov7670_capture:capture|dout[2]                                     ; Merged with ov7670_capture:capture|d_latch[10] ;
+; ov7670_capture:capture|dout[3]                                     ; Merged with ov7670_capture:capture|d_latch[11] ;
+; ov7670_capture:capture|dout[4]                                     ; Merged with ov7670_capture:capture|d_latch[12] ;
+; ov7670_capture:capture|dout[6]                                     ; Merged with ov7670_capture:capture|d_latch[14] ;
+; ov7670_capture:capture|dout[7]                                     ; Merged with ov7670_capture:capture|d_latch[15] ;
+; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[0] ; Stuck at VCC due to stuck port data_in         ;
+; vga:Inst_vga|address[16]                                           ; Lost fanout                                    ;
+; Total Number of Removed Registers = 10                             ;                                                ;
++--------------------------------------------------------------------+------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -257,12 +264,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 203   ;
-; Number of registers using Synchronous Clear  ; 54    ;
-; Number of registers using Synchronous Load   ; 16    ;
+; Total registers                              ; 221   ;
+; Number of registers using Synchronous Clear  ; 67    ;
+; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 110   ;
+; Number of registers using Clock Enable       ; 119   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -272,7 +279,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------+---------+
 ; Inverted Register                                                   ; Fan out ;
 +---------------------------------------------------------------------+---------+
-; vga:Inst_vga|blank                                                  ; 8       ;
+; vga:Inst_vga|blank                                                  ; 2       ;
 ; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|divider[0]  ; 4       ;
 ; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[31] ; 1       ;
 ; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[30] ; 1       ;
@@ -338,18 +345,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |ov7670_top|vga:Inst_vga|vga_blue[2]                                            ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |ov7670_top|ov7670_capture:capture|address[4]                                   ;
-; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |ov7670_top|vga:Inst_vga|address[5]                                             ;
-; 5:1                ; 31 bits   ; 93 LEs        ; 31 LEs               ; 62 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[24] ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|divider[2]  ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[29] ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[19] ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |ov7670_top|vga:Inst_vga|address[4]                                             ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 31 LEs               ; 62 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[30] ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|divider[1]  ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[11] ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[16] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------+
-; Source assignments for frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated ;
+; Source assignments for frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                      ;
 +---------------------------------+--------------------+------+-----------------------------------------+
@@ -358,7 +363,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated|altsyncram_pes1:altsyncram1 ;
+; Source assignments for frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1 ;
 +---------------------------------+--------------------+------+---------------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                                  ;
 +---------------------------------+--------------------+------+---------------------------------------------------------------------+
@@ -387,7 +392,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                   ;
 ; WIDTH_BYTEENA                      ; 1                    ; Untyped                          ;
 ; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                          ;
-; WIDTH_A                            ; 8                    ; Signed Integer                   ;
+; WIDTH_A                            ; 16                   ; Signed Integer                   ;
 ; WIDTHAD_A                          ; 15                   ; Signed Integer                   ;
 ; NUMWORDS_A                         ; 32768                ; Signed Integer                   ;
 ; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                          ;
@@ -396,7 +401,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                          ;
 ; INDATA_ACLR_A                      ; NONE                 ; Untyped                          ;
 ; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                          ;
-; WIDTH_B                            ; 8                    ; Signed Integer                   ;
+; WIDTH_B                            ; 16                   ; Signed Integer                   ;
 ; WIDTHAD_B                          ; 15                   ; Signed Integer                   ;
 ; NUMWORDS_B                         ; 32768                ; Signed Integer                   ;
 ; INDATA_REG_B                       ; CLOCK1               ; Untyped                          ;
@@ -429,7 +434,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                          ;
 ; ENABLE_ECC                         ; FALSE                ; Untyped                          ;
 ; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                          ;
-; CBXI_PARAMETER                     ; altsyncram_ejk1      ; Untyped                          ;
+; CBXI_PARAMETER                     ; altsyncram_cmk1      ; Untyped                          ;
 +------------------------------------+----------------------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -501,10 +506,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Number of entity instances                ; 2                                                                                         ;
 ; Entity Instance                           ; frame_buffer:fb|altsyncram:altsyncram_component                                           ;
 ;     -- OPERATION_MODE                     ; DUAL_PORT                                                                                 ;
-;     -- WIDTH_A                            ; 8                                                                                         ;
+;     -- WIDTH_A                            ; 16                                                                                        ;
 ;     -- NUMWORDS_A                         ; 32768                                                                                     ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                              ;
-;     -- WIDTH_B                            ; 8                                                                                         ;
+;     -- WIDTH_B                            ; 16                                                                                        ;
 ;     -- NUMWORDS_B                         ; 32768                                                                                     ;
 ;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                    ;
 ;     -- OUTDATA_REG_B                      ; CLOCK1                                                                                    ;
@@ -543,7 +548,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Wed May 24 18:30:37 2017
+    Info: Processing started: Tue May 30 19:29:24 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ov7670_top -c ov7670_top
 Info: Found 2 design units, including 1 entities, in source file frame_buffer.vhd
     Info: Found design unit 1: frame_buffer-SYN
@@ -560,6 +565,8 @@ Warning: Using design file vga.vhd, which is not specified as a design file for 
     Info: Found design unit 1: vga-Behavioral
     Info: Found entity 1: vga
 Info: Elaborating entity "vga" for hierarchy "vga:Inst_vga"
+Warning (10492): VHDL Process Statement warning at vga.vhd(105): signal "hCounter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga.vhd(109): signal "frame_pixel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info: Elaborating entity "frame_buffer" for hierarchy "frame_buffer:fb"
 Info: Elaborating entity "altsyncram" for hierarchy "frame_buffer:fb|altsyncram:altsyncram_component"
 Info: Elaborated megafunction instantiation "frame_buffer:fb|altsyncram:altsyncram_component"
@@ -579,25 +586,25 @@ Info: Instantiated megafunction "frame_buffer:fb|altsyncram:altsyncram_component
     Info: Parameter "power_up_uninitialized" = "FALSE"
     Info: Parameter "widthad_a" = "15"
     Info: Parameter "widthad_b" = "15"
-    Info: Parameter "width_a" = "8"
-    Info: Parameter "width_b" = "8"
+    Info: Parameter "width_a" = "16"
+    Info: Parameter "width_b" = "16"
     Info: Parameter "width_byteena_a" = "1"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_ejk1.tdf
-    Info: Found entity 1: altsyncram_ejk1
-Info: Elaborating entity "altsyncram_ejk1" for hierarchy "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_pes1.tdf
-    Info: Found entity 1: altsyncram_pes1
-Info: Elaborating entity "altsyncram_pes1" for hierarchy "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated|altsyncram_pes1:altsyncram1"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_cmk1.tdf
+    Info: Found entity 1: altsyncram_cmk1
+Info: Elaborating entity "altsyncram_cmk1" for hierarchy "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_nhs1.tdf
+    Info: Found entity 1: altsyncram_nhs1
+Info: Elaborating entity "altsyncram_nhs1" for hierarchy "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1"
 Warning: Variable or input pin "clocken1" is defined but never used
 Info: Found 1 design units, including 1 entities, in source file db/decode_9oa.tdf
     Info: Found entity 1: decode_9oa
-Info: Elaborating entity "decode_9oa" for hierarchy "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated|altsyncram_pes1:altsyncram1|decode_9oa:decode3"
-Info: Elaborating entity "decode_9oa" for hierarchy "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated|altsyncram_pes1:altsyncram1|decode_9oa:decode_a"
-Info: Found 1 design units, including 1 entities, in source file db/mux_pib.tdf
-    Info: Found entity 1: mux_pib
-Info: Elaborating entity "mux_pib" for hierarchy "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_ejk1:auto_generated|altsyncram_pes1:altsyncram1|mux_pib:mux5"
+Info: Elaborating entity "decode_9oa" for hierarchy "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode3"
+Info: Elaborating entity "decode_9oa" for hierarchy "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a"
+Info: Found 1 design units, including 1 entities, in source file db/mux_akb.tdf
+    Info: Found entity 1: mux_akb
+Info: Elaborating entity "mux_akb" for hierarchy "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|mux_akb:mux5"
 Warning: Using design file ov7670_capture.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info: Found design unit 1: ov7670_capture-Behavioral
+    Info: Found design unit 1: ov7670_capture-behavioral
     Info: Found entity 1: ov7670_capture
 Info: Elaborating entity "ov7670_capture" for hierarchy "ov7670_capture:capture"
 Warning: Using design file ov7670_controller.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
@@ -612,6 +619,36 @@ Warning: Using design file ov7670_registers.vhd, which is not specified as a des
     Info: Found design unit 1: ov7670_registers-Behavioral
     Info: Found entity 1: ov7670_registers
 Info: Elaborating entity "ov7670_registers" for hierarchy "ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers"
+Warning: Synthesized away the following node(s):
+    Warning: Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a5"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a21"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a37"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a53"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a69"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a85"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a101"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a117"
+Warning: Synthesized away the following node(s):
+    Warning: Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a0"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a16"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a32"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a48"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a64"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a80"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a96"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a112"
+Warning: Synthesized away the following node(s):
+    Warning: Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a16"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a0"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a32"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a48"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a80"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a64"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a96"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a112"
 Info: Inferred 1 megafunctions from design logic
     Info: Inferred altsyncram megafunction from the following design logic: "ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|Mux0~0"
         Info: Parameter OPERATION_MODE set to ROM
@@ -642,16 +679,19 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "LED[5]" is stuck at GND
     Warning (13410): Pin "LED[6]" is stuck at GND
     Warning (13410): Pin "LED[7]" is stuck at GND
-Info: Implemented 435 device resources after synthesis - the final resource count might be different
+Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
+    Info: Register "ov7670_capture:capture|dout[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "vga:Inst_vga|address[16]" lost all its fanouts during netlist optimizations.
+Info: Implemented 531 device resources after synthesis - the final resource count might be different
     Info: Implemented 13 input pins
     Info: Implemented 22 output pins
     Info: Implemented 1 bidirectional pins
-    Info: Implemented 319 logic cells
-    Info: Implemented 80 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 277 megabytes
-    Info: Processing ended: Wed May 24 18:30:42 2017
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Implemented 367 logic cells
+    Info: Implemented 128 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 50 warnings
+    Info: Peak virtual memory: 279 megabytes
+    Info: Processing ended: Tue May 30 19:29:28 2017
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

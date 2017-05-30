@@ -8,7 +8,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity ov7670_top is
     Port ( 
-      clk100        : in    STD_LOGIC;
+      clk100       : in    STD_LOGIC;
       OV7670_SIOC  : out   STD_LOGIC;
       OV7670_SIOD  : inout STD_LOGIC;
       OV7670_RESET : out   STD_LOGIC;
@@ -57,13 +57,13 @@ architecture Behavioral of ov7670_top is
    COMPONENT frame_buffer
    PORT
 	(
-		data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+		data		: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
 		rdaddress		: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 		rdclock		: IN STD_LOGIC ;
 		wraddress		: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 		wrclock		: IN STD_LOGIC ;
 		wren		: IN STD_LOGIC  := '1';
-		q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+		q		: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
 	);
    END COMPONENT;
    
@@ -74,7 +74,7 @@ architecture Behavioral of ov7670_top is
       href  : IN std_logic;
       d     : IN std_logic_vector(7 downto 0);          
       addr  : OUT std_logic_vector(14 downto 0);
-      dout  : OUT std_logic_vector(7 downto 0);
+      dout  : OUT std_logic_vector(15 downto 0);
       we    : OUT std_logic
       );
    END COMPONENT;
@@ -90,25 +90,32 @@ architecture Behavioral of ov7670_top is
       vga_vsync : OUT std_logic;
       
       frame_addr : OUT std_logic_vector(14 downto 0);
-      frame_pixel : IN std_logic_vector(7 downto 0)         
+      frame_pixel : IN std_logic_vector(15 downto 0)         
       );
    END COMPONENT;
    
    signal frame_addr  : std_logic_vector(14 downto 0);
-   signal frame_pixel : std_logic_vector(7 downto 0);
+   signal frame_pixel : std_logic_vector(15 downto 0);
 
    signal capture_addr  : std_logic_vector(14 downto 0);
-   signal capture_data  : std_logic_vector(7 downto 0);
+   signal capture_data  : std_logic_vector(15 downto 0);
    signal capture_we    : std_logic_vector(0 downto 0);
    signal resend : std_logic;
    signal config_finished : std_logic;
    
    signal clk50 : std_logic := '0';
+   signal clk25 : std_logic := '0';
 begin
    process(clk100)
    begin
 		if (rising_edge(clk100)) then
 			clk50 <= not clk50;
+		end if;
+   end process;
+   process(clk50)
+   begin
+		if (rising_edge(clk50)) then
+			clk25 <= not clk25;
 		end if;
    end process;
 btn_debounce: debounce PORT MAP(
@@ -118,7 +125,7 @@ btn_debounce: debounce PORT MAP(
    );
 
    Inst_vga: vga PORT MAP(
-      clk50       => clk50,
+      clk50       => clk25,
       vga_red     => vga_red,
       vga_green   => vga_green,
       vga_blue    => vga_blue,
@@ -136,7 +143,7 @@ fb : frame_buffer
     wraddress => capture_addr,
     data  => capture_data,
     
-    rdclock  => clk50,
+    rdclock  => clk25,
     rdaddress => frame_addr,
     q => frame_pixel
   );

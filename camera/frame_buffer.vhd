@@ -42,20 +42,20 @@ USE altera_mf.all;
 ENTITY frame_buffer IS
 	PORT
 	(
-		data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+		data		: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
 		rdaddress		: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 		rdclock		: IN STD_LOGIC ;
 		wraddress		: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 		wrclock		: IN STD_LOGIC ;
 		wren		: IN STD_LOGIC  := '1';
-		q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+		q		: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
 	);
 END frame_buffer;
 
 
 ARCHITECTURE SYN OF frame_buffer IS
 
-	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (7 DOWNTO 0);
+	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (15 DOWNTO 0);
 
 
 
@@ -86,13 +86,13 @@ ARCHITECTURE SYN OF frame_buffer IS
 			clock1	: IN STD_LOGIC ;
 			address_a	: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 			address_b	: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
-			q_b	: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-			data_a	: IN STD_LOGIC_VECTOR (7 DOWNTO 0)
+			q_b	: OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
+			data_a	: IN STD_LOGIC_VECTOR (15 DOWNTO 0)
 	);
 	END COMPONENT;
 
 BEGIN
-	q    <= sub_wire0(7 DOWNTO 0);
+	q    <= sub_wire0(15 DOWNTO 0);
 
 	altsyncram_component : altsyncram
 	GENERIC MAP (
@@ -111,8 +111,8 @@ BEGIN
 		power_up_uninitialized => "FALSE",
 		widthad_a => 15,
 		widthad_b => 15,
-		width_a => 8,
-		width_b => 8,
+		width_a => 16,
+		width_b => 16,
 		width_byteena_a => 1
 	)
 	PORT MAP (
@@ -163,7 +163,7 @@ END SYN;
 -- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 -- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 -- Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
--- Retrieval info: PRIVATE: MEMSIZE NUMERIC "262144"
+-- Retrieval info: PRIVATE: MEMSIZE NUMERIC "524288"
 -- Retrieval info: PRIVATE: MEM_IN_BITS NUMERIC "0"
 -- Retrieval info: PRIVATE: MIFfilename STRING ""
 -- Retrieval info: PRIVATE: OPERATION_MODE NUMERIC "2"
@@ -182,11 +182,11 @@ END SYN;
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 -- Retrieval info: PRIVATE: USE_DIFF_CLKEN NUMERIC "0"
 -- Retrieval info: PRIVATE: UseDPRAM NUMERIC "1"
--- Retrieval info: PRIVATE: VarWidth NUMERIC "1"
--- Retrieval info: PRIVATE: WIDTH_READ_A NUMERIC "8"
--- Retrieval info: PRIVATE: WIDTH_READ_B NUMERIC "8"
--- Retrieval info: PRIVATE: WIDTH_WRITE_A NUMERIC "8"
--- Retrieval info: PRIVATE: WIDTH_WRITE_B NUMERIC "8"
+-- Retrieval info: PRIVATE: VarWidth NUMERIC "0"
+-- Retrieval info: PRIVATE: WIDTH_READ_A NUMERIC "16"
+-- Retrieval info: PRIVATE: WIDTH_READ_B NUMERIC "16"
+-- Retrieval info: PRIVATE: WIDTH_WRITE_A NUMERIC "16"
+-- Retrieval info: PRIVATE: WIDTH_WRITE_B NUMERIC "16"
 -- Retrieval info: PRIVATE: WRADDR_ACLR_B NUMERIC "0"
 -- Retrieval info: PRIVATE: WRADDR_REG_B NUMERIC "0"
 -- Retrieval info: PRIVATE: WRCTRL_ACLR_B NUMERIC "0"
@@ -207,19 +207,19 @@ END SYN;
 -- Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "FALSE"
 -- Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "15"
 -- Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "15"
--- Retrieval info: CONSTANT: WIDTH_A NUMERIC "8"
--- Retrieval info: CONSTANT: WIDTH_B NUMERIC "8"
+-- Retrieval info: CONSTANT: WIDTH_A NUMERIC "16"
+-- Retrieval info: CONSTANT: WIDTH_B NUMERIC "16"
 -- Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
--- Retrieval info: USED_PORT: data 0 0 8 0 INPUT NODEFVAL data[7..0]
--- Retrieval info: USED_PORT: q 0 0 8 0 OUTPUT NODEFVAL q[7..0]
+-- Retrieval info: USED_PORT: data 0 0 16 0 INPUT NODEFVAL data[15..0]
+-- Retrieval info: USED_PORT: q 0 0 16 0 OUTPUT NODEFVAL q[15..0]
 -- Retrieval info: USED_PORT: rdaddress 0 0 15 0 INPUT NODEFVAL rdaddress[14..0]
 -- Retrieval info: USED_PORT: rdclock 0 0 0 0 INPUT NODEFVAL rdclock
 -- Retrieval info: USED_PORT: wraddress 0 0 15 0 INPUT NODEFVAL wraddress[14..0]
 -- Retrieval info: USED_PORT: wrclock 0 0 0 0 INPUT NODEFVAL wrclock
 -- Retrieval info: USED_PORT: wren 0 0 0 0 INPUT VCC wren
--- Retrieval info: CONNECT: @data_a 0 0 8 0 data 0 0 8 0
+-- Retrieval info: CONNECT: @data_a 0 0 16 0 data 0 0 16 0
 -- Retrieval info: CONNECT: @wren_a 0 0 0 0 wren 0 0 0 0
--- Retrieval info: CONNECT: q 0 0 8 0 @q_b 0 0 8 0
+-- Retrieval info: CONNECT: q 0 0 16 0 @q_b 0 0 16 0
 -- Retrieval info: CONNECT: @address_a 0 0 15 0 wraddress 0 0 15 0
 -- Retrieval info: CONNECT: @address_b 0 0 15 0 rdaddress 0 0 15 0
 -- Retrieval info: CONNECT: @clock0 0 0 0 0 wrclock 0 0 0 0

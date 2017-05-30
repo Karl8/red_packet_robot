@@ -7,6 +7,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
+--use IEEE.std_logic_arith.all;
 
 entity vga is
     Port ( 
@@ -17,21 +18,21 @@ entity vga is
       vga_hsync   : out STD_LOGIC;
       vga_vsync   : out STD_LOGIC;
       frame_addr  : out STD_LOGIC_VECTOR(14 downto 0);
-      frame_pixel : in  STD_LOGIC_VECTOR(7 downto 0)
+      frame_pixel : in  STD_LOGIC_VECTOR(15 downto 0)
     );
 end vga;
 
 architecture Behavioral of vga is
    -- Timing constants
-   constant hRez       : natural := 800;
-   constant vRez       : natural := 600;
+   constant hRez       : natural := 640;
+   constant hStartSync : natural := 640+16;
+   constant hEndSync   : natural := 640+16+96;
+   constant hMaxCount  : natural := 800;
 
-   constant hMaxCount  : natural := 1056;
-   constant hStartSync : natural := 840;
-   constant hEndSync   : natural := 968;
-   constant vMaxCount  : natural := 628;
-   constant vStartSync : natural := 601;
-   constant vEndSync   : natural := 605;
+   constant vRez       : natural := 480;
+   constant vStartSync : natural := 480+10;
+   constant vEndSync   : natural := 480+10+2;
+   constant vMaxCount  : natural := 480+10+2+33;
    constant hsync_active : std_logic := '1';
    constant vsync_active : std_logic := '1';
 
@@ -39,9 +40,11 @@ architecture Behavioral of vga is
    signal vCounter : unsigned(9 downto 0) := (others => '0');
    signal address : unsigned(16 downto 0) := (others => '0');
    signal blank : std_logic := '1';
-
+   
+   signal r, g: std_logic_vector(2 downto 0);
+   signal b : std_logic_vector(1 downto 0);
 begin
-   frame_addr <= std_logic_vector(address(16 downto 2));
+   frame_addr <= std_logic_vector(address(15 downto 1));
    
    process(clk50)
    begin
@@ -57,24 +60,13 @@ begin
          else
             hCounter <= hCounter+1;
          end if;
-
-         if blank = '0' then
-            vga_red   <= frame_pixel(7 downto 5);
-            vga_green <= frame_pixel(4 downto 2);
-            vga_blue  <= frame_pixel(1 downto 0);
-         else
-            vga_red   <= (others => '0');
-            vga_green <= (others => '0');
-            vga_blue  <= (others => '0');
-         end if;
-   
          if vCounter  >= vRez then
             address <= (others => '0');
             blank <= '1';
          else 
-            if hCounter  >= 80 and hCounter  < 720 then
+            if hCounter  < hRez then
                blank <= '0';
-               if hCounter = 719 then
+               if hCounter = hRez - 1 then
                   if vCounter(1 downto 0) /= "11" then
                      address <= address - 639;
                   else
@@ -101,6 +93,35 @@ begin
          else
             vga_vSync <= not vsync_active;
          end if;
+         
+         vga_red <= std_logic_vector(r(2 downto 0));
+         vga_green <= std_logic_vector(g(2 downto 0));
+         vga_blue <= std_logic_vector(b(1 downto 0));
       end if;
+	end process;
+	process(r, g, b, blank)
+    begin
+         if blank = '0' then
+            if hCounter = 100 or hCounter = 400 then
+				r   <= (others => '1');
+				g   <= (others => '1');
+				b   <= (others => '1');
+			elsif unsigned(frame_pixel(15 downto 11)) < 31 and unsigned(frame_pixel(15 downto 11)) > 26 and unsigned(frame_pixel(10 downto 6)) < 25 and unsigned(frame_pixel(4 downto 0)) > 25 then
+				r  <= (others => '1');
+				g  <= (others => '0');
+				b  <= (others => '0');
+            else
+				r   <= (others => '0');
+				g   <= (others => '0');
+				b   <= (others => '0');
+            --r   <= frame_pixel(15 downto 13);
+           -- g   <= frame_pixel(10 downto 8);
+           -- b   <= frame_pixel(4 downto 3);
+            end if;
+         else
+            r   <= (others => '0');
+            g   <= (others => '0');
+            b   <= (others => '0');
+         end if;
    end process;
 end Behavioral;

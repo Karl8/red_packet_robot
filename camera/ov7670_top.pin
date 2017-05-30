@@ -589,10 +589,10 @@ GND*                         : P24       :        :                   :         
 GND+                         : P25       :        :                   :         : 6         :                
 GND+                         : P26       :        :                   :         : 6         :                
 GND                          : R1        : gnd    :                   :         :           :                
-vga_red[0]                   : R2        : output : 3.3-V LVTTL       :         : 1         : Y              
-vga_red[1]                   : R3        : output : 3.3-V LVTTL       :         : 1         : Y              
-vga_red[2]                   : R4        : output : 3.3-V LVTTL       :         : 1         : Y              
-vga_green[0]                 : R5        : output : 3.3-V LVTTL       :         : 1         : Y              
+vga_green[0]                 : R2        : output : 3.3-V LVTTL       :         : 1         : Y              
+vga_green[1]                 : R3        : output : 3.3-V LVTTL       :         : 1         : Y              
+vga_green[2]                 : R4        : output : 3.3-V LVTTL       :         : 1         : Y              
+vga_red[0]                   : R5        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : R6        :        :                   :         : 1         :                
 GND*                         : R7        :        :                   :         : 1         :                
 VCCINT                       : R8        : power  :                   : 1.2V    :           :                
@@ -615,8 +615,8 @@ GND*                         : R24       :        :                   :         
 GND*                         : R25       :        :                   :         : 6         :                
 GND                          : R26       : gnd    :                   :         :           :                
 VCCIO1                       : T1        : power  :                   : 3.3V    : 1         :                
-vga_green[1]                 : T2        : output : 3.3-V LVTTL       :         : 1         : Y              
-vga_green[2]                 : T3        : output : 3.3-V LVTTL       :         : 1         : Y              
+vga_red[1]                   : T2        : output : 3.3-V LVTTL       :         : 1         : Y              
+vga_red[2]                   : T3        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : T4        :        :                   :         : 1         :                
 GND                          : T5        : gnd    :                   :         :           :                
 GND*                         : T6        :        :                   :         : 1         :                
