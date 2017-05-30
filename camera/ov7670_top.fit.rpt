@@ -1,5 +1,5 @@
 Fitter report for ov7670_top
-Tue May 30 19:29:42 2017
+Tue May 30 19:39:49 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +------------------------------------+------------------------------------------+
-; Fitter Status                      ; Successful - Tue May 30 19:29:42 2017    ;
+; Fitter Status                      ; Successful - Tue May 30 19:39:49 2017    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; ov7670_top                               ;
 ; Top-level Entity Name              ; ov7670_top                               ;
@@ -146,12 +146,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 2           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.22        ;
+; Average used               ; 1.12        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2 processors           ;  12.5%      ;
+;     2 processors           ;   6.3%      ;
 +----------------------------+-------------+
 
 
@@ -233,14 +233,14 @@ The pin-out file can be found in D:/code/vhdl/red_packet_robot/camera/ov7670_top
 ; JTAGs                                       ; 0 / 1 ( 0 % )                ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )                ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )                ;
-; Average interconnect usage (total/H/V)      ; 1% / 1% / 2%                 ;
-; Peak interconnect usage (total/H/V)         ; 8% / 7% / 11%                ;
+; Average interconnect usage (total/H/V)      ; 2% / 2% / 2%                 ;
+; Peak interconnect usage (total/H/V)         ; 8% / 9% / 10%                ;
 ; Maximum fan-out node                        ; OV7670_PCLK                  ;
 ; Maximum fan-out                             ; 170                          ;
 ; Highest non-global fan-out signal           ; OV7670_PCLK                  ;
 ; Highest non-global fan-out                  ; 170                          ;
-; Total fan-out                               ; 4957                         ;
-; Average fan-out                             ; 6.80                         ;
+; Total fan-out                               ; 4961                         ;
+; Average fan-out                             ; 6.77                         ;
 +---------------------------------------------+------------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -1102,11 +1102,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OV7670_D[7]  ; Input    ; 6             ; 6             ; --                    ; --  ;
 ; OV7670_D[3]  ; Input    ; 6             ; 6             ; --                    ; --  ;
 ; OV7670_D[4]  ; Input    ; 6             ; 6             ; --                    ; --  ;
-; OV7670_D[2]  ; Input    ; 6             ; 6             ; --                    ; --  ;
 ; OV7670_D[1]  ; Input    ; 6             ; 6             ; --                    ; --  ;
+; OV7670_D[2]  ; Input    ; 6             ; 6             ; --                    ; --  ;
 ; OV7670_HREF  ; Input    ; 6             ; 6             ; --                    ; --  ;
-; OV7670_D[0]  ; Input    ; 6             ; 6             ; --                    ; --  ;
 ; OV7670_D[5]  ; Input    ; 6             ; 6             ; --                    ; --  ;
+; OV7670_D[0]  ; Input    ; 6             ; 6             ; --                    ; --  ;
 +--------------+----------+---------------+---------------+-----------------------+-----+
 
 
@@ -1124,9 +1124,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - ov7670_capture:capture|we                                                                                                 ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a1   ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a2   ; 0                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a3   ; 0                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a4   ; 0                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a6   ; 0                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a3   ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a4   ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a6   ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a7   ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a8   ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a9   ; 1                 ; 0       ;
@@ -1135,7 +1135,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a12  ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a13  ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a14  ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a15  ; 0                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a15  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a17  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a18  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a19  ; 1                 ; 0       ;
@@ -1151,15 +1151,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a30  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a31  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a33  ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a34  ; 0                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a35  ; 0                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a34  ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a35  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a36  ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a38  ; 0                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a38  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a39  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a40  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a41  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a42  ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a43  ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a43  ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a44  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a45  ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a46  ; 1                 ; 0       ;
@@ -1168,68 +1168,68 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a50  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a51  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a52  ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a54  ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a55  ; 0                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a54  ; 0                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a55  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a56  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a57  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a58  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a59  ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a60  ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a60  ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a61  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a62  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a63  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a65  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a66  ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a67  ; 0                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a67  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a68  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a70  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a71  ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a72  ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a72  ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a73  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a74  ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a75  ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a76  ; 0                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a77  ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a77  ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a78  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a79  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a81  ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a82  ; 0                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a82  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a83  ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a84  ; 0                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a86  ; 0                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a87  ; 0                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a88  ; 0                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a86  ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a87  ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a88  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a89  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a90  ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a91  ; 0                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a92  ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a93  ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a92  ; 0                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a93  ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a94  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a95  ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a97  ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a98  ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a99  ; 0                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a100 ; 0                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a99  ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a100 ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a102 ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a103 ; 0                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a103 ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a104 ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a105 ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a106 ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a106 ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a107 ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a108 ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a109 ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a109 ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a110 ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a111 ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a113 ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a114 ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a115 ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a116 ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a118 ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a118 ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a119 ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a120 ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a121 ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a122 ; 1                 ; 0       ;
-;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a123 ; 1                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a122 ; 0                 ; 0       ;
+;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a123 ; 0                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a124 ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a125 ; 1                 ; 0       ;
 ;      - frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a126 ; 1                 ; 0       ;
@@ -1251,7 +1251,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - ov7670_capture:capture|address_next[11]                                                                                   ; 1                 ; 0       ;
 ;      - ov7670_capture:capture|address_next[12]                                                                                   ; 1                 ; 0       ;
 ;      - ov7670_capture:capture|address_next[0]                                                                                    ; 1                 ; 0       ;
-;      - ov7670_capture:capture|d_latch[14]                                                                                        ; 1                 ; 0       ;
+;      - ov7670_capture:capture|dout[13]                                                                                           ; 0                 ; 0       ;
 ;      - ov7670_capture:capture|address[1]                                                                                         ; 1                 ; 0       ;
 ;      - ov7670_capture:capture|address[2]                                                                                         ; 1                 ; 0       ;
 ;      - ov7670_capture:capture|address[3]                                                                                         ; 1                 ; 0       ;
@@ -1264,133 +1264,133 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - ov7670_capture:capture|address[10]                                                                                        ; 0                 ; 0       ;
 ;      - ov7670_capture:capture|address[11]                                                                                        ; 0                 ; 0       ;
 ;      - ov7670_capture:capture|address[12]                                                                                        ; 0                 ; 0       ;
-;      - ov7670_capture:capture|d_latch[15]                                                                                        ; 1                 ; 0       ;
-;      - ov7670_capture:capture|dout[8]                                                                                            ; 1                 ; 0       ;
-;      - ov7670_capture:capture|dout[9]                                                                                            ; 1                 ; 0       ;
+;      - ov7670_capture:capture|dout[12]                                                                                           ; 0                 ; 0       ;
+;      - ov7670_capture:capture|dout[11]                                                                                           ; 0                 ; 0       ;
+;      - ov7670_capture:capture|d_latch[14]                                                                                        ; 0                 ; 0       ;
+;      - ov7670_capture:capture|d_latch[15]                                                                                        ; 0                 ; 0       ;
+;      - ov7670_capture:capture|d_latch[11]                                                                                        ; 0                 ; 0       ;
+;      - ov7670_capture:capture|dout[14]                                                                                           ; 0                 ; 0       ;
+;      - ov7670_capture:capture|dout[8]                                                                                            ; 0                 ; 0       ;
 ;      - ov7670_capture:capture|dout[10]                                                                                           ; 1                 ; 0       ;
-;      - ov7670_capture:capture|dout[13]                                                                                           ; 0                 ; 0       ;
-;      - ov7670_capture:capture|dout[12]                                                                                           ; 1                 ; 0       ;
-;      - ov7670_capture:capture|dout[11]                                                                                           ; 1                 ; 0       ;
-;      - ov7670_capture:capture|dout[14]                                                                                           ; 1                 ; 0       ;
-;      - ov7670_capture:capture|d_latch[11]                                                                                        ; 1                 ; 0       ;
 ;      - ov7670_capture:capture|dout[15]                                                                                           ; 1                 ; 0       ;
-;      - ov7670_capture:capture|d_latch[12]                                                                                        ; 1                 ; 0       ;
-;      - ov7670_capture:capture|d_latch[10]                                                                                        ; 1                 ; 0       ;
+;      - ov7670_capture:capture|d_latch[12]                                                                                        ; 0                 ; 0       ;
 ;      - ov7670_capture:capture|d_latch[9]                                                                                         ; 1                 ; 0       ;
+;      - ov7670_capture:capture|d_latch[10]                                                                                        ; 1                 ; 0       ;
+;      - ov7670_capture:capture|dout[9]                                                                                            ; 1                 ; 0       ;
 ;      - ov7670_capture:capture|wr_hold[1]                                                                                         ; 0                 ; 0       ;
-;      - ov7670_capture:capture|d_latch[6]                                                                                         ; 1                 ; 0       ;
-;      - ov7670_capture:capture|d_latch[7]                                                                                         ; 1                 ; 0       ;
-;      - ov7670_capture:capture|d_latch[8]                                                                                         ; 1                 ; 0       ;
 ;      - ov7670_capture:capture|d_latch[13]                                                                                        ; 0                 ; 0       ;
-;      - ov7670_capture:capture|d_latch[3]                                                                                         ; 1                 ; 0       ;
-;      - ov7670_capture:capture|d_latch[4]                                                                                         ; 1                 ; 0       ;
-;      - ov7670_capture:capture|d_latch[2]                                                                                         ; 1                 ; 0       ;
+;      - ov7670_capture:capture|d_latch[6]                                                                                         ; 0                 ; 0       ;
+;      - ov7670_capture:capture|d_latch[7]                                                                                         ; 0                 ; 0       ;
+;      - ov7670_capture:capture|d_latch[3]                                                                                         ; 0                 ; 0       ;
+;      - ov7670_capture:capture|d_latch[8]                                                                                         ; 0                 ; 0       ;
+;      - ov7670_capture:capture|d_latch[4]                                                                                         ; 0                 ; 0       ;
 ;      - ov7670_capture:capture|d_latch[1]                                                                                         ; 1                 ; 0       ;
-;      - ov7670_capture:capture|d_latch[0]                                                                                         ; 1                 ; 0       ;
+;      - ov7670_capture:capture|d_latch[2]                                                                                         ; 1                 ; 0       ;
 ;      - ov7670_capture:capture|d_latch[5]                                                                                         ; 0                 ; 0       ;
+;      - ov7670_capture:capture|d_latch[0]                                                                                         ; 0                 ; 0       ;
 ; btn                                                                                                                              ;                   ;         ;
-;      - debounce:btn_debounce|o                                                                                                   ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[0]                                                                                                ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[1]                                                                                                ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[2]                                                                                                ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[3]                                                                                                ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[4]                                                                                                ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[5]                                                                                                ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[6]                                                                                                ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[7]                                                                                                ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[8]                                                                                                ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[9]                                                                                                ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[10]                                                                                               ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[11]                                                                                               ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[12]                                                                                               ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[13]                                                                                               ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[14]                                                                                               ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[15]                                                                                               ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[16]                                                                                               ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[17]                                                                                               ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[18]                                                                                               ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[19]                                                                                               ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[20]                                                                                               ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[21]                                                                                               ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[22]                                                                                               ; 0                 ; 6       ;
-;      - debounce:btn_debounce|c[23]                                                                                               ; 0                 ; 6       ;
+;      - debounce:btn_debounce|o                                                                                                   ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[0]                                                                                                ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[1]                                                                                                ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[2]                                                                                                ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[3]                                                                                                ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[4]                                                                                                ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[5]                                                                                                ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[6]                                                                                                ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[7]                                                                                                ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[8]                                                                                                ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[9]                                                                                                ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[10]                                                                                               ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[11]                                                                                               ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[12]                                                                                               ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[13]                                                                                               ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[14]                                                                                               ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[15]                                                                                               ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[16]                                                                                               ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[17]                                                                                               ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[18]                                                                                               ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[19]                                                                                               ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[20]                                                                                               ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[21]                                                                                               ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[22]                                                                                               ; 1                 ; 6       ;
+;      - debounce:btn_debounce|c[23]                                                                                               ; 1                 ; 6       ;
 ; OV7670_VSYNC                                                                                                                     ;                   ;         ;
-;      - ov7670_capture:capture|d_latch[9]                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[10]                                                                                        ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[11]                                                                                        ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[12]                                                                                        ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[14]                                                                                        ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[15]                                                                                        ; 1                 ; 6       ;
-;      - ov7670_capture:capture|we                                                                                                 ; 1                 ; 6       ;
-;      - ov7670_capture:capture|dout[8]                                                                                            ; 1                 ; 6       ;
-;      - ov7670_capture:capture|dout[9]                                                                                            ; 1                 ; 6       ;
-;      - ov7670_capture:capture|dout[10]                                                                                           ; 1                 ; 6       ;
-;      - ov7670_capture:capture|dout[11]                                                                                           ; 1                 ; 6       ;
-;      - ov7670_capture:capture|dout[12]                                                                                           ; 1                 ; 6       ;
-;      - ov7670_capture:capture|dout[13]                                                                                           ; 1                 ; 6       ;
-;      - ov7670_capture:capture|dout[14]                                                                                           ; 1                 ; 6       ;
-;      - ov7670_capture:capture|dout[15]                                                                                           ; 1                 ; 6       ;
-;      - ov7670_capture:capture|wr_hold[0]                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[15]                                                                                   ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[14]                                                                                   ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[13]                                                                                   ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[1]                                                                                    ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[2]                                                                                    ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[3]                                                                                    ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[4]                                                                                    ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[5]                                                                                    ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[6]                                                                                    ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[7]                                                                                    ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[8]                                                                                    ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[9]                                                                                    ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[10]                                                                                   ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[11]                                                                                   ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[12]                                                                                   ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address_next[0]                                                                                    ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~15                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~16                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~17                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[6]                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~18                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~19                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~20                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~21                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~22                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~23                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~24                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~25                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~26                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~27                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~28                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|address~29                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[7]                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[8]                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[13]                                                                                        ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[3]                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[4]                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[2]                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[1]                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|wr_hold~3                                                                                          ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[0]                                                                                         ; 1                 ; 6       ;
-;      - ov7670_capture:capture|d_latch[5]                                                                                         ; 1                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[9]                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[10]                                                                                        ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[11]                                                                                        ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[12]                                                                                        ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[14]                                                                                        ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[15]                                                                                        ; 0                 ; 6       ;
+;      - ov7670_capture:capture|we                                                                                                 ; 0                 ; 6       ;
+;      - ov7670_capture:capture|dout[8]                                                                                            ; 0                 ; 6       ;
+;      - ov7670_capture:capture|dout[9]                                                                                            ; 0                 ; 6       ;
+;      - ov7670_capture:capture|dout[10]                                                                                           ; 0                 ; 6       ;
+;      - ov7670_capture:capture|dout[11]                                                                                           ; 0                 ; 6       ;
+;      - ov7670_capture:capture|dout[12]                                                                                           ; 0                 ; 6       ;
+;      - ov7670_capture:capture|dout[13]                                                                                           ; 0                 ; 6       ;
+;      - ov7670_capture:capture|dout[14]                                                                                           ; 0                 ; 6       ;
+;      - ov7670_capture:capture|dout[15]                                                                                           ; 0                 ; 6       ;
+;      - ov7670_capture:capture|wr_hold[0]                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[15]                                                                                   ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[14]                                                                                   ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[13]                                                                                   ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[1]                                                                                    ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[2]                                                                                    ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[3]                                                                                    ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[4]                                                                                    ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[5]                                                                                    ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[6]                                                                                    ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[7]                                                                                    ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[8]                                                                                    ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[9]                                                                                    ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[10]                                                                                   ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[11]                                                                                   ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[12]                                                                                   ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address_next[0]                                                                                    ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~15                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~16                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~17                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[13]                                                                                        ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~18                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~19                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~20                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~21                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~22                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~23                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~24                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~25                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~26                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~27                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~28                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|address~29                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[6]                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[7]                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[3]                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[8]                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[4]                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[1]                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[2]                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|wr_hold~3                                                                                          ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[5]                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[0]                                                                                         ; 0                 ; 6       ;
 ; OV7670_D[6]                                                                                                                      ;                   ;         ;
-;      - ov7670_capture:capture|d_latch[6]~feeder                                                                                  ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[6]~feeder                                                                                  ; 1                 ; 6       ;
 ; OV7670_D[7]                                                                                                                      ;                   ;         ;
 ;      - ov7670_capture:capture|d_latch[7]~feeder                                                                                  ; 0                 ; 6       ;
 ; OV7670_D[3]                                                                                                                      ;                   ;         ;
-;      - ov7670_capture:capture|d_latch[3]                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[3]~feeder                                                                                  ; 0                 ; 6       ;
 ; OV7670_D[4]                                                                                                                      ;                   ;         ;
-;      - ov7670_capture:capture|d_latch[4]                                                                                         ; 1                 ; 6       ;
-; OV7670_D[2]                                                                                                                      ;                   ;         ;
-;      - ov7670_capture:capture|d_latch[2]~feeder                                                                                  ; 1                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[4]~feeder                                                                                  ; 0                 ; 6       ;
 ; OV7670_D[1]                                                                                                                      ;                   ;         ;
-;      - ov7670_capture:capture|d_latch[1]~feeder                                                                                  ; 1                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[1]                                                                                         ; 1                 ; 6       ;
+; OV7670_D[2]                                                                                                                      ;                   ;         ;
+;      - ov7670_capture:capture|d_latch[2]~feeder                                                                                  ; 0                 ; 6       ;
 ; OV7670_HREF                                                                                                                      ;                   ;         ;
 ;      - ov7670_capture:capture|wr_hold~0                                                                                          ; 0                 ; 6       ;
-; OV7670_D[0]                                                                                                                      ;                   ;         ;
-;      - ov7670_capture:capture|d_latch[0]~feeder                                                                                  ; 1                 ; 6       ;
 ; OV7670_D[5]                                                                                                                      ;                   ;         ;
-;      - ov7670_capture:capture|d_latch[5]                                                                                         ; 0                 ; 6       ;
+;      - ov7670_capture:capture|d_latch[5]~feeder                                                                                  ; 0                 ; 6       ;
+; OV7670_D[0]                                                                                                                      ;                   ;         ;
+;      - ov7670_capture:capture|d_latch[0]                                                                                         ; 0                 ; 6       ;
 +----------------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
 
 
@@ -1403,41 +1403,41 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OV7670_VSYNC                                                                                                                                    ; PIN_B18            ; 58      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
 ; btn                                                                                                                                             ; PIN_AF4            ; 25      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
 ; clk100                                                                                                                                          ; PIN_N2             ; 1       ; Clock                     ; no     ; --                   ; --               ; --                        ;
-; clk25                                                                                                                                           ; LCFF_X1_Y25_N13    ; 166     ; Clock                     ; yes    ; Global Clock         ; GCLK0            ; --                        ;
+; clk25                                                                                                                                           ; LCFF_X1_Y25_N29    ; 166     ; Clock                     ; yes    ; Global Clock         ; GCLK1            ; --                        ;
 ; clk50                                                                                                                                           ; LCFF_X1_Y25_N9     ; 3       ; Clock                     ; no     ; --                   ; --               ; --                        ;
-; clk50                                                                                                                                           ; LCFF_X1_Y25_N9     ; 108     ; Clock                     ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; debounce:btn_debounce|o                                                                                                                         ; LCFF_X12_Y7_N25    ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode857w[3]    ; LCCOMB_X62_Y38_N18 ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode874w[3]    ; LCCOMB_X62_Y38_N20 ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode884w[3]    ; LCCOMB_X62_Y38_N24 ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode894w[3]    ; LCCOMB_X62_Y38_N14 ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode904w[3]    ; LCCOMB_X62_Y38_N8  ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode914w[3]    ; LCCOMB_X63_Y38_N24 ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode924w[3]    ; LCCOMB_X63_Y38_N6  ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode934w[3]    ; LCCOMB_X62_Y38_N10 ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode857w[3]   ; LCCOMB_X54_Y29_N28 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode874w[3]~2 ; LCCOMB_X54_Y29_N20 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode884w[3]~2 ; LCCOMB_X54_Y29_N0  ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode894w[3]~1 ; LCCOMB_X54_Y29_N22 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode904w[3]~2 ; LCCOMB_X54_Y29_N2  ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode914w[3]~1 ; LCCOMB_X54_Y29_N16 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode924w[3]~1 ; LCCOMB_X54_Y29_N10 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode934w[3]~0 ; LCCOMB_X57_Y31_N24 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode857w[3]   ; LCCOMB_X63_Y38_N26 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode874w[3]~2 ; LCCOMB_X63_Y38_N20 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode884w[3]~2 ; LCCOMB_X63_Y38_N16 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode894w[3]~1 ; LCCOMB_X63_Y38_N30 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode904w[3]~2 ; LCCOMB_X63_Y38_N28 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode914w[3]~1 ; LCCOMB_X63_Y38_N18 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode924w[3]~1 ; LCCOMB_X63_Y38_N0  ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode934w[3]~0 ; LCCOMB_X63_Y38_N10 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[30]~130                                                                         ; LCCOMB_X36_Y23_N14 ; 61      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[31]                                                                             ; LCFF_X35_Y23_N29   ; 70      ; Sync. clear, Sync. load   ; no     ; --                   ; --               ; --                        ;
-; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|divider[1]~32                                                                           ; LCCOMB_X36_Y23_N28 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|process_0~1                                                                             ; LCCOMB_X33_Y23_N12 ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
-; vga:Inst_vga|Equal0~6                                                                                                                           ; LCCOMB_X52_Y28_N22 ; 10      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; vga:Inst_vga|LessThan0~0                                                                                                                        ; LCCOMB_X53_Y29_N12 ; 16      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; vga:Inst_vga|address[4]~114                                                                                                                     ; LCCOMB_X53_Y29_N14 ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; clk50                                                                                                                                           ; LCFF_X1_Y25_N9     ; 108     ; Clock                     ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; debounce:btn_debounce|o                                                                                                                         ; LCFF_X32_Y34_N25   ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode857w[3]    ; LCCOMB_X62_Y41_N2  ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode874w[3]    ; LCCOMB_X62_Y41_N22 ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode884w[3]    ; LCCOMB_X62_Y41_N8  ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode894w[3]    ; LCCOMB_X63_Y41_N16 ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode904w[3]    ; LCCOMB_X62_Y41_N18 ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode914w[3]    ; LCCOMB_X62_Y41_N0  ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode924w[3]    ; LCCOMB_X63_Y41_N0  ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode934w[3]    ; LCCOMB_X62_Y41_N12 ; 14      ; Write enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode857w[3]   ; LCCOMB_X59_Y34_N4  ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode874w[3]~2 ; LCCOMB_X59_Y34_N24 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode884w[3]~2 ; LCCOMB_X59_Y34_N26 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode894w[3]~1 ; LCCOMB_X59_Y34_N22 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode904w[3]~2 ; LCCOMB_X59_Y34_N28 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode914w[3]~1 ; LCCOMB_X59_Y34_N10 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode924w[3]~1 ; LCCOMB_X59_Y34_N16 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode934w[3]~0 ; LCCOMB_X59_Y34_N30 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode857w[3]   ; LCCOMB_X63_Y41_N22 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode874w[3]~2 ; LCCOMB_X63_Y41_N10 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode884w[3]~2 ; LCCOMB_X63_Y41_N4  ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode894w[3]~1 ; LCCOMB_X63_Y41_N18 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode904w[3]~2 ; LCCOMB_X63_Y41_N12 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode914w[3]~1 ; LCCOMB_X63_Y41_N26 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode924w[3]~1 ; LCCOMB_X63_Y41_N24 ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode934w[3]~0 ; LCCOMB_X63_Y41_N6  ; 14      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[30]~130                                                                         ; LCCOMB_X38_Y35_N22 ; 61      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[31]                                                                             ; LCFF_X39_Y35_N29   ; 70      ; Sync. clear, Sync. load   ; no     ; --                   ; --               ; --                        ;
+; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|divider[1]~32                                                                           ; LCCOMB_X38_Y35_N4  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|process_0~1                                                                             ; LCCOMB_X41_Y35_N28 ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
+; vga:Inst_vga|Equal0~6                                                                                                                           ; LCCOMB_X58_Y27_N22 ; 10      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; vga:Inst_vga|LessThan0~0                                                                                                                        ; LCCOMB_X57_Y27_N28 ; 16      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; vga:Inst_vga|address[4]~114                                                                                                                     ; LCCOMB_X57_Y27_N6  ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1446,8 +1446,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------+-----------------+---------+----------------------+------------------+---------------------------+
 ; Name  ; Location        ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------+-----------------+---------+----------------------+------------------+---------------------------+
-; clk25 ; LCFF_X1_Y25_N13 ; 166     ; Global Clock         ; GCLK0            ; --                        ;
-; clk50 ; LCFF_X1_Y25_N9  ; 108     ; Global Clock         ; GCLK2            ; --                        ;
+; clk25 ; LCFF_X1_Y25_N29 ; 166     ; Global Clock         ; GCLK1            ; --                        ;
+; clk50 ; LCFF_X1_Y25_N9  ; 108     ; Global Clock         ; GCLK3            ; --                        ;
 +-------+-----------------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1484,28 +1484,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[31]                                                                             ; 70      ;
 ; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[30]~130                                                                         ; 61      ;
 ; OV7670_VSYNC                                                                                                                                    ; 58      ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|out_address_reg_a[0]                 ; 40      ;
 ; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|out_address_reg_a[1]                 ; 39      ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|out_address_reg_a[0]                 ; 39      ;
 ; btn                                                                                                                                             ; 25      ;
 ; vga:Inst_vga|address[4]~114                                                                                                                     ; 16      ;
 ; vga:Inst_vga|LessThan0~0                                                                                                                        ; 16      ;
-; ov7670_capture:capture|address[15]                                                                                                              ; 16      ;
 ; ov7670_capture:capture|address[13]                                                                                                              ; 16      ;
 ; ov7670_capture:capture|address[14]                                                                                                              ; 16      ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode934w[3]~0 ; 14      ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode934w[3]~0 ; 14      ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode934w[3]    ; 14      ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode924w[3]~1 ; 14      ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode924w[3]~1 ; 14      ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode924w[3]    ; 14      ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode904w[3]~2 ; 14      ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode904w[3]~2 ; 14      ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode904w[3]    ; 14      ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode914w[3]~1 ; 14      ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode914w[3]~1 ; 14      ;
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode914w[3]    ; 14      ;
+; ov7670_capture:capture|address[15]                                                                                                              ; 16      ;
 ; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode894w[3]~1 ; 14      ;
 ; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode894w[3]~1 ; 14      ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode894w[3]    ; 14      ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode857w[3]   ; 14      ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode857w[3]   ; 14      ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode857w[3]    ; 14      ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode884w[3]~2 ; 14      ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode884w[3]~2 ; 14      ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode884w[3]    ; 14      ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode874w[3]~2 ; 14      ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode874w[3]~2 ; 14      ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4|w_anode874w[3]    ; 14      ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b|w_anode934w[3]~0 ; 14      ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a|w_anode934w[3]~0 ; 14      ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -1514,8 +1514,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Name                                                                                                                               ; Type ; Mode           ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size   ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M4Ks ; MIF                            ; Location                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
 +------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ALTSYNCRAM              ; AUTO ; True Dual Port ; Dual Clocks  ; 32768        ; 16           ; 32768        ; 16           ; yes                    ; yes                     ; yes                    ; no                      ; 524288 ; 32768                       ; 14                          ; 32768                       ; 14                          ; 458752              ; 112  ; None                           ; M4K_X55_Y36, M4K_X55_Y23, M4K_X55_Y35, M4K_X55_Y39, M4K_X55_Y42, M4K_X55_Y41, M4K_X55_Y47, M4K_X55_Y38, M4K_X37_Y37, M4K_X37_Y35, M4K_X37_Y39, M4K_X37_Y50, M4K_X37_Y48, M4K_X37_Y46, M4K_X37_Y32, M4K_X37_Y49, M4K_X37_Y40, M4K_X55_Y50, M4K_X64_Y24, M4K_X37_Y38, M4K_X84_Y40, M4K_X37_Y30, M4K_X55_Y25, M4K_X37_Y41, M4K_X84_Y45, M4K_X37_Y33, M4K_X64_Y30, M4K_X37_Y45, M4K_X84_Y47, M4K_X55_Y31, M4K_X37_Y42, M4K_X64_Y38, M4K_X37_Y43, M4K_X55_Y48, M4K_X37_Y34, M4K_X37_Y47, M4K_X37_Y36, M4K_X55_Y37, M4K_X55_Y26, M4K_X55_Y49, M4K_X84_Y38, M4K_X55_Y30, M4K_X55_Y24, M4K_X55_Y46, M4K_X64_Y39, M4K_X37_Y31, M4K_X64_Y22, M4K_X37_Y44, M4K_X64_Y47, M4K_X55_Y45, M4K_X55_Y33, M4K_X55_Y27, M4K_X55_Y29, M4K_X64_Y46, M4K_X64_Y49, M4K_X64_Y40, M4K_X55_Y21, M4K_X64_Y33, M4K_X55_Y43, M4K_X64_Y26, M4K_X64_Y34, M4K_X64_Y45, M4K_X64_Y29, M4K_X64_Y23, M4K_X84_Y30, M4K_X64_Y28, M4K_X84_Y28, M4K_X84_Y49, M4K_X84_Y37, M4K_X64_Y35, M4K_X84_Y33, M4K_X84_Y44, M4K_X64_Y37, M4K_X55_Y28, M4K_X64_Y27, M4K_X64_Y42, M4K_X64_Y19, M4K_X55_Y18, M4K_X84_Y26, M4K_X84_Y42, M4K_X84_Y50, M4K_X64_Y25, M4K_X64_Y31, M4K_X64_Y41, M4K_X84_Y46, M4K_X55_Y20, M4K_X55_Y40, M4K_X84_Y43, M4K_X64_Y50, M4K_X64_Y18, M4K_X64_Y32, M4K_X64_Y43, M4K_X64_Y20, M4K_X64_Y21, M4K_X84_Y27, M4K_X84_Y39, M4K_X84_Y36, M4K_X55_Y32, M4K_X84_Y31, M4K_X84_Y48, M4K_X84_Y32, M4K_X55_Y22, M4K_X84_Y29, M4K_X84_Y35, M4K_X84_Y41, M4K_X64_Y36, M4K_X55_Y19, M4K_X55_Y34, M4K_X55_Y44, M4K_X64_Y48, M4K_X84_Y34, M4K_X64_Y44 ;
-; ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_aov:auto_generated|ALTSYNCRAM ; AUTO ; ROM            ; Single Clock ; 256          ; 16           ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 4096   ; 256                         ; 16                          ; --                          ; --                          ; 4096                ; 1    ; ov7670_top.ov7670_top0.rtl.mif ; M4K_X37_Y23                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ;
+; frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ALTSYNCRAM              ; AUTO ; True Dual Port ; Dual Clocks  ; 32768        ; 16           ; 32768        ; 16           ; yes                    ; yes                     ; yes                    ; no                      ; 524288 ; 32768                       ; 14                          ; 32768                       ; 14                          ; 458752              ; 112  ; None                           ; M4K_X64_Y21, M4K_X55_Y38, M4K_X55_Y39, M4K_X84_Y49, M4K_X64_Y26, M4K_X55_Y34, M4K_X64_Y47, M4K_X84_Y25, M4K_X84_Y29, M4K_X37_Y31, M4K_X64_Y33, M4K_X64_Y45, M4K_X55_Y44, M4K_X37_Y39, M4K_X55_Y40, M4K_X55_Y43, M4K_X84_Y39, M4K_X64_Y36, M4K_X55_Y42, M4K_X37_Y42, M4K_X84_Y40, M4K_X37_Y32, M4K_X64_Y39, M4K_X64_Y48, M4K_X84_Y38, M4K_X37_Y36, M4K_X37_Y38, M4K_X84_Y43, M4K_X64_Y24, M4K_X55_Y36, M4K_X64_Y35, M4K_X64_Y40, M4K_X84_Y41, M4K_X55_Y33, M4K_X55_Y35, M4K_X64_Y46, M4K_X84_Y22, M4K_X64_Y34, M4K_X37_Y33, M4K_X84_Y34, M4K_X84_Y44, M4K_X37_Y30, M4K_X37_Y34, M4K_X84_Y26, M4K_X64_Y28, M4K_X37_Y48, M4K_X55_Y41, M4K_X84_Y46, M4K_X64_Y38, M4K_X84_Y50, M4K_X64_Y22, M4K_X64_Y30, M4K_X84_Y48, M4K_X55_Y46, M4K_X64_Y41, M4K_X84_Y42, M4K_X55_Y47, M4K_X55_Y25, M4K_X55_Y37, M4K_X84_Y21, M4K_X64_Y44, M4K_X84_Y28, M4K_X55_Y23, M4K_X55_Y19, M4K_X37_Y43, M4K_X55_Y32, M4K_X55_Y31, M4K_X64_Y29, M4K_X37_Y41, M4K_X55_Y27, M4K_X64_Y37, M4K_X64_Y20, M4K_X55_Y49, M4K_X84_Y32, M4K_X55_Y29, M4K_X64_Y49, M4K_X37_Y45, M4K_X55_Y28, M4K_X55_Y21, M4K_X84_Y47, M4K_X37_Y40, M4K_X84_Y27, M4K_X64_Y23, M4K_X64_Y19, M4K_X64_Y50, M4K_X55_Y45, M4K_X55_Y26, M4K_X84_Y24, M4K_X37_Y47, M4K_X64_Y42, M4K_X84_Y35, M4K_X84_Y36, M4K_X37_Y49, M4K_X64_Y27, M4K_X84_Y33, M4K_X84_Y31, M4K_X84_Y45, M4K_X64_Y25, M4K_X64_Y31, M4K_X55_Y48, M4K_X84_Y23, M4K_X55_Y20, M4K_X37_Y37, M4K_X84_Y37, M4K_X37_Y46, M4K_X84_Y30, M4K_X55_Y24, M4K_X55_Y22, M4K_X55_Y30, M4K_X64_Y43, M4K_X55_Y50, M4K_X64_Y32 ;
+; ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_aov:auto_generated|ALTSYNCRAM ; AUTO ; ROM            ; Single Clock ; 256          ; 16           ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 4096   ; 256                         ; 16                          ; --                          ; --                          ; 4096                ; 1    ; ov7670_top.ov7670_top0.rtl.mif ; M4K_X37_Y35                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ;
 +------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
@@ -1525,14 +1525,14 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +----------------------------+-------------------------+
 ; Interconnect Resource Type ; Usage                   ;
 +----------------------------+-------------------------+
-; Block interconnects        ; 3,606 / 197,592 ( 2 % ) ;
-; C16 interconnects          ; 236 / 6,270 ( 4 % )     ;
-; C4 interconnects           ; 1,862 / 123,120 ( 2 % ) ;
-; Direct links               ; 73 / 197,592 ( < 1 % )  ;
+; Block interconnects        ; 3,600 / 197,592 ( 2 % ) ;
+; C16 interconnects          ; 248 / 6,270 ( 4 % )     ;
+; C4 interconnects           ; 1,869 / 123,120 ( 2 % ) ;
+; Direct links               ; 72 / 197,592 ( < 1 % )  ;
 ; Global clocks              ; 2 / 16 ( 13 % )         ;
-; Local interconnects        ; 235 / 68,416 ( < 1 % )  ;
-; R24 interconnects          ; 273 / 5,926 ( 5 % )     ;
-; R4 interconnects           ; 1,802 / 167,484 ( 1 % ) ;
+; Local interconnects        ; 236 / 68,416 ( < 1 % )  ;
+; R24 interconnects          ; 300 / 5,926 ( 5 % )     ;
+; R4 interconnects           ; 2,046 / 167,484 ( 1 % ) ;
 +----------------------------+-------------------------+
 
 
@@ -1541,32 +1541,32 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +---------------------------------------------+------------------------------+
 ; Number of Logic Elements  (Average = 11.34) ; Number of LABs  (Total = 32) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 4                            ;
+; 1                                           ; 3                            ;
 ; 2                                           ; 1                            ;
 ; 3                                           ; 1                            ;
 ; 4                                           ; 3                            ;
 ; 5                                           ; 0                            ;
-; 6                                           ; 1                            ;
+; 6                                           ; 2                            ;
 ; 7                                           ; 0                            ;
-; 8                                           ; 1                            ;
+; 8                                           ; 2                            ;
 ; 9                                           ; 0                            ;
 ; 10                                          ; 0                            ;
 ; 11                                          ; 0                            ;
 ; 12                                          ; 0                            ;
 ; 13                                          ; 0                            ;
-; 14                                          ; 3                            ;
-; 15                                          ; 2                            ;
-; 16                                          ; 16                           ;
+; 14                                          ; 2                            ;
+; 15                                          ; 1                            ;
+; 16                                          ; 17                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.31) ; Number of LABs  (Total = 32) ;
+; LAB-wide Signals  (Average = 1.34) ; Number of LABs  (Total = 32) ;
 +------------------------------------+------------------------------+
 ; 1 Clock                            ; 27                           ;
-; 1 Clock enable                     ; 10                           ;
+; 1 Clock enable                     ; 11                           ;
 ; 1 Sync. clear                      ; 5                            ;
 +------------------------------------+------------------------------+
 
@@ -1574,31 +1574,31 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 17.97) ; Number of LABs  (Total = 32) ;
+; Number of Signals Sourced  (Average = 18.09) ; Number of LABs  (Total = 32) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 2                            ;
+; 1                                            ; 1                            ;
 ; 2                                            ; 2                            ;
 ; 3                                            ; 0                            ;
 ; 4                                            ; 1                            ;
 ; 5                                            ; 0                            ;
-; 6                                            ; 2                            ;
+; 6                                            ; 3                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 3                            ;
+; 8                                            ; 4                            ;
 ; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
-; 14                                           ; 2                            ;
-; 15                                           ; 1                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 2                            ;
 ; 16                                           ; 1                            ;
-; 17                                           ; 2                            ;
-; 18                                           ; 0                            ;
-; 19                                           ; 1                            ;
+; 17                                           ; 1                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 0                            ;
 ; 20                                           ; 0                            ;
 ; 21                                           ; 1                            ;
-; 22                                           ; 2                            ;
+; 22                                           ; 3                            ;
 ; 23                                           ; 0                            ;
 ; 24                                           ; 1                            ;
 ; 25                                           ; 1                            ;
@@ -1615,19 +1615,19 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 6.09) ; Number of LABs  (Total = 32) ;
+; Number of Signals Sourced Out  (Average = 5.91) ; Number of LABs  (Total = 32) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 5                            ;
-; 2                                               ; 3                            ;
-; 3                                               ; 4                            ;
-; 4                                               ; 5                            ;
-; 5                                               ; 0                            ;
+; 1                                               ; 4                            ;
+; 2                                               ; 2                            ;
+; 3                                               ; 6                            ;
+; 4                                               ; 6                            ;
+; 5                                               ; 1                            ;
 ; 6                                               ; 3                            ;
 ; 7                                               ; 0                            ;
-; 8                                               ; 3                            ;
+; 8                                               ; 2                            ;
 ; 9                                               ; 2                            ;
-; 10                                              ; 2                            ;
+; 10                                              ; 1                            ;
 ; 11                                              ; 0                            ;
 ; 12                                              ; 0                            ;
 ; 13                                              ; 1                            ;
@@ -1639,7 +1639,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 10.25) ; Number of LABs  (Total = 32) ;
+; Number of Distinct Inputs  (Average = 10.03) ; Number of LABs  (Total = 32) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 2                            ;
@@ -1655,7 +1655,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 ; 11                                           ; 0                            ;
 ; 12                                           ; 1                            ;
 ; 13                                           ; 0                            ;
-; 14                                           ; 1                            ;
+; 14                                           ; 2                            ;
 ; 15                                           ; 0                            ;
 ; 16                                           ; 1                            ;
 ; 17                                           ; 0                            ;
@@ -1665,13 +1665,14 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 ; 21                                           ; 0                            ;
 ; 22                                           ; 2                            ;
 ; 23                                           ; 0                            ;
-; 24                                           ; 1                            ;
+; 24                                           ; 0                            ;
 ; 25                                           ; 0                            ;
 ; 26                                           ; 0                            ;
 ; 27                                           ; 0                            ;
 ; 28                                           ; 0                            ;
-; 29                                           ; 3                            ;
-; 30                                           ; 1                            ;
+; 29                                           ; 1                            ;
+; 30                                           ; 2                            ;
+; 31                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1733,8 +1734,8 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 ; Internal Atom Count - Fit Attempt 1                              ; 549                   ;
 ; LE/ALM Count - Fit Attempt 1                                     ; 362                   ;
 ; LAB Count - Fit Attempt 1                                        ; 33                    ;
-; Outputs per Lab - Fit Attempt 1                                  ; 5.909                 ;
-; Inputs per LAB - Fit Attempt 1                                   ; 9.455                 ;
+; Outputs per Lab - Fit Attempt 1                                  ; 5.727                 ;
+; Inputs per LAB - Fit Attempt 1                                   ; 9.242                 ;
 ; Global Inputs per LAB - Fit Attempt 1                            ; 0.636                 ;
 ; LAB Constraint 'non-global clock + sync load' - Fit Attempt 1    ; 0:26;1:3;2:4          ;
 ; LAB Constraint 'non-global controls' - Fit Attempt 1             ; 0:15;1:10;2:5;3:2;4:1 ;
@@ -1748,7 +1749,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 ; LAB Constraint 'true sload_sclear pair' - Fit Attempt 1          ; 0:21;1:12             ;
 ; LAB Constraint 'constant sload_sclear pair' - Fit Attempt 1      ; 0:26;1:7              ;
 ; LAB Constraint 'has placement constraint' - Fit Attempt 1        ; 0:31;1:2              ;
-; LAB Constraint 'group hierarchy constraint' - Fit Attempt 1      ; 0:1;1:25;2:3;3:3;4:1  ;
+; LAB Constraint 'group hierarchy constraint' - Fit Attempt 1      ; 0:1;1:26;2:2;3:4      ;
 ; LEs in Chains - Fit Attempt 1                                    ; 93                    ;
 ; LEs in Long Chains - Fit Attempt 1                               ; 24                    ;
 ; LABs with Chains - Fit Attempt 1                                 ; 8                     ;
@@ -1765,7 +1766,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-------------------------------------+--------+
 ; Auto Fit Point 2 - Fit Attempt 1    ; ff     ;
 ; Early Wire Use - Fit Attempt 1      ; 1      ;
-; Early Slack - Fit Attempt 1         ; -10563 ;
+; Early Slack - Fit Attempt 1         ; -10574 ;
 ; Auto Fit Point 5 - Fit Attempt 1    ; ff     ;
 ; Mid Wire Use - Fit Attempt 1        ; 2      ;
 ; Mid Slack - Fit Attempt 1           ; -9515  ;
@@ -1782,8 +1783,8 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 ; Late Slack - Fit Attempt 1          ; -9504  ;
 ; Peak Regional Wire - Fit Attempt 1  ; 0.000  ;
 ; Auto Fit Point 7 - Fit Attempt 1    ; ff     ;
-; Time - Fit Attempt 1                ; 3      ;
-; Time in tsm_tan.dll - Fit Attempt 1 ; 0.203  ;
+; Time - Fit Attempt 1                ; 2      ;
+; Time in tsm_tan.dll - Fit Attempt 1 ; 0.219  ;
 +-------------------------------------+--------+
 
 
@@ -1792,14 +1793,14 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-------------------------------------+-------------+
 ; Name                                ; Value       ;
 +-------------------------------------+-------------+
-; Early Slack - Fit Attempt 1         ; -8310       ;
+; Early Slack - Fit Attempt 1         ; -8276       ;
 ; Early Wire Use - Fit Attempt 1      ; 2           ;
 ; Peak Regional Wire - Fit Attempt 1  ; 8           ;
-; Mid Slack - Fit Attempt 1           ; -8737       ;
+; Mid Slack - Fit Attempt 1           ; -9063       ;
 ; Late Slack - Fit Attempt 1          ; -2147483648 ;
 ; Late Wire Use - Fit Attempt 1       ; 2           ;
 ; Time - Fit Attempt 1                ; 2           ;
-; Time in tsm_tan.dll - Fit Attempt 1 ; 0.406       ;
+; Time in tsm_tan.dll - Fit Attempt 1 ; 0.422       ;
 +-------------------------------------+-------------+
 
 
@@ -1809,7 +1810,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Tue May 30 19:29:29 2017
+    Info: Processing started: Tue May 30 19:39:36 2017
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off ov7670_top -c ov7670_top
 Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info: Selected device EP2C70F672C8 for design "ov7670_top"
@@ -1846,7 +1847,7 @@ Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
 Info: Fitter placement was successful
-Info: Fitter placement operations ending: elapsed time is 00:00:03
+Info: Fitter placement operations ending: elapsed time is 00:00:02
 Info: Slack time is -8.59 ns between source memory "ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_aov:auto_generated|ram_block1a15~porta_address_reg7" and destination register "ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[29]"
     Info: + Largest memory to register requirement is 0.611 ns
     Info:   Shortest clock path from clock "clk100" to destination register is 5.517 ns
@@ -1890,18 +1891,18 @@ Info: Slack time is -8.59 ns between source memory "ov7670_controller:controller
         Info: Total cell delay = 5.436 ns ( 59.08 % )
         Info: Total interconnect delay = 3.765 ns ( 40.92 % )
 Info: Estimated most critical path is memory to register delay of 9.201 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = M4K_X37_Y23; Fanout = 1; MEM Node = 'ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_aov:auto_generated|ram_block1a15~porta_address_reg7'
-    Info: 2: + IC(0.000 ns) + CELL(3.761 ns) = 3.761 ns; Loc. = M4K_X37_Y23; Fanout = 2; MEM Node = 'ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_aov:auto_generated|ram_block1a15'
-    Info: 3: + IC(0.884 ns) + CELL(0.206 ns) = 4.851 ns; Loc. = LAB_X36_Y23; Fanout = 1; COMB Node = 'ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|Equal0~3'
-    Info: 4: + IC(0.606 ns) + CELL(0.206 ns) = 5.663 ns; Loc. = LAB_X36_Y23; Fanout = 4; COMB Node = 'ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|Equal0~4'
-    Info: 5: + IC(0.606 ns) + CELL(0.202 ns) = 6.471 ns; Loc. = LAB_X36_Y23; Fanout = 4; COMB Node = 'ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[0]~129'
-    Info: 6: + IC(0.606 ns) + CELL(0.206 ns) = 7.283 ns; Loc. = LAB_X36_Y23; Fanout = 61; COMB Node = 'ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[30]~130'
-    Info: 7: + IC(1.063 ns) + CELL(0.855 ns) = 9.201 ns; Loc. = LAB_X33_Y23; Fanout = 4; REG Node = 'ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[29]'
+    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = M4K_X37_Y35; Fanout = 1; MEM Node = 'ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_aov:auto_generated|ram_block1a15~porta_address_reg7'
+    Info: 2: + IC(0.000 ns) + CELL(3.761 ns) = 3.761 ns; Loc. = M4K_X37_Y35; Fanout = 2; MEM Node = 'ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_aov:auto_generated|ram_block1a15'
+    Info: 3: + IC(0.884 ns) + CELL(0.206 ns) = 4.851 ns; Loc. = LAB_X38_Y35; Fanout = 1; COMB Node = 'ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|Equal0~3'
+    Info: 4: + IC(0.606 ns) + CELL(0.206 ns) = 5.663 ns; Loc. = LAB_X38_Y35; Fanout = 4; COMB Node = 'ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|Equal0~4'
+    Info: 5: + IC(0.606 ns) + CELL(0.202 ns) = 6.471 ns; Loc. = LAB_X38_Y35; Fanout = 4; COMB Node = 'ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[0]~129'
+    Info: 6: + IC(0.606 ns) + CELL(0.206 ns) = 7.283 ns; Loc. = LAB_X38_Y35; Fanout = 61; COMB Node = 'ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[30]~130'
+    Info: 7: + IC(1.063 ns) + CELL(0.855 ns) = 9.201 ns; Loc. = LAB_X41_Y35; Fanout = 4; REG Node = 'ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[29]'
     Info: Total cell delay = 5.436 ns ( 59.08 % )
     Info: Total interconnect delay = 3.765 ns ( 40.92 % )
 Info: Fitter routing operations beginning
 Info: Average interconnect usage is 1% of the available device resources
-    Info: Peak interconnect usage is 8% of the available device resources in the region that extends from location X48_Y26 to location X59_Y38
+    Info: Peak interconnect usage is 8% of the available device resources in the region that extends from location X60_Y39 to location X71_Y51
 Info: Fitter routing operations ending: elapsed time is 00:00:02
 Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info: Optimizations that may affect the design's routability were skipped
@@ -1950,9 +1951,9 @@ Warning: The Reserve All Unused Pins setting has not been specified, and will de
 Info: Generated suppressed messages file D:/code/vhdl/red_packet_robot/camera/ov7670_top.fit.smsg
 Info: Quartus II Fitter was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 414 megabytes
-    Info: Processing ended: Tue May 30 19:29:43 2017
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Processing ended: Tue May 30 19:39:49 2017
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:14
 
 
 +----------------------------+

@@ -106,7 +106,7 @@ begin
 				r   <= (others => '1');
 				g   <= (others => '1');
 				b   <= (others => '1');
-			elsif unsigned(frame_pixel(15 downto 11)) < 31 and unsigned(frame_pixel(15 downto 11)) > 26 and unsigned(frame_pixel(10 downto 6)) < 25 and unsigned(frame_pixel(4 downto 0)) > 25 then
+			elsif unsigned(frame_pixel(15 downto 11)) < 31 and unsigned(frame_pixel(15 downto 11)) > 26 and unsigned(frame_pixel(10 downto 6)) > 24 and unsigned(frame_pixel(10 downto 6)) < 28 and unsigned(frame_pixel(4 downto 0)) > 25 then
 				r  <= (others => '1');
 				g  <= (others => '0');
 				b  <= (others => '0');
