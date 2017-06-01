@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ov7670_top
-Fri Jun 02 00:34:11 2017
+Fri Jun 02 01:33:04 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -14,20 +14,21 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
   6. Analysis & Synthesis Resource Utilization by Entity
   7. Analysis & Synthesis RAM Summary
   8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Registers Packed Into Inferred Megafunctions
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated
- 14. Source assignments for frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1
- 15. Source assignments for ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_aov:auto_generated
- 16. Parameter Settings for User Entity Instance: frame_buffer:fb|altsyncram:altsyncram_component
- 17. Parameter Settings for Inferred Entity Instance: ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0
- 18. Parameter Settings for Inferred Entity Instance: vga:Inst_vga|lpm_divide:Div1
- 19. Parameter Settings for Inferred Entity Instance: vga:Inst_vga|lpm_divide:Div0
- 20. altsyncram Parameter Settings by Entity Instance
- 21. Port Connectivity Checks: "ov7670_controller:controller|i2c_sender:Inst_i2c_sender"
- 22. Analysis & Synthesis Messages
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Registers Packed Into Inferred Megafunctions
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated
+ 15. Source assignments for frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1
+ 16. Source assignments for ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_aov:auto_generated
+ 17. Parameter Settings for User Entity Instance: frame_buffer:fb|altsyncram:altsyncram_component
+ 18. Parameter Settings for Inferred Entity Instance: ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0
+ 19. Parameter Settings for Inferred Entity Instance: vga:Inst_vga|lpm_divide:Div1
+ 20. Parameter Settings for Inferred Entity Instance: vga:Inst_vga|lpm_divide:Div0
+ 21. altsyncram Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "ov7670_controller:controller|i2c_sender:Inst_i2c_sender"
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -53,18 +54,18 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 02 00:34:11 2017    ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun 02 01:33:04 2017    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; ov7670_top                               ;
 ; Top-level Entity Name              ; ov7670_top                               ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 3,468                                    ;
-;     Total combinational functions  ; 3,429                                    ;
-;     Dedicated logic registers      ; 427                                      ;
-; Total registers                    ; 427                                      ;
+; Total logic elements               ; 3,424                                    ;
+;     Total combinational functions  ; 3,394                                    ;
+;     Dedicated logic registers      ; 418                                      ;
+; Total registers                    ; 418                                      ;
 ; Total pins                         ; 36                                       ;
 ; Total virtual pins                 ; 0                                        ;
-; Total memory bits                  ; 462,848                                  ;
+; Total memory bits                  ; 167,936                                  ;
 ; Embedded Multiplier 9-bit elements ; 0                                        ;
 ; Total PLLs                         ; 0                                        ;
 +------------------------------------+------------------------------------------+
@@ -190,28 +191,28 @@ applicable agreement for further details.
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 3,468  ;
+; Estimated Total logic elements              ; 3,424  ;
 ;                                             ;        ;
-; Total combinational functions               ; 3429   ;
+; Total combinational functions               ; 3394   ;
 ; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 1319   ;
-;     -- 3 input functions                    ; 1575   ;
-;     -- <=2 input functions                  ; 535    ;
+;     -- 4 input functions                    ; 1294   ;
+;     -- 3 input functions                    ; 1566   ;
+;     -- <=2 input functions                  ; 534    ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 1727   ;
-;     -- arithmetic mode                      ; 1702   ;
+;     -- normal mode                          ; 1691   ;
+;     -- arithmetic mode                      ; 1703   ;
 ;                                             ;        ;
-; Total registers                             ; 427    ;
-;     -- Dedicated logic registers            ; 427    ;
+; Total registers                             ; 418    ;
+;     -- Dedicated logic registers            ; 418    ;
 ;     -- I/O registers                        ; 0      ;
 ;                                             ;        ;
 ; I/O pins                                    ; 36     ;
-; Total memory bits                           ; 462848 ;
-; Maximum fan-out node                        ; clk25  ;
-; Maximum fan-out                             ; 373    ;
-; Total fan-out                               ; 15671  ;
-; Average fan-out                             ; 3.90   ;
+; Total memory bits                           ; 167936 ;
+; Maximum fan-out node                        ; clk50  ;
+; Maximum fan-out                             ; 379    ;
+; Total fan-out                               ; 13357  ;
+; Average fan-out                             ; 3.42   ;
 +---------------------------------------------+--------+
 
 
@@ -220,27 +221,27 @@ applicable agreement for further details.
 +------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                        ; Library Name ;
 +------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |ov7670_top                                    ; 3429 (2)          ; 427 (2)      ; 462848      ; 0            ; 0       ; 0         ; 36   ; 0            ; |ov7670_top                                                                                                                                ; work         ;
+; |ov7670_top                                    ; 3394 (2)          ; 418 (2)      ; 167936      ; 0            ; 0       ; 0         ; 36   ; 0            ; |ov7670_top                                                                                                                                ; work         ;
 ;    |debounce:btn_debounce|                     ; 32 (32)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|debounce:btn_debounce                                                                                                          ; work         ;
-;    |frame_buffer:fb|                           ; 60 (0)            ; 6 (0)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb                                                                                                                ; work         ;
-;       |altsyncram:altsyncram_component|        ; 60 (0)            ; 6 (0)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component                                                                                ; work         ;
-;          |altsyncram_cmk1:auto_generated|      ; 60 (0)            ; 6 (0)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated                                                 ; work         ;
-;             |altsyncram_nhs1:altsyncram1|      ; 60 (0)            ; 6 (6)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1                     ; work         ;
+;    |frame_buffer:fb|                           ; 40 (0)            ; 6 (0)        ; 163840      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb                                                                                                                ; work         ;
+;       |altsyncram:altsyncram_component|        ; 40 (0)            ; 6 (0)        ; 163840      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component                                                                                ; work         ;
+;          |altsyncram_cmk1:auto_generated|      ; 40 (0)            ; 6 (0)        ; 163840      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated                                                 ; work         ;
+;             |altsyncram_nhs1:altsyncram1|      ; 40 (0)            ; 6 (6)        ; 163840      ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1                     ; work         ;
 ;                |decode_9oa:decode4|            ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4  ; work         ;
 ;                |decode_9oa:decode_a|           ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a ; work         ;
 ;                |decode_9oa:decode_b|           ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b ; work         ;
-;                |mux_akb:mux5|                  ; 36 (36)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|mux_akb:mux5        ; work         ;
-;    |ov7670_capture:capture|                    ; 33 (33)           ; 58 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|ov7670_capture:capture                                                                                                         ; work         ;
+;                |mux_akb:mux5|                  ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|mux_akb:mux5        ; work         ;
+;    |ov7670_capture:capture|                    ; 33 (33)           ; 49 (49)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|ov7670_capture:capture                                                                                                         ; work         ;
 ;    |ov7670_controller:controller|              ; 102 (1)           ; 82 (1)       ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|ov7670_controller:controller                                                                                                   ; work         ;
 ;       |i2c_sender:Inst_i2c_sender|             ; 88 (88)           ; 73 (73)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender                                                                        ; work         ;
 ;       |ov7670_registers:Inst_ov7670_registers| ; 13 (13)           ; 8 (8)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers                                                            ; work         ;
 ;          |altsyncram:Mux0_rtl_0|               ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0                                      ; work         ;
 ;             |altsyncram_aov:auto_generated|    ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_aov:auto_generated        ; work         ;
-;    |vga:Inst_vga|                              ; 3200 (831)        ; 254 (254)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga                                                                                                                   ; work         ;
-;       |lpm_divide:Div0|                        ; 1183 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga|lpm_divide:Div0                                                                                                   ; work         ;
-;          |lpm_divide_nto:auto_generated|       ; 1183 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated                                                                     ; work         ;
-;             |abs_divider_4dg:divider|          ; 1183 (33)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider                                             ; work         ;
-;                |alt_u_div_k5f:divider|         ; 1087 (1084)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider                       ; work         ;
+;    |vga:Inst_vga|                              ; 3185 (815)        ; 254 (254)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga                                                                                                                   ; work         ;
+;       |lpm_divide:Div0|                        ; 1184 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga|lpm_divide:Div0                                                                                                   ; work         ;
+;          |lpm_divide_nto:auto_generated|       ; 1184 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated                                                                     ; work         ;
+;             |abs_divider_4dg:divider|          ; 1184 (33)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider                                             ; work         ;
+;                |alt_u_div_k5f:divider|         ; 1088 (1085)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider                       ; work         ;
 ;                   |add_sub_lkc:add_sub_0|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|add_sub_lkc:add_sub_0 ; work         ;
 ;                   |add_sub_mkc:add_sub_1|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|add_sub_mkc:add_sub_1 ; work         ;
 ;                |lpm_abs_0s9:my_abs_den|        ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ov7670_top|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|lpm_abs_0s9:my_abs_den                      ; work         ;
@@ -267,26 +268,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+--------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                  ;
-+--------------------------------------------------------------------+------------------------------------------------+
-; Register name                                                      ; Reason for Removal                             ;
-+--------------------------------------------------------------------+------------------------------------------------+
-; ov7670_capture:capture|dout[5]                                     ; Lost fanout                                    ;
-; ov7670_capture:capture|dout[0]                                     ; Merged with ov7670_capture:capture|d_latch[8]  ;
-; ov7670_capture:capture|dout[1]                                     ; Merged with ov7670_capture:capture|d_latch[9]  ;
-; ov7670_capture:capture|dout[2]                                     ; Merged with ov7670_capture:capture|d_latch[10] ;
-; ov7670_capture:capture|dout[3]                                     ; Merged with ov7670_capture:capture|d_latch[11] ;
-; ov7670_capture:capture|dout[4]                                     ; Merged with ov7670_capture:capture|d_latch[12] ;
-; ov7670_capture:capture|dout[6]                                     ; Merged with ov7670_capture:capture|d_latch[14] ;
-; ov7670_capture:capture|dout[7]                                     ; Merged with ov7670_capture:capture|d_latch[15] ;
-; vga:Inst_vga|r[0..1]                                               ; Merged with vga:Inst_vga|r[2]                  ;
-; vga:Inst_vga|g[0..1]                                               ; Merged with vga:Inst_vga|g[2]                  ;
-; vga:Inst_vga|b[0]                                                  ; Merged with vga:Inst_vga|b[1]                  ;
-; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[0] ; Stuck at VCC due to stuck port data_in         ;
-; vga:Inst_vga|address[16]                                           ; Lost fanout                                    ;
-; Total Number of Removed Registers = 15                             ;                                                ;
-+--------------------------------------------------------------------+------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                    ;
++--------------------------------------------------------------------+--------------------------------------------------+
+; Register name                                                      ; Reason for Removal                               ;
++--------------------------------------------------------------------+--------------------------------------------------+
+; ov7670_capture:capture|dout[0..8]                                  ; Lost fanout                                      ;
+; ov7670_capture:capture|d_latch[0,8]                                ; Lost fanout                                      ;
+; ov7670_capture:capture|dout[9]                                     ; Lost fanout                                      ;
+; ov7670_capture:capture|d_latch[1,9]                                ; Lost fanout                                      ;
+; ov7670_capture:capture|dout[10]                                    ; Lost fanout                                      ;
+; ov7670_capture:capture|d_latch[2,10]                               ; Lost fanout                                      ;
+; vga:Inst_vga|r[0..1]                                               ; Merged with vga:Inst_vga|r[2]                    ;
+; vga:Inst_vga|g[0..1]                                               ; Merged with vga:Inst_vga|g[2]                    ;
+; vga:Inst_vga|b[0]                                                  ; Merged with vga:Inst_vga|b[1]                    ;
+; ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[0] ; Stuck at VCC due to stuck port data_in           ;
+; vga:Inst_vga|hCounter[0]                                           ; Merged with ov7670_controller:controller|sys_clk ;
+; Total Number of Removed Registers = 24                             ;                                                  ;
++--------------------------------------------------------------------+--------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                   ;
++---------------------------------+--------------------+----------------------------------------+
+; Register name                   ; Reason for Removal ; Registers Removed due to This Register ;
++---------------------------------+--------------------+----------------------------------------+
+; ov7670_capture:capture|dout[0]  ; Lost Fanouts       ; ov7670_capture:capture|d_latch[0]      ;
+; ov7670_capture:capture|dout[1]  ; Lost Fanouts       ; ov7670_capture:capture|d_latch[1]      ;
+; ov7670_capture:capture|dout[2]  ; Lost Fanouts       ; ov7670_capture:capture|d_latch[2]      ;
+; ov7670_capture:capture|dout[8]  ; Lost Fanouts       ; ov7670_capture:capture|d_latch[8]      ;
+; ov7670_capture:capture|dout[9]  ; Lost Fanouts       ; ov7670_capture:capture|d_latch[9]      ;
+; ov7670_capture:capture|dout[10] ; Lost Fanouts       ; ov7670_capture:capture|d_latch[10]     ;
++---------------------------------+--------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -294,12 +307,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 427   ;
-; Number of registers using Synchronous Clear  ; 67    ;
+; Total registers                              ; 418   ;
+; Number of registers using Synchronous Clear  ; 68    ;
 ; Number of registers using Synchronous Load   ; 97    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 109   ;
+; Number of registers using Clock Enable       ; 101   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -376,15 +389,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |ov7670_top|vga:Inst_vga|b[1]                                                   ;
-; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |ov7670_top|vga:Inst_vga|address[6]                                             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |ov7670_top|vga:Inst_vga|cnt[13]                                                ;
-; 5:1                ; 31 bits   ; 93 LEs        ; 31 LEs               ; 62 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[12] ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|divider[4]  ;
-; 5:1                ; 64 bits   ; 192 LEs       ; 64 LEs               ; 128 LEs                ; Yes        ; |ov7670_top|vga:Inst_vga|hSum[17]                                               ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[30] ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[8]  ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ov7670_top|vga:Inst_vga|vCounter~58                                            ;
-; 3:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |ov7670_top|vga:Inst_vga|lastv~54                                               ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |ov7670_top|vga:Inst_vga|address[10]                                            ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |ov7670_top|vga:Inst_vga|cnt[22]                                                ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 31 LEs               ; 62 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[8]  ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|divider[7]  ;
+; 5:1                ; 64 bits   ; 192 LEs       ; 64 LEs               ; 128 LEs                ; Yes        ; |ov7670_top|vga:Inst_vga|vSum[29]                                               ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[21] ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[19] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ov7670_top|vga:Inst_vga|vCounter~63                                            ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |ov7670_top|vga:Inst_vga|lastv~50                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 
 
@@ -629,7 +642,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Fri Jun 02 00:33:56 2017
+    Info: Processing started: Fri Jun 02 01:32:50 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ov7670_top -c ov7670_top
 Info: Found 2 design units, including 1 entities, in source file frame_buffer.vhd
     Info: Found design unit 1: frame_buffer-SYN
@@ -700,34 +713,94 @@ Warning: Using design file ov7670_registers.vhd, which is not specified as a des
 Info: Elaborating entity "ov7670_registers" for hierarchy "ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers"
 Warning: Synthesized away the following node(s):
     Warning: Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a0"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a1"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a2"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a3"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a4"
         Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a5"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a6"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a7"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a8"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a9"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a10"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a16"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a17"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a18"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a19"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a20"
         Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a21"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a22"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a23"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a24"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a25"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a26"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a32"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a33"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a34"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a35"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a36"
         Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a37"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a38"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a39"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a40"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a41"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a42"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a48"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a49"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a50"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a51"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a52"
         Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a53"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a54"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a55"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a56"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a57"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a58"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a64"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a65"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a66"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a67"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a68"
         Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a69"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a70"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a71"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a72"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a73"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a74"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a80"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a81"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a82"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a83"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a84"
         Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a85"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a86"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a87"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a88"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a89"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a90"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a96"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a97"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a98"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a99"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a100"
         Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a101"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a102"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a103"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a104"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a105"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a106"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a112"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a113"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a114"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a115"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a116"
         Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a117"
-Warning: Synthesized away the following node(s):
-    Warning: Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a0"
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a16"
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a32"
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a48"
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a64"
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a80"
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a96"
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a112"
-Warning: Synthesized away the following node(s):
-    Warning: Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a16"
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a0"
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a32"
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a48"
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a80"
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a64"
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a96"
-        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a112"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a118"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a119"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a120"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a121"
+        Warning (14320): Synthesized away node "frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a122"
 Info: Inferred 1 megafunctions from design logic
     Info: Inferred altsyncram megafunction from the following design logic: "ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|Mux0~0"
         Info: Parameter OPERATION_MODE set to ROM
@@ -780,19 +853,38 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "LED[5]" is stuck at GND
     Warning (13410): Pin "LED[6]" is stuck at GND
     Warning (13410): Pin "LED[7]" is stuck at GND
-Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
+Info: 17 registers lost all their fanouts during netlist optimizations. The first 17 are displayed below.
+    Info: Register "ov7670_capture:capture|dout[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "ov7670_capture:capture|dout[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "ov7670_capture:capture|dout[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "ov7670_capture:capture|dout[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "ov7670_capture:capture|dout[4]" lost all its fanouts during netlist optimizations.
     Info: Register "ov7670_capture:capture|dout[5]" lost all its fanouts during netlist optimizations.
-    Info: Register "vga:Inst_vga|address[16]" lost all its fanouts during netlist optimizations.
-Info: Implemented 3761 device resources after synthesis - the final resource count might be different
+    Info: Register "ov7670_capture:capture|dout[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "ov7670_capture:capture|dout[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "ov7670_capture:capture|dout[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "ov7670_capture:capture|d_latch[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "ov7670_capture:capture|d_latch[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "ov7670_capture:capture|dout[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "ov7670_capture:capture|d_latch[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "ov7670_capture:capture|d_latch[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "ov7670_capture:capture|dout[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "ov7670_capture:capture|d_latch[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "ov7670_capture:capture|d_latch[2]" lost all its fanouts during netlist optimizations.
+Warning: Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "OV7670_D[0]"
+    Warning (15610): No output dependent on input pin "OV7670_D[1]"
+    Warning (15610): No output dependent on input pin "OV7670_D[2]"
+Info: Implemented 3644 device resources after synthesis - the final resource count might be different
     Info: Implemented 13 input pins
     Info: Implemented 22 output pins
     Info: Implemented 1 bidirectional pins
-    Info: Implemented 3597 logic cells
-    Info: Implemented 128 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 48 warnings
-    Info: Peak virtual memory: 298 megabytes
-    Info: Processing ended: Fri Jun 02 00:34:11 2017
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Implemented 3552 logic cells
+    Info: Implemented 56 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 112 warnings
+    Info: Peak virtual memory: 295 megabytes
+    Info: Processing ended: Fri Jun 02 01:33:04 2017
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:14
 
 

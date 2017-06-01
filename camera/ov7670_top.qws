@@ -11,15 +11,13 @@ ptn_Child5=Document-4
 ptn_Child6=Document-5
 ptn_Child7=Document-6
 ptn_Child8=Document-7
-ptn_Child9=Document-8
-ptn_Child10=Document-9
 [ProjectWorkspace.Frames.ChildFrames.Document-0]
 ptn_Child1=ViewFrame-0
 [ProjectWorkspace.Frames.ChildFrames.Document-0.ViewFrame-0]
 DocPathName=vga.vhd
 DocumentCLSID={ca385d57-a4c7-11d1-a098-0020affa43f2}
 IsChildFrameDetached=False
-IsActiveChildFrame=True
+IsActiveChildFrame=False
 ptn_Child1=StateMap
 [ProjectWorkspace.Frames.ChildFrames.Document-0.ViewFrame-0.StateMap]
 AFC_IN_REPORT=False
@@ -36,7 +34,7 @@ AFC_IN_REPORT=False
 [ProjectWorkspace.Frames.ChildFrames.Document-2]
 ptn_Child1=ViewFrame-0
 [ProjectWorkspace.Frames.ChildFrames.Document-2.ViewFrame-0]
-DocPathName=ov7670_capture.vhd
+DocPathName=ov7670_registers.vhd
 DocumentCLSID={ca385d57-a4c7-11d1-a098-0020affa43f2}
 IsChildFrameDetached=False
 IsActiveChildFrame=False
@@ -46,7 +44,7 @@ AFC_IN_REPORT=False
 [ProjectWorkspace.Frames.ChildFrames.Document-3]
 ptn_Child1=ViewFrame-0
 [ProjectWorkspace.Frames.ChildFrames.Document-3.ViewFrame-0]
-DocPathName=ov7670_registers.vhd
+DocPathName=ov7670_capture.vhd
 DocumentCLSID={ca385d57-a4c7-11d1-a098-0020affa43f2}
 IsChildFrameDetached=False
 IsActiveChildFrame=False

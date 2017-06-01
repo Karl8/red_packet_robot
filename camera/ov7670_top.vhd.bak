@@ -74,7 +74,7 @@ architecture Behavioral of ov7670_top is
       href  : IN std_logic;
       d     : IN std_logic_vector(7 downto 0);          
       addr  : OUT std_logic_vector(14 downto 0);
-      dout  : OUT std_logic_vector(7 downto 0);
+      dout  : OUT std_logic_vector(15 downto 0);
       we    : OUT std_logic
       );
    END COMPONENT;

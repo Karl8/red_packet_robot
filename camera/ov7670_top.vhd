@@ -125,7 +125,7 @@ btn_debounce: debounce PORT MAP(
    );
 
    Inst_vga: vga PORT MAP(
-      clk50       => clk25,
+      clk50       => clk50,
       vga_red     => vga_red,
       vga_green   => vga_green,
       vga_blue    => vga_blue,

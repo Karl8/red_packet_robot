@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Fri Jun 02 00:34:11 2017
+Analysis & Synthesis Status : Successful - Fri Jun 02 01:33:04 2017
 Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
 Revision Name : ov7670_top
 Top-level Entity Name : ov7670_top
 Family : Cyclone II
-Total logic elements : 3,468
-    Total combinational functions : 3,429
-    Dedicated logic registers : 427
-Total registers : 427
+Total logic elements : 3,424
+    Total combinational functions : 3,394
+    Dedicated logic registers : 418
+Total registers : 418
 Total pins : 36
 Total virtual pins : 0
-Total memory bits : 462,848
+Total memory bits : 167,936
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

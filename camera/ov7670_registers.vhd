@@ -93,11 +93,6 @@ begin
             when x"34" => sreg <= x"A990"; -- TPH Total Prob High
             when x"35" => sreg <= x"AA94"; -- NALG AEC Algo select
             when x"36" => sreg <= x"13E5"; -- COM8 AGC Settings
-            ------------------
-            when x"37" => sreg <= x"6B0A"; 
-            when x"38" => sreg <= x"13E7"; 
-            when x"39" => sreg <= x"6F9F"; 
-
             when others => sreg <= x"ffff";
          end case;
       end if;
