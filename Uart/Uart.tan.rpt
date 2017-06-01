@@ -1,0 +1,755 @@
+Classic Timing Analyzer report for Uart
+Fri Jun 02 00:33:58 2017
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                 ;
++------------------------------+-------+---------------+----------------------------------+------------------------+-------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                   ; To                            ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------------------+-------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 2.730 ns                         ; reset                  ; reciever:inst1|\pro2:rcnt[23] ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 18.826 ns                        ; reciever:inst1|r_ready ; rec_ready                     ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 1.856 ns                         ; xmit_cmd_p_in          ; transfer:inst2|state.x_idle   ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 151.38 MHz ( period = 6.606 ns ) ; baud:inst|cnt[0]       ; baud:inst|cnt[31]             ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                        ;                               ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------------------+-------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C70F672C8       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                  ;
++-----------------------------------------+-----------------------------------------------------+----------------------------+----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                       ; To                         ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+----------------------------+----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 151.38 MHz ( period = 6.606 ns )                    ; baud:inst|cnt[0]           ; baud:inst|cnt[31]          ; clk        ; clk      ; None                        ; None                      ; 6.339 ns                ;
+; N/A                                     ; 152.91 MHz ( period = 6.540 ns )                    ; baud:inst|cnt[1]           ; baud:inst|cnt[31]          ; clk        ; clk      ; None                        ; None                      ; 6.273 ns                ;
+; N/A                                     ; 153.05 MHz ( period = 6.534 ns )                    ; baud:inst|cnt[0]           ; baud:inst|cnt[29]          ; clk        ; clk      ; None                        ; None                      ; 6.270 ns                ;
+; N/A                                     ; 154.61 MHz ( period = 6.468 ns )                    ; baud:inst|cnt[1]           ; baud:inst|cnt[29]          ; clk        ; clk      ; None                        ; None                      ; 6.204 ns                ;
+; N/A                                     ; 156.89 MHz ( period = 6.374 ns )                    ; baud:inst|cnt[3]           ; baud:inst|cnt[31]          ; clk        ; clk      ; None                        ; None                      ; 6.107 ns                ;
+; N/A                                     ; 157.11 MHz ( period = 6.365 ns )                    ; baud:inst|cnt[2]           ; baud:inst|cnt[31]          ; clk        ; clk      ; None                        ; None                      ; 6.098 ns                ;
+; N/A                                     ; 157.11 MHz ( period = 6.365 ns )                    ; baud:inst|cnt[0]           ; baud:inst|cnt[27]          ; clk        ; clk      ; None                        ; None                      ; 6.101 ns                ;
+; N/A                                     ; 157.21 MHz ( period = 6.361 ns )                    ; baud:inst|cnt[0]           ; baud:inst|cnt[25]          ; clk        ; clk      ; None                        ; None                      ; 6.097 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[20] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[21] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[22] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[23] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[26] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[24] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[27] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[25] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[17] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[16] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[19] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[18] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[31] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[28] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[30] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 157.85 MHz ( period = 6.335 ns )                    ; transfer:inst2|xbitcnt[20] ; transfer:inst2|xbitcnt[29] ; clk        ; clk      ; None                        ; None                      ; 6.071 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[20] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[21] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[22] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[23] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[26] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[24] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[27] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[25] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[17] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[16] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[19] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[18] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[31] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[28] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[30] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; transfer:inst2|xbitcnt[22] ; transfer:inst2|xbitcnt[29] ; clk        ; clk      ; None                        ; None                      ; 6.059 ns                ;
+; N/A                                     ; 158.68 MHz ( period = 6.302 ns )                    ; baud:inst|cnt[3]           ; baud:inst|cnt[29]          ; clk        ; clk      ; None                        ; None                      ; 6.038 ns                ;
+; N/A                                     ; 158.76 MHz ( period = 6.299 ns )                    ; baud:inst|cnt[1]           ; baud:inst|cnt[27]          ; clk        ; clk      ; None                        ; None                      ; 6.035 ns                ;
+; N/A                                     ; 158.86 MHz ( period = 6.295 ns )                    ; baud:inst|cnt[1]           ; baud:inst|cnt[25]          ; clk        ; clk      ; None                        ; None                      ; 6.031 ns                ;
+; N/A                                     ; 158.91 MHz ( period = 6.293 ns )                    ; baud:inst|cnt[2]           ; baud:inst|cnt[29]          ; clk        ; clk      ; None                        ; None                      ; 6.029 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[20] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[21] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[22] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[23] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[26] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[24] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[27] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[25] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[17] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[16] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[19] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[18] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[31] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[28] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[30] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; transfer:inst2|xbitcnt[21] ; transfer:inst2|xbitcnt[29] ; clk        ; clk      ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.16 MHz ( period = 6.283 ns )                    ; baud:inst|cnt[0]           ; baud:inst|cnt[30]          ; clk        ; clk      ; None                        ; None                      ; 6.019 ns                ;
+; N/A                                     ; 159.44 MHz ( period = 6.272 ns )                    ; baud:inst|cnt[4]           ; baud:inst|cnt[31]          ; clk        ; clk      ; None                        ; None                      ; 6.008 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[20] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[21] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[22] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[23] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[26] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[24] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[27] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[25] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[17] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[16] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[19] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[18] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[31] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[28] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[30] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.46 MHz ( period = 6.271 ns )                    ; transfer:inst2|xbitcnt[23] ; transfer:inst2|xbitcnt[29] ; clk        ; clk      ; None                        ; None                      ; 6.007 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[20] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[21] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[22] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[23] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[26] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[24] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[27] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[25] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[17] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[16] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[19] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[18] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[31] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[28] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[30] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; transfer:inst2|xbitcnt[10] ; transfer:inst2|xbitcnt[29] ; clk        ; clk      ; None                        ; None                      ; 5.989 ns                ;
+; N/A                                     ; 160.85 MHz ( period = 6.217 ns )                    ; baud:inst|cnt[1]           ; baud:inst|cnt[30]          ; clk        ; clk      ; None                        ; None                      ; 5.953 ns                ;
+; N/A                                     ; 161.29 MHz ( period = 6.200 ns )                    ; baud:inst|cnt[4]           ; baud:inst|cnt[29]          ; clk        ; clk      ; None                        ; None                      ; 5.939 ns                ;
+; N/A                                     ; 161.60 MHz ( period = 6.188 ns )                    ; baud:inst|cnt[5]           ; baud:inst|cnt[31]          ; clk        ; clk      ; None                        ; None                      ; 5.924 ns                ;
+; N/A                                     ; 162.00 MHz ( period = 6.173 ns )                    ; baud:inst|cnt[8]           ; baud:inst|cnt[31]          ; clk        ; clk      ; None                        ; None                      ; 5.909 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[20] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[21] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[22] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[23] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[26] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[24] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[27] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[25] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[17] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[16] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[19] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[18] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[31] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[28] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[30] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.21 MHz ( period = 6.165 ns )                    ; transfer:inst2|xbitcnt[26] ; transfer:inst2|xbitcnt[29] ; clk        ; clk      ; None                        ; None                      ; 5.901 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[20] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[21] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[22] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[23] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[26] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[24] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[27] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[25] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[17] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[16] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[19] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[18] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[31] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[28] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[30] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 162.34 MHz ( period = 6.160 ns )                    ; transfer:inst2|xbitcnt[27] ; transfer:inst2|xbitcnt[29] ; clk        ; clk      ; None                        ; None                      ; 5.896 ns                ;
+; N/A                                     ; 163.05 MHz ( period = 6.133 ns )                    ; baud:inst|cnt[3]           ; baud:inst|cnt[27]          ; clk        ; clk      ; None                        ; None                      ; 5.869 ns                ;
+; N/A                                     ; 163.16 MHz ( period = 6.129 ns )                    ; baud:inst|cnt[3]           ; baud:inst|cnt[25]          ; clk        ; clk      ; None                        ; None                      ; 5.865 ns                ;
+; N/A                                     ; 163.29 MHz ( period = 6.124 ns )                    ; baud:inst|cnt[2]           ; baud:inst|cnt[27]          ; clk        ; clk      ; None                        ; None                      ; 5.860 ns                ;
+; N/A                                     ; 163.40 MHz ( period = 6.120 ns )                    ; baud:inst|cnt[2]           ; baud:inst|cnt[25]          ; clk        ; clk      ; None                        ; None                      ; 5.856 ns                ;
+; N/A                                     ; 163.51 MHz ( period = 6.116 ns )                    ; baud:inst|cnt[5]           ; baud:inst|cnt[29]          ; clk        ; clk      ; None                        ; None                      ; 5.855 ns                ;
+; N/A                                     ; 163.51 MHz ( period = 6.116 ns )                    ; baud:inst|cnt[0]           ; baud:inst|cnt[26]          ; clk        ; clk      ; None                        ; None                      ; 5.852 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[20] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[21] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[22] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[23] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[26] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[24] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[27] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[25] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[17] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[16] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[19] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[18] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[31] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[28] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[30] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; transfer:inst2|xbitcnt[24] ; transfer:inst2|xbitcnt[29] ; clk        ; clk      ; None                        ; None                      ; 5.851 ns                ;
+; N/A                                     ; 163.75 MHz ( period = 6.107 ns )                    ; baud:inst|cnt[0]           ; baud:inst|cnt[28]          ; clk        ; clk      ; None                        ; None                      ; 5.843 ns                ;
+; N/A                                     ; 163.80 MHz ( period = 6.105 ns )                    ; baud:inst|cnt[0]           ; baud:inst|cnt[24]          ; clk        ; clk      ; None                        ; None                      ; 5.841 ns                ;
+; N/A                                     ; 163.91 MHz ( period = 6.101 ns )                    ; baud:inst|cnt[8]           ; baud:inst|cnt[29]          ; clk        ; clk      ; None                        ; None                      ; 5.840 ns                ;
+; N/A                                     ; 164.18 MHz ( period = 6.091 ns )                    ; baud:inst|cnt[6]           ; baud:inst|cnt[31]          ; clk        ; clk      ; None                        ; None                      ; 5.827 ns                ;
+; N/A                                     ; 165.26 MHz ( period = 6.051 ns )                    ; baud:inst|cnt[3]           ; baud:inst|cnt[30]          ; clk        ; clk      ; None                        ; None                      ; 5.787 ns                ;
+; N/A                                     ; 165.29 MHz ( period = 6.050 ns )                    ; baud:inst|cnt[1]           ; baud:inst|cnt[26]          ; clk        ; clk      ; None                        ; None                      ; 5.786 ns                ;
+; N/A                                     ; 165.51 MHz ( period = 6.042 ns )                    ; baud:inst|cnt[2]           ; baud:inst|cnt[30]          ; clk        ; clk      ; None                        ; None                      ; 5.778 ns                ;
+; N/A                                     ; 165.54 MHz ( period = 6.041 ns )                    ; baud:inst|cnt[1]           ; baud:inst|cnt[28]          ; clk        ; clk      ; None                        ; None                      ; 5.777 ns                ;
+; N/A                                     ; 165.59 MHz ( period = 6.039 ns )                    ; baud:inst|cnt[1]           ; baud:inst|cnt[24]          ; clk        ; clk      ; None                        ; None                      ; 5.775 ns                ;
+; N/A                                     ; 165.81 MHz ( period = 6.031 ns )                    ; baud:inst|cnt[4]           ; baud:inst|cnt[27]          ; clk        ; clk      ; None                        ; None                      ; 5.770 ns                ;
+; N/A                                     ; 165.92 MHz ( period = 6.027 ns )                    ; baud:inst|cnt[4]           ; baud:inst|cnt[25]          ; clk        ; clk      ; None                        ; None                      ; 5.766 ns                ;
+; N/A                                     ; 166.14 MHz ( period = 6.019 ns )                    ; baud:inst|cnt[6]           ; baud:inst|cnt[29]          ; clk        ; clk      ; None                        ; None                      ; 5.758 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[20] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[21] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[22] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[23] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[26] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[24] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[27] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[25] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[17] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[16] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[19] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[18] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[31] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[28] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[30] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; transfer:inst2|xbitcnt[17] ; transfer:inst2|xbitcnt[29] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.28 MHz ( period = 5.978 ns )                    ; baud:inst|cnt[7]           ; baud:inst|cnt[31]          ; clk        ; clk      ; None                        ; None                      ; 5.714 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[20] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[21] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[22] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[23] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[26] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[24] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[27] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[25] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[17] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[16] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[19] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[18] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[31] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[28] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[30] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.34 MHz ( period = 5.976 ns )                    ; transfer:inst2|xbitcnt[19] ; transfer:inst2|xbitcnt[29] ; clk        ; clk      ; None                        ; None                      ; 5.712 ns                ;
+; N/A                                     ; 167.48 MHz ( period = 5.971 ns )                    ; baud:inst|cnt[11]          ; baud:inst|cnt[31]          ; clk        ; clk      ; None                        ; None                      ; 5.709 ns                ;
+; N/A                                     ; 168.10 MHz ( period = 5.949 ns )                    ; baud:inst|cnt[4]           ; baud:inst|cnt[30]          ; clk        ; clk      ; None                        ; None                      ; 5.688 ns                ;
+; N/A                                     ; 168.15 MHz ( period = 5.947 ns )                    ; baud:inst|cnt[5]           ; baud:inst|cnt[27]          ; clk        ; clk      ; None                        ; None                      ; 5.686 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                            ;                            ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+----------------------------+----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; tsu                                                                                          ;
++-------+--------------+------------+---------------+-------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From          ; To                            ; To Clock ;
++-------+--------------+------------+---------------+-------------------------------+----------+
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[27] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[25] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[26] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[24] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[30] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[29] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[31] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[28] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[16] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[19] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[18] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[17] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[20] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[21] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[22] ; clk      ;
+; N/A   ; None         ; 2.730 ns   ; reset         ; reciever:inst1|\pro2:rcnt[23] ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[3]  ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[2]  ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[1]  ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[0]  ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[11] ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[9]  ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[10] ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[8]  ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[5]  ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[4]  ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[6]  ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[7]  ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[12] ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[14] ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[15] ; clk      ;
+; N/A   ; None         ; 2.333 ns   ; reset         ; reciever:inst1|\pro2:rcnt[13] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[27] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[25] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[26] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[24] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[30] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[29] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[31] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[28] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[16] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[19] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[18] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[17] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[20] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[21] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[22] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[23] ; clk      ;
+; N/A   ; None         ; 2.029 ns   ; reset         ; reciever:inst1|\pro2:rbufs[0] ; clk      ;
+; N/A   ; None         ; 1.938 ns   ; reset         ; reciever:inst1|rbuf[7]        ; clk      ;
+; N/A   ; None         ; 1.938 ns   ; reset         ; reciever:inst1|rbuf[6]        ; clk      ;
+; N/A   ; None         ; 1.938 ns   ; reset         ; reciever:inst1|rbuf[5]        ; clk      ;
+; N/A   ; None         ; 1.938 ns   ; reset         ; reciever:inst1|rbuf[4]        ; clk      ;
+; N/A   ; None         ; 1.938 ns   ; reset         ; reciever:inst1|rbuf[3]        ; clk      ;
+; N/A   ; None         ; 1.938 ns   ; reset         ; reciever:inst1|rbuf[2]        ; clk      ;
+; N/A   ; None         ; 1.938 ns   ; reset         ; reciever:inst1|rbuf[1]        ; clk      ;
+; N/A   ; None         ; 1.788 ns   ; reset         ; reciever:inst1|\pro2:rbufs[7] ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[3]  ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[2]  ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[1]  ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[0]  ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[11] ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[9]  ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[10] ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[8]  ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[5]  ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[4]  ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[6]  ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[7]  ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[12] ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[14] ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[15] ; clk      ;
+; N/A   ; None         ; 1.702 ns   ; rxd           ; reciever:inst1|\pro2:rcnt[13] ; clk      ;
+; N/A   ; None         ; 1.652 ns   ; reset         ; reciever:inst1|\pro2:rbufs[1] ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[20]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[21]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[22]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[23]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[26]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[24]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[27]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[25]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[17]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[16]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[19]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[18]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[31]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[28]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[30]    ; clk      ;
+; N/A   ; None         ; 1.487 ns   ; reset         ; transfer:inst2|xbitcnt[29]    ; clk      ;
+; N/A   ; None         ; 1.363 ns   ; reset         ; reciever:inst1|\pro2:rbufs[6] ; clk      ;
+; N/A   ; None         ; 1.360 ns   ; reset         ; reciever:inst1|\pro2:rbufs[5] ; clk      ;
+; N/A   ; None         ; 1.327 ns   ; reset         ; reciever:inst1|rbuf[0]        ; clk      ;
+; N/A   ; None         ; 1.323 ns   ; reset         ; reciever:inst1|\pro2:rbufs[2] ; clk      ;
+; N/A   ; None         ; 1.322 ns   ; reset         ; reciever:inst1|\pro2:rbufs[4] ; clk      ;
+; N/A   ; None         ; 1.315 ns   ; reset         ; reciever:inst1|\pro2:rbufs[3] ; clk      ;
+; N/A   ; None         ; 1.121 ns   ; rxd           ; reciever:inst1|\pro2:count[3] ; clk      ;
+; N/A   ; None         ; 1.121 ns   ; rxd           ; reciever:inst1|\pro2:count[1] ; clk      ;
+; N/A   ; None         ; 1.121 ns   ; rxd           ; reciever:inst1|\pro2:count[2] ; clk      ;
+; N/A   ; None         ; 1.121 ns   ; rxd           ; reciever:inst1|\pro2:count[0] ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[0]     ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[2]     ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[1]     ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[3]     ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[15]    ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[14]    ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[12]    ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[13]    ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[6]     ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[7]     ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[4]     ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[5]     ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[10]    ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[9]     ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[8]     ; clk      ;
+; N/A   ; None         ; 1.078 ns   ; reset         ; transfer:inst2|xbitcnt[11]    ; clk      ;
+; N/A   ; None         ; 0.632 ns   ; reset         ; reciever:inst1|r_ready        ; clk      ;
+; N/A   ; None         ; 0.488 ns   ; rxd           ; reciever:inst1|state.r_wait   ; clk      ;
+; N/A   ; None         ; 0.364 ns   ; rxd           ; reciever:inst1|\pro2:rbufs[7] ; clk      ;
+; N/A   ; None         ; 0.364 ns   ; rxd           ; reciever:inst1|\pro2:rbufs[2] ; clk      ;
+; N/A   ; None         ; 0.362 ns   ; rxd           ; reciever:inst1|\pro2:rbufs[4] ; clk      ;
+; N/A   ; None         ; 0.361 ns   ; rxd           ; reciever:inst1|\pro2:rbufs[5] ; clk      ;
+; N/A   ; None         ; 0.360 ns   ; rxd           ; reciever:inst1|\pro2:rbufs[3] ; clk      ;
+; N/A   ; None         ; 0.359 ns   ; rxd           ; reciever:inst1|state.r_start  ; clk      ;
+; N/A   ; None         ; 0.358 ns   ; rxd           ; reciever:inst1|\pro2:rbufs[6] ; clk      ;
+; N/A   ; None         ; 0.316 ns   ; rxd           ; reciever:inst1|\pro2:rbufs[1] ; clk      ;
+; N/A   ; None         ; 0.224 ns   ; xmit_cmd_p_in ; transfer:inst2|state.x_stop   ; clk      ;
+; N/A   ; None         ; 0.007 ns   ; rxd           ; reciever:inst1|\pro2:rbufs[0] ; clk      ;
+; N/A   ; None         ; -0.074 ns  ; rxd           ; reciever:inst1|state.r_center ; clk      ;
+; N/A   ; None         ; -0.530 ns  ; xmit_cmd_p_in ; transfer:inst2|xcnt16[3]      ; clk      ;
+; N/A   ; None         ; -0.531 ns  ; xmit_cmd_p_in ; transfer:inst2|xcnt16[2]      ; clk      ;
+; N/A   ; None         ; -0.531 ns  ; xmit_cmd_p_in ; transfer:inst2|xcnt16[1]      ; clk      ;
+; N/A   ; None         ; -0.531 ns  ; xmit_cmd_p_in ; transfer:inst2|xcnt16[0]      ; clk      ;
+; N/A   ; None         ; -1.047 ns  ; reset         ; transfer:inst2|xcnt16[3]      ; clk      ;
+; N/A   ; None         ; -1.047 ns  ; reset         ; transfer:inst2|xcnt16[2]      ; clk      ;
+; N/A   ; None         ; -1.047 ns  ; reset         ; transfer:inst2|xcnt16[1]      ; clk      ;
+; N/A   ; None         ; -1.047 ns  ; reset         ; transfer:inst2|xcnt16[0]      ; clk      ;
+; N/A   ; None         ; -1.227 ns  ; xmit_cmd_p_in ; transfer:inst2|txd_done       ; clk      ;
+; N/A   ; None         ; -1.401 ns  ; xmit_cmd_p_in ; transfer:inst2|state.x_start  ; clk      ;
+; N/A   ; None         ; -1.590 ns  ; xmit_cmd_p_in ; transfer:inst2|state.x_idle   ; clk      ;
++-------+--------------+------------+---------------+-------------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------+
+; tco                                                                                     ;
++-------+--------------+------------+-------------------------+--------------+------------+
+; Slack ; Required tco ; Actual tco ; From                    ; To           ; From Clock ;
++-------+--------------+------------+-------------------------+--------------+------------+
+; N/A   ; None         ; 18.826 ns  ; reciever:inst1|r_ready  ; rec_ready    ; clk        ;
+; N/A   ; None         ; 18.427 ns  ; transfer:inst2|txd_done ; txd_done_out ; clk        ;
+; N/A   ; None         ; 18.412 ns  ; reciever:inst1|rbuf[6]  ; rec_buf[6]   ; clk        ;
+; N/A   ; None         ; 18.390 ns  ; reciever:inst1|rbuf[2]  ; rec_buf[2]   ; clk        ;
+; N/A   ; None         ; 17.635 ns  ; reciever:inst1|rbuf[7]  ; rec_buf[7]   ; clk        ;
+; N/A   ; None         ; 17.495 ns  ; transfer:inst2|txds     ; txd_ou       ; clk        ;
+; N/A   ; None         ; 16.805 ns  ; reciever:inst1|rbuf[4]  ; rec_buf[4]   ; clk        ;
+; N/A   ; None         ; 16.803 ns  ; reciever:inst1|rbuf[5]  ; rec_buf[5]   ; clk        ;
+; N/A   ; None         ; 16.461 ns  ; reciever:inst1|rbuf[1]  ; rec_buf[1]   ; clk        ;
+; N/A   ; None         ; 16.427 ns  ; reciever:inst1|rbuf[0]  ; rec_buf[0]   ; clk        ;
+; N/A   ; None         ; 15.424 ns  ; reciever:inst1|rbuf[3]  ; rec_buf[3]   ; clk        ;
++-------+--------------+------------+-------------------------+--------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; th                                                                                                 ;
++---------------+-------------+-----------+---------------+-------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From          ; To                            ; To Clock ;
++---------------+-------------+-----------+---------------+-------------------------------+----------+
+; N/A           ; None        ; 1.856 ns  ; xmit_cmd_p_in ; transfer:inst2|state.x_idle   ; clk      ;
+; N/A           ; None        ; 1.667 ns  ; xmit_cmd_p_in ; transfer:inst2|state.x_start  ; clk      ;
+; N/A           ; None        ; 1.493 ns  ; xmit_cmd_p_in ; transfer:inst2|txd_done       ; clk      ;
+; N/A           ; None        ; 1.313 ns  ; reset         ; transfer:inst2|xcnt16[3]      ; clk      ;
+; N/A           ; None        ; 1.313 ns  ; reset         ; transfer:inst2|xcnt16[2]      ; clk      ;
+; N/A           ; None        ; 1.313 ns  ; reset         ; transfer:inst2|xcnt16[1]      ; clk      ;
+; N/A           ; None        ; 1.313 ns  ; reset         ; transfer:inst2|xcnt16[0]      ; clk      ;
+; N/A           ; None        ; 0.797 ns  ; xmit_cmd_p_in ; transfer:inst2|xcnt16[2]      ; clk      ;
+; N/A           ; None        ; 0.797 ns  ; xmit_cmd_p_in ; transfer:inst2|xcnt16[1]      ; clk      ;
+; N/A           ; None        ; 0.797 ns  ; xmit_cmd_p_in ; transfer:inst2|xcnt16[0]      ; clk      ;
+; N/A           ; None        ; 0.796 ns  ; xmit_cmd_p_in ; transfer:inst2|xcnt16[3]      ; clk      ;
+; N/A           ; None        ; 0.340 ns  ; rxd           ; reciever:inst1|state.r_center ; clk      ;
+; N/A           ; None        ; 0.259 ns  ; rxd           ; reciever:inst1|\pro2:rbufs[0] ; clk      ;
+; N/A           ; None        ; 0.042 ns  ; xmit_cmd_p_in ; transfer:inst2|state.x_stop   ; clk      ;
+; N/A           ; None        ; -0.050 ns ; rxd           ; reciever:inst1|\pro2:rbufs[1] ; clk      ;
+; N/A           ; None        ; -0.092 ns ; rxd           ; reciever:inst1|\pro2:rbufs[6] ; clk      ;
+; N/A           ; None        ; -0.093 ns ; rxd           ; reciever:inst1|state.r_start  ; clk      ;
+; N/A           ; None        ; -0.094 ns ; rxd           ; reciever:inst1|\pro2:rbufs[3] ; clk      ;
+; N/A           ; None        ; -0.095 ns ; rxd           ; reciever:inst1|\pro2:rbufs[5] ; clk      ;
+; N/A           ; None        ; -0.096 ns ; rxd           ; reciever:inst1|\pro2:rbufs[4] ; clk      ;
+; N/A           ; None        ; -0.098 ns ; rxd           ; reciever:inst1|\pro2:rbufs[7] ; clk      ;
+; N/A           ; None        ; -0.098 ns ; rxd           ; reciever:inst1|\pro2:rbufs[2] ; clk      ;
+; N/A           ; None        ; -0.222 ns ; rxd           ; reciever:inst1|state.r_wait   ; clk      ;
+; N/A           ; None        ; -0.366 ns ; reset         ; reciever:inst1|r_ready        ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[0]     ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[2]     ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[1]     ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[3]     ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[15]    ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[14]    ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[12]    ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[13]    ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[6]     ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[7]     ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[4]     ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[5]     ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[10]    ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[9]     ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[8]     ; clk      ;
+; N/A           ; None        ; -0.812 ns ; reset         ; transfer:inst2|xbitcnt[11]    ; clk      ;
+; N/A           ; None        ; -0.855 ns ; rxd           ; reciever:inst1|\pro2:count[3] ; clk      ;
+; N/A           ; None        ; -0.855 ns ; rxd           ; reciever:inst1|\pro2:count[1] ; clk      ;
+; N/A           ; None        ; -0.855 ns ; rxd           ; reciever:inst1|\pro2:count[2] ; clk      ;
+; N/A           ; None        ; -0.855 ns ; rxd           ; reciever:inst1|\pro2:count[0] ; clk      ;
+; N/A           ; None        ; -1.049 ns ; reset         ; reciever:inst1|\pro2:rbufs[3] ; clk      ;
+; N/A           ; None        ; -1.056 ns ; reset         ; reciever:inst1|\pro2:rbufs[4] ; clk      ;
+; N/A           ; None        ; -1.057 ns ; reset         ; reciever:inst1|\pro2:rbufs[2] ; clk      ;
+; N/A           ; None        ; -1.061 ns ; reset         ; reciever:inst1|rbuf[0]        ; clk      ;
+; N/A           ; None        ; -1.094 ns ; reset         ; reciever:inst1|\pro2:rbufs[5] ; clk      ;
+; N/A           ; None        ; -1.097 ns ; reset         ; reciever:inst1|\pro2:rbufs[6] ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[20]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[21]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[22]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[23]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[26]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[24]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[27]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[25]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[17]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[16]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[19]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[18]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[31]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[28]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[30]    ; clk      ;
+; N/A           ; None        ; -1.221 ns ; reset         ; transfer:inst2|xbitcnt[29]    ; clk      ;
+; N/A           ; None        ; -1.386 ns ; reset         ; reciever:inst1|\pro2:rbufs[1] ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[3]  ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[2]  ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[1]  ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[0]  ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[11] ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[9]  ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[10] ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[8]  ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[5]  ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[4]  ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[6]  ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[7]  ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[12] ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[14] ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[15] ; clk      ;
+; N/A           ; None        ; -1.436 ns ; rxd           ; reciever:inst1|\pro2:rcnt[13] ; clk      ;
+; N/A           ; None        ; -1.522 ns ; reset         ; reciever:inst1|\pro2:rbufs[7] ; clk      ;
+; N/A           ; None        ; -1.672 ns ; reset         ; reciever:inst1|rbuf[7]        ; clk      ;
+; N/A           ; None        ; -1.672 ns ; reset         ; reciever:inst1|rbuf[6]        ; clk      ;
+; N/A           ; None        ; -1.672 ns ; reset         ; reciever:inst1|rbuf[5]        ; clk      ;
+; N/A           ; None        ; -1.672 ns ; reset         ; reciever:inst1|rbuf[4]        ; clk      ;
+; N/A           ; None        ; -1.672 ns ; reset         ; reciever:inst1|rbuf[3]        ; clk      ;
+; N/A           ; None        ; -1.672 ns ; reset         ; reciever:inst1|rbuf[2]        ; clk      ;
+; N/A           ; None        ; -1.672 ns ; reset         ; reciever:inst1|rbuf[1]        ; clk      ;
+; N/A           ; None        ; -1.763 ns ; reset         ; reciever:inst1|\pro2:rbufs[0] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[27] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[25] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[26] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[24] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[30] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[29] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[31] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[28] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[16] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[19] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[18] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[17] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[20] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[21] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[22] ; clk      ;
+; N/A           ; None        ; -1.833 ns ; rxd           ; reciever:inst1|\pro2:rcnt[23] ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[3]  ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[2]  ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[1]  ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[0]  ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[11] ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[9]  ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[10] ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[8]  ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[5]  ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[4]  ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[6]  ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[7]  ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[12] ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[14] ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[15] ; clk      ;
+; N/A           ; None        ; -2.067 ns ; reset         ; reciever:inst1|\pro2:rcnt[13] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[27] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[25] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[26] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[24] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[30] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[29] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[31] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[28] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[16] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[19] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[18] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[17] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[20] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[21] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[22] ; clk      ;
+; N/A           ; None        ; -2.464 ns ; reset         ; reciever:inst1|\pro2:rcnt[23] ; clk      ;
++---------------+-------------+-----------+---------------+-------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Fri Jun 02 00:33:58 2017
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Uart -c Uart --timing_analysis_only
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "baud:inst|bclk" as buffer
+Info: Clock "clk" has Internal fmax of 151.38 MHz between source register "baud:inst|cnt[0]" and destination register "baud:inst|cnt[31]" (period= 6.606 ns)
+    Info: + Longest register to register delay is 6.339 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X60_Y24_N13; Fanout = 3; REG Node = 'baud:inst|cnt[0]'
+        Info: 2: + IC(0.735 ns) + CELL(0.596 ns) = 1.331 ns; Loc. = LCCOMB_X59_Y24_N0; Fanout = 2; COMB Node = 'baud:inst|Add0~1'
+        Info: 3: + IC(0.000 ns) + CELL(0.086 ns) = 1.417 ns; Loc. = LCCOMB_X59_Y24_N2; Fanout = 2; COMB Node = 'baud:inst|Add0~3'
+        Info: 4: + IC(0.000 ns) + CELL(0.086 ns) = 1.503 ns; Loc. = LCCOMB_X59_Y24_N4; Fanout = 2; COMB Node = 'baud:inst|Add0~5'
+        Info: 5: + IC(0.000 ns) + CELL(0.086 ns) = 1.589 ns; Loc. = LCCOMB_X59_Y24_N6; Fanout = 2; COMB Node = 'baud:inst|Add0~7'
+        Info: 6: + IC(0.000 ns) + CELL(0.086 ns) = 1.675 ns; Loc. = LCCOMB_X59_Y24_N8; Fanout = 2; COMB Node = 'baud:inst|Add0~9'
+        Info: 7: + IC(0.000 ns) + CELL(0.086 ns) = 1.761 ns; Loc. = LCCOMB_X59_Y24_N10; Fanout = 2; COMB Node = 'baud:inst|Add0~11'
+        Info: 8: + IC(0.000 ns) + CELL(0.086 ns) = 1.847 ns; Loc. = LCCOMB_X59_Y24_N12; Fanout = 2; COMB Node = 'baud:inst|Add0~13'
+        Info: 9: + IC(0.000 ns) + CELL(0.190 ns) = 2.037 ns; Loc. = LCCOMB_X59_Y24_N14; Fanout = 2; COMB Node = 'baud:inst|Add0~15'
+        Info: 10: + IC(0.000 ns) + CELL(0.086 ns) = 2.123 ns; Loc. = LCCOMB_X59_Y24_N16; Fanout = 2; COMB Node = 'baud:inst|Add0~17'
+        Info: 11: + IC(0.000 ns) + CELL(0.086 ns) = 2.209 ns; Loc. = LCCOMB_X59_Y24_N18; Fanout = 2; COMB Node = 'baud:inst|Add0~19'
+        Info: 12: + IC(0.000 ns) + CELL(0.086 ns) = 2.295 ns; Loc. = LCCOMB_X59_Y24_N20; Fanout = 2; COMB Node = 'baud:inst|Add0~21'
+        Info: 13: + IC(0.000 ns) + CELL(0.086 ns) = 2.381 ns; Loc. = LCCOMB_X59_Y24_N22; Fanout = 2; COMB Node = 'baud:inst|Add0~23'
+        Info: 14: + IC(0.000 ns) + CELL(0.086 ns) = 2.467 ns; Loc. = LCCOMB_X59_Y24_N24; Fanout = 2; COMB Node = 'baud:inst|Add0~25'
+        Info: 15: + IC(0.000 ns) + CELL(0.086 ns) = 2.553 ns; Loc. = LCCOMB_X59_Y24_N26; Fanout = 2; COMB Node = 'baud:inst|Add0~27'
+        Info: 16: + IC(0.000 ns) + CELL(0.086 ns) = 2.639 ns; Loc. = LCCOMB_X59_Y24_N28; Fanout = 2; COMB Node = 'baud:inst|Add0~29'
+        Info: 17: + IC(0.000 ns) + CELL(0.175 ns) = 2.814 ns; Loc. = LCCOMB_X59_Y24_N30; Fanout = 2; COMB Node = 'baud:inst|Add0~31'
+        Info: 18: + IC(0.000 ns) + CELL(0.086 ns) = 2.900 ns; Loc. = LCCOMB_X59_Y23_N0; Fanout = 2; COMB Node = 'baud:inst|Add0~33'
+        Info: 19: + IC(0.000 ns) + CELL(0.086 ns) = 2.986 ns; Loc. = LCCOMB_X59_Y23_N2; Fanout = 2; COMB Node = 'baud:inst|Add0~35'
+        Info: 20: + IC(0.000 ns) + CELL(0.086 ns) = 3.072 ns; Loc. = LCCOMB_X59_Y23_N4; Fanout = 2; COMB Node = 'baud:inst|Add0~37'
+        Info: 21: + IC(0.000 ns) + CELL(0.086 ns) = 3.158 ns; Loc. = LCCOMB_X59_Y23_N6; Fanout = 2; COMB Node = 'baud:inst|Add0~39'
+        Info: 22: + IC(0.000 ns) + CELL(0.086 ns) = 3.244 ns; Loc. = LCCOMB_X59_Y23_N8; Fanout = 2; COMB Node = 'baud:inst|Add0~41'
+        Info: 23: + IC(0.000 ns) + CELL(0.086 ns) = 3.330 ns; Loc. = LCCOMB_X59_Y23_N10; Fanout = 2; COMB Node = 'baud:inst|Add0~43'
+        Info: 24: + IC(0.000 ns) + CELL(0.086 ns) = 3.416 ns; Loc. = LCCOMB_X59_Y23_N12; Fanout = 2; COMB Node = 'baud:inst|Add0~45'
+        Info: 25: + IC(0.000 ns) + CELL(0.190 ns) = 3.606 ns; Loc. = LCCOMB_X59_Y23_N14; Fanout = 2; COMB Node = 'baud:inst|Add0~47'
+        Info: 26: + IC(0.000 ns) + CELL(0.086 ns) = 3.692 ns; Loc. = LCCOMB_X59_Y23_N16; Fanout = 2; COMB Node = 'baud:inst|Add0~49'
+        Info: 27: + IC(0.000 ns) + CELL(0.086 ns) = 3.778 ns; Loc. = LCCOMB_X59_Y23_N18; Fanout = 2; COMB Node = 'baud:inst|Add0~51'
+        Info: 28: + IC(0.000 ns) + CELL(0.086 ns) = 3.864 ns; Loc. = LCCOMB_X59_Y23_N20; Fanout = 2; COMB Node = 'baud:inst|Add0~53'
+        Info: 29: + IC(0.000 ns) + CELL(0.086 ns) = 3.950 ns; Loc. = LCCOMB_X59_Y23_N22; Fanout = 2; COMB Node = 'baud:inst|Add0~55'
+        Info: 30: + IC(0.000 ns) + CELL(0.086 ns) = 4.036 ns; Loc. = LCCOMB_X59_Y23_N24; Fanout = 2; COMB Node = 'baud:inst|Add0~57'
+        Info: 31: + IC(0.000 ns) + CELL(0.086 ns) = 4.122 ns; Loc. = LCCOMB_X59_Y23_N26; Fanout = 2; COMB Node = 'baud:inst|Add0~59'
+        Info: 32: + IC(0.000 ns) + CELL(0.086 ns) = 4.208 ns; Loc. = LCCOMB_X59_Y23_N28; Fanout = 1; COMB Node = 'baud:inst|Add0~61'
+        Info: 33: + IC(0.000 ns) + CELL(0.506 ns) = 4.714 ns; Loc. = LCCOMB_X59_Y23_N30; Fanout = 1; COMB Node = 'baud:inst|Add0~62'
+        Info: 34: + IC(1.147 ns) + CELL(0.370 ns) = 6.231 ns; Loc. = LCCOMB_X58_Y24_N6; Fanout = 1; COMB Node = 'baud:inst|Add0~64'
+        Info: 35: + IC(0.000 ns) + CELL(0.108 ns) = 6.339 ns; Loc. = LCFF_X58_Y24_N7; Fanout = 2; REG Node = 'baud:inst|cnt[31]'
+        Info: Total cell delay = 4.457 ns ( 70.31 % )
+        Info: Total interconnect delay = 1.882 ns ( 29.69 % )
+    Info: - Smallest clock skew is -0.003 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 3.355 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(0.135 ns) + CELL(0.000 ns) = 1.235 ns; Loc. = CLKCTRL_G2; Fanout = 32; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(1.454 ns) + CELL(0.666 ns) = 3.355 ns; Loc. = LCFF_X58_Y24_N7; Fanout = 2; REG Node = 'baud:inst|cnt[31]'
+            Info: Total cell delay = 1.766 ns ( 52.64 % )
+            Info: Total interconnect delay = 1.589 ns ( 47.36 % )
+        Info: - Longest clock path from clock "clk" to source register is 3.358 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(0.135 ns) + CELL(0.000 ns) = 1.235 ns; Loc. = CLKCTRL_G2; Fanout = 32; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(1.457 ns) + CELL(0.666 ns) = 3.358 ns; Loc. = LCFF_X60_Y24_N13; Fanout = 3; REG Node = 'baud:inst|cnt[0]'
+            Info: Total cell delay = 1.766 ns ( 52.59 % )
+            Info: Total interconnect delay = 1.592 ns ( 47.41 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Micro setup delay of destination is -0.040 ns
+Info: tsu for register "reciever:inst1|\pro2:rcnt[27]" (data pin = "reset", clock pin = "clk") is 2.730 ns
+    Info: + Longest pin to register delay is 12.567 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.934 ns) = 0.934 ns; Loc. = PIN_AD4; Fanout = 58; PIN Node = 'reset'
+        Info: 2: + IC(8.759 ns) + CELL(0.647 ns) = 10.340 ns; Loc. = LCCOMB_X51_Y21_N22; Fanout = 32; COMB Node = 'reciever:inst1|\pro2:rcnt[21]~1'
+        Info: 3: + IC(1.372 ns) + CELL(0.855 ns) = 12.567 ns; Loc. = LCFF_X49_Y20_N23; Fanout = 3; REG Node = 'reciever:inst1|\pro2:rcnt[27]'
+        Info: Total cell delay = 2.436 ns ( 19.38 % )
+        Info: Total interconnect delay = 10.131 ns ( 80.62 % )
+    Info: + Micro setup delay of destination is -0.040 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 9.797 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(2.717 ns) + CELL(0.970 ns) = 4.787 ns; Loc. = LCFF_X58_Y24_N3; Fanout = 1; REG Node = 'baud:inst|bclk'
+        Info: 3: + IC(2.965 ns) + CELL(0.000 ns) = 7.752 ns; Loc. = CLKCTRL_G15; Fanout = 101; COMB Node = 'baud:inst|bclk~clkctrl'
+        Info: 4: + IC(1.379 ns) + CELL(0.666 ns) = 9.797 ns; Loc. = LCFF_X49_Y20_N23; Fanout = 3; REG Node = 'reciever:inst1|\pro2:rcnt[27]'
+        Info: Total cell delay = 2.736 ns ( 27.93 % )
+        Info: Total interconnect delay = 7.061 ns ( 72.07 % )
+Info: tco from clock "clk" to destination pin "rec_ready" through register "reciever:inst1|r_ready" is 18.826 ns
+    Info: + Longest clock path from clock "clk" to source register is 9.809 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(2.717 ns) + CELL(0.970 ns) = 4.787 ns; Loc. = LCFF_X58_Y24_N3; Fanout = 1; REG Node = 'baud:inst|bclk'
+        Info: 3: + IC(2.965 ns) + CELL(0.000 ns) = 7.752 ns; Loc. = CLKCTRL_G15; Fanout = 101; COMB Node = 'baud:inst|bclk~clkctrl'
+        Info: 4: + IC(1.391 ns) + CELL(0.666 ns) = 9.809 ns; Loc. = LCFF_X52_Y21_N17; Fanout = 2; REG Node = 'reciever:inst1|r_ready'
+        Info: Total cell delay = 2.736 ns ( 27.89 % )
+        Info: Total interconnect delay = 7.073 ns ( 72.11 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Longest register to pin delay is 8.713 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X52_Y21_N17; Fanout = 2; REG Node = 'reciever:inst1|r_ready'
+        Info: 2: + IC(5.517 ns) + CELL(3.196 ns) = 8.713 ns; Loc. = PIN_AB10; Fanout = 0; PIN Node = 'rec_ready'
+        Info: Total cell delay = 3.196 ns ( 36.68 % )
+        Info: Total interconnect delay = 5.517 ns ( 63.32 % )
+Info: th for register "transfer:inst2|state.x_idle" (data pin = "xmit_cmd_p_in", clock pin = "clk") is 1.856 ns
+    Info: + Longest clock path from clock "clk" to destination register is 9.806 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(2.717 ns) + CELL(0.970 ns) = 4.787 ns; Loc. = LCFF_X58_Y24_N3; Fanout = 1; REG Node = 'baud:inst|bclk'
+        Info: 3: + IC(2.965 ns) + CELL(0.000 ns) = 7.752 ns; Loc. = CLKCTRL_G15; Fanout = 101; COMB Node = 'baud:inst|bclk~clkctrl'
+        Info: 4: + IC(1.388 ns) + CELL(0.666 ns) = 9.806 ns; Loc. = LCFF_X19_Y16_N17; Fanout = 5; REG Node = 'transfer:inst2|state.x_idle'
+        Info: Total cell delay = 2.736 ns ( 27.90 % )
+        Info: Total interconnect delay = 7.070 ns ( 72.10 % )
+    Info: + Micro hold delay of destination is 0.306 ns
+    Info: - Shortest pin to register delay is 8.256 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.924 ns) = 0.924 ns; Loc. = PIN_AC6; Fanout = 5; PIN Node = 'xmit_cmd_p_in'
+        Info: 2: + IC(7.018 ns) + CELL(0.206 ns) = 8.148 ns; Loc. = LCCOMB_X19_Y16_N16; Fanout = 1; COMB Node = 'transfer:inst2|Selector0~0'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 8.256 ns; Loc. = LCFF_X19_Y16_N17; Fanout = 5; REG Node = 'transfer:inst2|state.x_idle'
+        Info: Total cell delay = 1.238 ns ( 15.00 % )
+        Info: Total interconnect delay = 7.018 ns ( 85.00 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 165 megabytes
+    Info: Processing ended: Fri Jun 02 00:33:58 2017
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
