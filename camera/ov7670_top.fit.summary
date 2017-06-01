@@ -1,14 +1,14 @@
-Fitter Status : Successful - Tue May 30 22:49:22 2017
+Fitter Status : Successful - Fri Jun 02 00:34:32 2017
 Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
 Revision Name : ov7670_top
 Top-level Entity Name : ov7670_top
 Family : Cyclone II
 Device : EP2C70F672C8
 Timing Models : Final
-Total logic elements : 3,700 / 68,416 ( 5 % )
-    Total combinational functions : 3,601 / 68,416 ( 5 % )
-    Dedicated logic registers : 264 / 68,416 ( < 1 % )
-Total registers : 264
+Total logic elements : 3,465 / 68,416 ( 5 % )
+    Total combinational functions : 3,429 / 68,416 ( 5 % )
+    Dedicated logic registers : 427 / 68,416 ( < 1 % )
+Total registers : 427
 Total pins : 36 / 422 ( 9 % )
 Total virtual pins : 0
 Total memory bits : 462,848 / 1,152,000 ( 40 % )

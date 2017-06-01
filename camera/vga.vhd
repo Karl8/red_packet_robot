@@ -69,10 +69,14 @@ begin
          if vCounter  >= vRez then
             address <= (others => '0');
             blank <= '1';
-            
+    
          else 
             if hCounter  < hRez then
-               blank <= '0';
+               if (hCounter < 320) then
+					blank <= '0';
+				else
+					blank <= '1';
+				end if;
                if hCounter = hRez - 1 then
                   if (vCounter mod 4) = 3 then
                      address <= address+1;
@@ -102,17 +106,10 @@ begin
             vga_vSync <= not vsync_active;
          end if;
          
-         vga_red <= std_logic_vector(r(2 downto 0));
-         vga_green <= std_logic_vector(g(2 downto 0));
-         vga_blue <= std_logic_vector(b(1 downto 0));
-      end if;
-	end process;
-	process(blank)
-    begin
-		if vCounter > vRez then
+         if vCounter = 0 and hCounter = 0 then
 			if cnt = 0 then
-				lasth := 0;
-				lastv := 0;
+				lasth := 100;
+				lastv := 100;
             else
 				lasth := hSum / cnt;
 				lastv := vSum / cnt;
@@ -121,12 +118,12 @@ begin
             vSum := 0;
             cnt := 0;
 		end if;
-		
+         
          if blank = '0' then
-            if hCounter <= lasth + 100 and hCounter >= lasth - 100 and vCounter <= lastv + 100 and vCounter >= lastv - 100 then
-              r  <= (others => '1');
-              g  <= (others => '0');
-              b  <= (others => '1');
+            if hCounter <= lasth + 5 and hCounter >= lasth - 5 and vCounter <= lastv + 5 and vCounter >= lastv - 5 then
+              r  <= (others => '0');
+              g  <= (others => '1');
+              b  <= (others => '0');
             elsif hCounter = 100 or hCounter = 400 then
 				r   <= (others => '1');
 				g   <= (others => '1');
@@ -151,5 +148,17 @@ begin
             g   <= (others => '0');
             b   <= (others => '0');
          end if;
+         
+         
+         vga_red <= std_logic_vector(r(2 downto 0));
+         vga_green <= std_logic_vector(g(2 downto 0));
+         vga_blue <= std_logic_vector(b(1 downto 0));
+      end if;
+	end process;
+	process(blank)
+    begin
+		
+		
+         
    end process;
 end Behavioral;

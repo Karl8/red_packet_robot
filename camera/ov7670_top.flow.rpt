@@ -1,5 +1,5 @@
 Flow report for ov7670_top
-Tue May 30 22:49:52 2017
+Fri Jun 02 00:35:01 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +------------------------------------+------------------------------------------+
-; Flow Status                        ; Successful - Tue May 30 22:49:43 2017    ;
+; Flow Status                        ; Successful - Fri Jun 02 00:34:52 2017    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; ov7670_top                               ;
 ; Top-level Entity Name              ; ov7670_top                               ;
@@ -46,10 +46,10 @@ applicable agreement for further details.
 ; Device                             ; EP2C70F672C8                             ;
 ; Timing Models                      ; Final                                    ;
 ; Met timing requirements            ; No                                       ;
-; Total logic elements               ; 3,700 / 68,416 ( 5 % )                   ;
-;     Total combinational functions  ; 3,601 / 68,416 ( 5 % )                   ;
-;     Dedicated logic registers      ; 264 / 68,416 ( < 1 % )                   ;
-; Total registers                    ; 264                                      ;
+; Total logic elements               ; 3,465 / 68,416 ( 5 % )                   ;
+;     Total combinational functions  ; 3,429 / 68,416 ( 5 % )                   ;
+;     Dedicated logic registers      ; 427 / 68,416 ( < 1 % )                   ;
+; Total registers                    ; 427                                      ;
 ; Total pins                         ; 36 / 422 ( 9 % )                         ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 462,848 / 1,152,000 ( 40 % )             ;
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/30/2017 22:48:47 ;
+; Start date & time ; 06/02/2017 00:33:56 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ov7670_top          ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ applicable agreement for further details.
 +------------------------------------+-----------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                                               ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+-----------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 345052807169.149615572759608                        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 345052807169.149633483632288                        ; --            ; --          ; --             ;
 ; IP_TOOL_NAME                       ; RAM: 2-PORT                                         ; --            ; --          ; --             ;
 ; IP_TOOL_VERSION                    ; 9.0                                                 ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP             ; 85                                                  ; --            ; --          ; --             ;
@@ -94,11 +94,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:12     ; 1.0                     ; 297 MB              ; 00:00:12                           ;
-; Fitter                  ; 00:00:21     ; 1.1                     ; 424 MB              ; 00:00:23                           ;
-; Assembler               ; 00:00:04     ; 1.0                     ; 372 MB              ; 00:00:05                           ;
-; Classic Timing Analyzer ; 00:00:02     ; 1.0                     ; 231 MB              ; 00:00:02                           ;
-; Total                   ; 00:00:39     ; --                      ; --                  ; 00:00:42                           ;
+; Analysis & Synthesis    ; 00:00:14     ; 1.0                     ; 298 MB              ; 00:00:14                           ;
+; Fitter                  ; 00:00:21     ; 1.2                     ; 424 MB              ; 00:00:22                           ;
+; Assembler               ; 00:00:05     ; 1.0                     ; 372 MB              ; 00:00:04                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 231 MB              ; 00:00:02                           ;
+; Total                   ; 00:00:41     ; --                      ; --                  ; 00:00:42                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
