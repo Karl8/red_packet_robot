@@ -1,9 +1,5 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="ov7670_top">
-		<CBX_INST_ENTRY INSTANCE_NAME="|ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_cmk1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|ov7670_top|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0" CBX_FILE_NAME="altsyncram_aov.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|ov7670_top|vga:Inst_vga|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_nto.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|ov7670_top|vga:Inst_vga|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_nto.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

@@ -20,7 +20,7 @@ begin
    process(clk)
    begin
       if rising_edge(clk) then
-         if i = '1' then
+         if i = '0' then
             if c = x"FFFFFF" then
                o <= '1';
             else

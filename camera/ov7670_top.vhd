@@ -8,7 +8,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity ov7670_top is
     Port ( 
-      clk100       : in    STD_LOGIC;
+      clk100        : in    STD_LOGIC;
       OV7670_SIOC  : out   STD_LOGIC;
       OV7670_SIOD  : inout STD_LOGIC;
       OV7670_RESET : out   STD_LOGIC;
@@ -20,10 +20,10 @@ entity ov7670_top is
       OV7670_D     : in    STD_LOGIC_VECTOR(7 downto 0);
 
       LED          : out    STD_LOGIC_VECTOR(7 downto 0);
-
+		ledd: out std_logic;
       vga_red      : out   STD_LOGIC_VECTOR(2 downto 0);
       vga_green    : out   STD_LOGIC_VECTOR(2 downto 0);
-      vga_blue     : out   STD_LOGIC_VECTOR(2 downto 1);
+      vga_blue     : out   STD_LOGIC_VECTOR(2 downto 0);
       vga_hsync    : out   STD_LOGIC;
       vga_vsync    : out   STD_LOGIC;
       
@@ -55,23 +55,23 @@ architecture Behavioral of ov7670_top is
    END COMPONENT;
 
    COMPONENT frame_buffer
-   PORT
-	(
-		data		: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+   PORT (
+      data		: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
 		rdaddress		: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 		rdclock		: IN STD_LOGIC ;
 		wraddress		: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
-		wrclock		: IN STD_LOGIC ;
-		wren		: IN STD_LOGIC  := '1';
+		wrclock		: IN STD_LOGIC  := '1';
+		wren		: IN STD_LOGIC  := '0';
 		q		: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
-	);
+   );
    END COMPONENT;
-   
+
    COMPONENT ov7670_capture
    PORT(
       pclk : IN std_logic;
       vsync : IN std_logic;
       href  : IN std_logic;
+		led:out std_logic;
       d     : IN std_logic_vector(7 downto 0);          
       addr  : OUT std_logic_vector(14 downto 0);
       dout  : OUT std_logic_vector(15 downto 0);
@@ -85,7 +85,7 @@ architecture Behavioral of ov7670_top is
       clk50 : IN std_logic;
       vga_red : OUT std_logic_vector(2 downto 0);
       vga_green : OUT std_logic_vector(2 downto 0);
-      vga_blue : OUT std_logic_vector(2 downto 1);
+      vga_blue : OUT std_logic_vector(2 downto 0);
       vga_hsync : OUT std_logic;
       vga_vsync : OUT std_logic;
       
@@ -102,22 +102,16 @@ architecture Behavioral of ov7670_top is
    signal capture_we    : std_logic_vector(0 downto 0);
    signal resend : std_logic;
    signal config_finished : std_logic;
-   
-   signal clk50 : std_logic := '0';
-   signal clk25 : std_logic := '0';
+	
+	signal clk50			: std_logic;
+
 begin
-   process(clk100)
-   begin
+	process(clk100) 
+	begin
 		if (rising_edge(clk100)) then
 			clk50 <= not clk50;
 		end if;
-   end process;
-   process(clk50)
-   begin
-		if (rising_edge(clk50)) then
-			clk25 <= not clk25;
-		end if;
-   end process;
+	end process;
 btn_debounce: debounce PORT MAP(
       clk => clk50,
       i   => btn,
@@ -135,7 +129,6 @@ btn_debounce: debounce PORT MAP(
       frame_pixel => frame_pixel
    );
 
-
 fb : frame_buffer
   PORT MAP (
     wrclock  => OV7670_PCLK,
@@ -143,7 +136,7 @@ fb : frame_buffer
     wraddress => capture_addr,
     data  => capture_data,
     
-    rdclock  => clk25,
+    rdclock  => clk50,
     rdaddress => frame_addr,
     q => frame_pixel
   );
@@ -153,6 +146,7 @@ capture: ov7670_capture PORT MAP(
       pclk  => OV7670_PCLK,
       vsync => OV7670_VSYNC,
       href  => OV7670_HREF,
+		led => ledd,
       d     => OV7670_D,
       addr  => capture_addr,
       dout  => capture_data,

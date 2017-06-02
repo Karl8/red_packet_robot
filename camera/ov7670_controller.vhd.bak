@@ -21,7 +21,7 @@ entity ov7670_controller is
 end ov7670_controller;
 
 architecture Behavioral of ov7670_controller is
-   COMPONENT ov7670_registers
+   COMPONENT ov7670_register
    PORT(
       clk      : IN std_logic;
       advance  : IN std_logic;          
@@ -70,7 +70,7 @@ begin
    pwdn  <= '0';                   -- Power device up
    xclk  <= sys_clk;
    
-   Inst_ov7670_registers: ov7670_registers PORT MAP(
+   Inst_ov7670_registers: ov7670_register PORT MAP(
       clk      => clk,
       advance  => taken,
       command  => command,
