@@ -1,0 +1,31 @@
+|logic
+clk => act~reg0.CLK
+clk => mode[0]~reg0.CLK
+clk => mode[1]~reg0.CLK
+clk => mode_cnt[0].CLK
+clk => mode_cnt[1].CLK
+clk => state~17.DATAIN
+reset => mode[0]~reg0.ACLR
+reset => mode[1]~reg0.ACLR
+reset => state~21.DATAIN
+reset => act~reg0.ENA
+reset => mode_cnt[1].ENA
+reset => mode_cnt[0].ENA
+cam_finished => state~0.OUTPUTSELECT
+cam_finished => state~1.OUTPUTSELECT
+cam_finished => state~2.OUTPUTSELECT
+act_finished => mode_cnt~4.OUTPUTSELECT
+act_finished => mode_cnt~5.OUTPUTSELECT
+act_finished => state~3.OUTPUTSELECT
+act_finished => state~4.OUTPUTSELECT
+act_finished => state~5.OUTPUTSELECT
+act_finished => act~0.DATAB
+btn => mode_cnt~0.OUTPUTSELECT
+btn => mode_cnt~1.OUTPUTSELECT
+btn => Selector3.IN2
+btn => Selector2.IN0
+mode[0] <= mode[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mode[1] <= mode[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+act <= act~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
