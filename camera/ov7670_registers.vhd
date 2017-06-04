@@ -1,4 +1,5 @@
- -- Company: 
+----------------------------------------------------------------------------------
+-- Company: 
 -- Engineer: Mike Field <hamster@sanp.net.nz> 
 -- 
 -- Description: Register settings for the OV7670 Caamera (partially from OV7670.c
@@ -52,7 +53,7 @@ begin
             when x"0e" => sreg <= x"030a"; -- VREF   VSYNC low two bits
             
             when x"0f" => sreg <= x"703a"; -- SCALING_XSC
-            when x"10" => sreg <= x"7135"; -- SCALING_YSC########
+            when x"10" => sreg <= x"7135"; -- SCALING_YSC
             when x"11" => sreg <= x"7211"; -- SCALING_DCWCTR
             when x"12" => sreg <= x"73f1"; -- SCALING_PCLK_DIV
             when x"13" => sreg <= x"a202"; -- SCALING_PCLK_DELAY  PCLK scaling = 4, must match COM14
@@ -77,7 +78,7 @@ begin
             when x"25" => sreg <= x"13E0"; -- COM8 - AGC, White balance
             when x"26" => sreg <= x"0000"; -- GAIN AGC 
             when x"27" => sreg <= x"1000"; -- AECH Exposure
-            when x"28" => sreg <= x"0D40"; -- COMM4 - Window Size##########
+            when x"28" => sreg <= x"0D40"; -- COMM4 - Window Size
             when x"29" => sreg <= x"1418"; -- COMM9 AGC 
             when x"2a" => sreg <= x"a505"; -- AECGMAX banding filter step
             when x"2b" => sreg <= x"2495"; -- AEW AGC Stable upper limite
@@ -92,9 +93,13 @@ begin
             when x"34" => sreg <= x"A990"; -- TPH Total Prob High
             when x"35" => sreg <= x"AA94"; -- NALG AEC Algo select
             when x"36" => sreg <= x"13E5"; -- COM8 AGC Settings
+            ------------------
+            when x"37" => sreg <= x"6B0A"; 
+            when x"38" => sreg <= x"13E7"; 
+            when x"39" => sreg <= x"6F9F"; 
+
             when others => sreg <= x"ffff";
          end case;
       end if;
    end process;
 end Behavioral;
-

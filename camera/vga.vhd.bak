@@ -18,21 +18,27 @@ entity vga is
       vga_hsync   : out STD_LOGIC;
       vga_vsync   : out STD_LOGIC;
       frame_addr  : out STD_LOGIC_VECTOR(14 downto 0);
-      frame_pixel : in  STD_LOGIC_VECTOR(15 downto 0)
+      frame_pixel : in  STD_LOGIC_VECTOR(15 downto 0);
+      mode        : in  STD_LOGIC_VECTOR(1 downto 0); 
+	  finished    : out STD_LOGIC;
+	  x           : out STD_LOGIC_VECTOR(8 downto 0);
+	  y           : out STD_LOGIC_VECTOR(8 downto 0);
+	  led         : out STD_LOGIC;
     );
 end vga;
 
 architecture Behavioral of vga is
    -- Timing constants
-   constant hRez       : natural := 800;
-   constant vRez       : natural := 600;
+   
+   constant hRez       : natural := 640;
+   constant hStartSync : natural := 640+16;
+   constant hEndSync   : natural := 640+16+96;
+   constant hMaxCount  : natural := 800;
 
-   constant hMaxCount  : natural := 1056;
-   constant hStartSync : natural := 840;
-   constant hEndSync   : natural := 968;
-   constant vMaxCount  : natural := 628;
-   constant vStartSync : natural := 601;
-   constant vEndSync   : natural := 605;
+   constant vRez       : natural := 480;
+   constant vStartSync : natural := 480+10;
+   constant vEndSync   : natural := 480+10+2;
+   constant vMaxCount  : natural := 480+10+2+33;
    constant hsync_active : std_logic := '1';
    constant vsync_active : std_logic := '1';
 
@@ -41,20 +47,29 @@ architecture Behavioral of vga is
    signal address : unsigned(16 downto 0) := (others => '0');
    signal blank : std_logic := '1';
    
-   signal r, g: std_logic_vector(2 downto 0);
-   signal b : std_logic_vector(2 downto 0);
+   signal r, g, b: std_logic_vector(2 downto 0);
+   signal cog : std_logic;
    
    shared variable hSum, vSum, cnt : integer := 0;
-   shared variable lastcnt : integer := 1;
-   
+   shared variable count : integer := 0;
    shared variable lasth : integer := 0;
    shared variable lastv : integer := 0;
-begin
-   frame_addr <= std_logic_vector(address(14 downto 0));
    
+   
+   signal ledd: std_logic;
+   signal clk25: std_logic := '0';
+begin
+   frame_addr <= std_logic_vector(address(15 downto 1));
    process(clk50)
+	begin
+		if (rising_edge(clk50)) then
+			clk25<=not clk25;
+		end if;
+	end process;
+   process(clk25)
    begin
-      if rising_edge(clk50) then
+      led <= ledd;
+      if rising_edge(clk25) then
          -- Count the lines and rows      
          if hCounter = hMaxCount-1 then
             hCounter := 0;
@@ -70,18 +85,18 @@ begin
             address <= (others => '0');
             blank <= '1';
          else 
-            if hCounter  >= 0 and hCounter  < 160 then
-               if hCounter = 639 then
-            --      if vCounter mod 4 /= 3 then
-             --        address <= address - 639;
-             --     else
-                      address <= address+1;
-                --  end if;
-               else
+            if hCounter  < 320 then
+               --if hCounter = 319 then
+                --  if vCounter mod 2 /= 1 then
+                --     address <= address - 639;
+               --   else
+           --           address <= address+1;
+               --   end if;
+           --    else
                   address <= address+1;
-               end if;
+           --    end if;
             end if;
-            if vCounter < 120 and hCounter  < 160 then
+            if vCounter < 160 and hCounter  < 320 then
                blank <= '0';
             else
 				blank <= '1';
@@ -102,61 +117,77 @@ begin
             vga_vSync <= not vsync_active;
          end if;
          
+         finished <= '0';
+         
          if vCounter = 0 and hCounter = 0 then
-			if cnt = 0 then
+			if mode /= "00" then
+				if cog = '0' then 
+					cog <= '1';
+				else
+					cog <= '0';
+					finished <= '1';
+					ledd <= not ledd;
+				end if;
+			end if;
+					
+			if cnt < 100 then
 				lasth := 100;
 				lastv := 100;
             else
 				lasth := hSum / cnt;
 				lastv := vSum / cnt;
+				x <= conv_std_logic_vector(lasth, 9);
+				y <= conv_std_logic_vector(lastv, 9);
 			end if;
             hSum := 0;
             vSum := 0;
             cnt := 0;
+            count := 0;
 		end if;
          
          if blank = '0' then
-            if hCounter <= lasth + 5 and hCounter >= lasth - 5 and vCounter <= lastv + 5 and vCounter >= lastv - 5 then
+            if hCounter <= lasth + 3 and hCounter >= lasth - 3 and vCounter <= lastv + 3 and vCounter >= lastv - 3 then
               r  <= (others => '0');
               g  <= (others => '1');
               b  <= (others => '0');
-            elsif hCounter = 100 or hCounter = 400 then
-				r   <= (others => '1');
-				g   <= (others => '1');
-				b   <= (others => '1');
---red packet			elsif unsigned(frame_pixel(15 downto 11)) < 31 and unsigned(frame_pixel(15 downto 11)) > 26 and unsigned(frame_pixel(10 downto 6)) > 24 and unsigned(frame_pixel(10 downto 6)) < 28 and unsigned(frame_pixel(4 downto 0)) > 25 then
-				elsif unsigned(frame_pixel(15 downto 11)) < 29 and unsigned(frame_pixel(15 downto 11)) > 20 then
-				
-				hSum := hSum + hCounter;
-                vSum := vSum + vCounter;
-                cnt := cnt + 1;
+			elsif mode = "01" and cog = '1' and unsigned(frame_pixel(15 downto 11)) < 28 and unsigned(frame_pixel(15 downto 11)) > 22 and  unsigned(frame_pixel(10 downto 6)) > 24 and unsigned(frame_pixel(10 downto 6)) < 30 and unsigned(frame_pixel(4 downto 0)) > 25 then
+				count := count + 1;
+				if (count >= 5) then
+					hSum := hSum + hCounter;
+					vSum := vSum + vCounter;
+					cnt := cnt + 1;
+				end if;
+				r  <= (others => '1');
+				g  <= (others => '0');
+				b  <= (others => '0');
+			elsif mode = "10" and cog = '1' and unsigned(frame_pixel(15 downto 11)) >= 29 then
+				count := count + 1;
+				if (count >= 5) then
+					hSum := hSum + hCounter;
+					vSum := vSum + vCounter;
+					cnt := cnt + 1;
+				end if;
 				r  <= (others => '1');
 				g  <= (others => '0');
 				b  <= (others => '0');
             else
-			----	r   <= (others => '0');
-			--	g   <= (others => '0');
+				count := 0;
+				r   <= (others => '0');
+				g   <= (others => '0');
 				b   <= (others => '0');
-            r   <= frame_pixel(15 downto 13);
-            g   <= frame_pixel(10 downto 8);
-            b   <= frame_pixel(4 downto 2);
+        --    r   <= frame_pixel(15 downto 13);
+        --    g   <= frame_pixel(10 downto 8);
+        --    b   <= frame_pixel(4 downto 2);
             end if;
          else
+			count := 0;
             r   <= (others => '0');
             g   <= (others => '0');
             b   <= (others => '0');
          end if;
-         
-         
          vga_red <= std_logic_vector(r(2 downto 0));
          vga_green <= std_logic_vector(g(2 downto 0));
          vga_blue <= std_logic_vector(b(2 downto 0));
       end if;
 	end process;
-	process(blank)
-    begin
-		
-		
-         
-   end process;
 end Behavioral;

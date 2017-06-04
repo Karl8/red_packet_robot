@@ -19,14 +19,16 @@ entity ov7670_top is
       OV7670_XCLK  : out   STD_LOGIC;
       OV7670_D     : in    STD_LOGIC_VECTOR(7 downto 0);
 
-      LED          : out    STD_LOGIC_VECTOR(7 downto 0);
-		ledd: out std_logic;
+      led          : out    STD_LOGIC;
       vga_red      : out   STD_LOGIC_VECTOR(2 downto 0);
       vga_green    : out   STD_LOGIC_VECTOR(2 downto 0);
       vga_blue     : out   STD_LOGIC_VECTOR(2 downto 0);
       vga_hsync    : out   STD_LOGIC;
       vga_vsync    : out   STD_LOGIC;
-      
+      mode        : in  STD_LOGIC_VECTOR(1 downto 0); 
+	  finished    : out STD_LOGIC;
+	  x           : out STD_LOGIC_VECTOR(8 downto 0);
+	  y           : out STD_LOGIC_VECTOR(8 downto 0);
       btn           : in    STD_LOGIC
     );
 end ov7670_top;
@@ -71,7 +73,6 @@ architecture Behavioral of ov7670_top is
       pclk : IN std_logic;
       vsync : IN std_logic;
       href  : IN std_logic;
-		led:out std_logic;
       d     : IN std_logic_vector(7 downto 0);          
       addr  : OUT std_logic_vector(14 downto 0);
       dout  : OUT std_logic_vector(15 downto 0);
@@ -90,7 +91,12 @@ architecture Behavioral of ov7670_top is
       vga_vsync : OUT std_logic;
       
       frame_addr : OUT std_logic_vector(14 downto 0);
-      frame_pixel : IN std_logic_vector(15 downto 0)         
+      frame_pixel : IN std_logic_vector(15 downto 0);
+      mode        : in  STD_LOGIC_VECTOR(1 downto 0); 
+	  finished    : out STD_LOGIC;
+	  x           : out STD_LOGIC_VECTOR(8 downto 0);
+	  y           : out STD_LOGIC_VECTOR(8 downto 0);
+	  led         : out STD_LOGIC    
       );
    END COMPONENT;
    
@@ -126,7 +132,12 @@ btn_debounce: debounce PORT MAP(
       vga_hsync   => vga_hsync,
       vga_vsync   => vga_vsync,
       frame_addr  => frame_addr,
-      frame_pixel => frame_pixel
+      frame_pixel => frame_pixel,
+      mode        => mode, 
+	  finished    => finished,
+	  x           => x,
+	  y           => y,
+	  led         => led
    );
 
 fb : frame_buffer
@@ -139,14 +150,11 @@ fb : frame_buffer
     rdclock  => clk50,
     rdaddress => frame_addr,
     q => frame_pixel
-  );
-  led <= "0000000" & config_finished;
-  
+  );  
 capture: ov7670_capture PORT MAP(
       pclk  => OV7670_PCLK,
       vsync => OV7670_VSYNC,
       href  => OV7670_HREF,
-		led => ledd,
       d     => OV7670_D,
       addr  => capture_addr,
       dout  => capture_data,

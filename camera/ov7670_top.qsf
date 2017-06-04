@@ -87,3 +87,7 @@ set_global_assignment -name MISC_FILE "C:/Users/kaer/Desktop/jjx_ov_7670/ov7670_
 set_global_assignment -name CDF_FILE Chain1.cdf
 set_global_assignment -name CDF_FILE Chain3.cdf
 set_global_assignment -name CDF_FILE Chain4.cdf
+set_global_assignment -name MISC_FILE "D:/code/vhdl/red_packet_robot/camera/ov7670_top.dpf"
+set_location_assignment PIN_AC7 -to led
+set_location_assignment PIN_AD4 -to mode[1]
+set_location_assignment PIN_AD5 -to mode[0]
