@@ -91,3 +91,4 @@ set_global_assignment -name MISC_FILE "D:/code/vhdl/red_packet_robot/camera/ov76
 set_location_assignment PIN_AC7 -to led
 set_location_assignment PIN_AD4 -to mode[1]
 set_location_assignment PIN_AD5 -to mode[0]
+set_global_assignment -name VHDL_FILE new_top.vhd

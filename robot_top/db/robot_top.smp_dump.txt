@@ -1,0 +1,6 @@
+
+State Machine - |robot_top|logic:lg|state
+Name state.s_act state.s_cam state.s_idle 
+state.s_idle 0 0 0 
+state.s_cam 0 1 1 
+state.s_act 1 0 1 

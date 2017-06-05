@@ -172,12 +172,12 @@ begin
 				b  <= (others => '0');
             else
 				count := 0;
-				r   <= (others => '0');
-				g   <= (others => '0');
-				b   <= (others => '0');
-        --    r   <= frame_pixel(15 downto 13);
-        --    g   <= frame_pixel(10 downto 8);
-        --    b   <= frame_pixel(4 downto 2);
+		--		r   <= (others => '0');
+		--		g   <= (others => '0');
+		--		b   <= (others => '0');
+            r   <= frame_pixel(15 downto 13);
+            g   <= frame_pixel(10 downto 8);
+            b   <= frame_pixel(4 downto 2);
             end if;
          else
 			count := 0;

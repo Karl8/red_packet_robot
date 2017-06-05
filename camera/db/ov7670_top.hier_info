@@ -1,4 +1,58 @@
 |ov7670_top
+clk100 => new_top:top.clk100
+OV7670_SIOC <= new_top:top.OV7670_SIOC
+OV7670_SIOD <= new_top:top.OV7670_SIOD
+OV7670_RESET <= new_top:top.OV7670_RESET
+OV7670_PWDN <= new_top:top.OV7670_PWDN
+OV7670_VSYNC => new_top:top.OV7670_VSYNC
+OV7670_HREF => new_top:top.OV7670_HREF
+OV7670_PCLK => new_top:top.OV7670_PCLK
+OV7670_XCLK <= new_top:top.OV7670_XCLK
+OV7670_D[0] => new_top:top.OV7670_D[0]
+OV7670_D[1] => new_top:top.OV7670_D[1]
+OV7670_D[2] => new_top:top.OV7670_D[2]
+OV7670_D[3] => new_top:top.OV7670_D[3]
+OV7670_D[4] => new_top:top.OV7670_D[4]
+OV7670_D[5] => new_top:top.OV7670_D[5]
+OV7670_D[6] => new_top:top.OV7670_D[6]
+OV7670_D[7] => new_top:top.OV7670_D[7]
+led <= new_top:top.led
+vga_red[0] <= new_top:top.vga_red[0]
+vga_red[1] <= new_top:top.vga_red[1]
+vga_red[2] <= new_top:top.vga_red[2]
+vga_green[0] <= new_top:top.vga_green[0]
+vga_green[1] <= new_top:top.vga_green[1]
+vga_green[2] <= new_top:top.vga_green[2]
+vga_blue[0] <= new_top:top.vga_blue[0]
+vga_blue[1] <= new_top:top.vga_blue[1]
+vga_blue[2] <= new_top:top.vga_blue[2]
+vga_hsync <= new_top:top.vga_hsync
+vga_vsync <= new_top:top.vga_vsync
+mode[0] => new_top:top.mode[0]
+mode[1] => new_top:top.mode[1]
+finished <= new_top:top.finished
+x[0] <= new_top:top.x[0]
+x[1] <= new_top:top.x[1]
+x[2] <= new_top:top.x[2]
+x[3] <= new_top:top.x[3]
+x[4] <= new_top:top.x[4]
+x[5] <= new_top:top.x[5]
+x[6] <= new_top:top.x[6]
+x[7] <= new_top:top.x[7]
+x[8] <= new_top:top.x[8]
+y[0] <= new_top:top.y[0]
+y[1] <= new_top:top.y[1]
+y[2] <= new_top:top.y[2]
+y[3] <= new_top:top.y[3]
+y[4] <= new_top:top.y[4]
+y[5] <= new_top:top.y[5]
+y[6] <= new_top:top.y[6]
+y[7] <= new_top:top.y[7]
+y[8] <= new_top:top.y[8]
+btn => new_top:top.btn
+
+
+|ov7670_top|new_top:top
 clk100 => clk50.CLK
 OV7670_SIOC <= ov7670_controller:controller.sioc
 OV7670_SIOD <= ov7670_controller:controller.siod
@@ -53,7 +107,7 @@ y[8] <= vga:Inst_vga.y[8]
 btn => debounce:btn_debounce.i
 
 
-|ov7670_top|debounce:btn_debounce
+|ov7670_top|new_top:top|debounce:btn_debounce
 clk => o~reg0.CLK
 clk => c[23].CLK
 clk => c[22].CLK
@@ -107,7 +161,7 @@ i => o~0.OUTPUTSELECT
 o <= o~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ov7670_top|vga:Inst_vga
+|ov7670_top|new_top:top|vga:Inst_vga
 clk50 => clk25.CLK
 vga_red[0] <= vga_red[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vga_red[1] <= vga_red[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -137,18 +191,24 @@ frame_addr[13] <= address[14].DB_MAX_OUTPUT_PORT_TYPE
 frame_addr[14] <= address[15].DB_MAX_OUTPUT_PORT_TYPE
 frame_pixel[0] => LessThan16.IN10
 frame_pixel[1] => LessThan16.IN9
+frame_pixel[2] => b~2.DATAA
 frame_pixel[2] => LessThan16.IN8
+frame_pixel[3] => b~1.DATAA
 frame_pixel[3] => LessThan16.IN7
+frame_pixel[4] => b~0.DATAA
 frame_pixel[4] => LessThan16.IN6
 frame_pixel[5] => ~NO_FANOUT~
 frame_pixel[6] => LessThan15.IN10
 frame_pixel[6] => LessThan14.IN10
 frame_pixel[7] => LessThan15.IN9
 frame_pixel[7] => LessThan14.IN9
+frame_pixel[8] => g~2.DATAA
 frame_pixel[8] => LessThan15.IN8
 frame_pixel[8] => LessThan14.IN8
+frame_pixel[9] => g~1.DATAA
 frame_pixel[9] => LessThan15.IN7
 frame_pixel[9] => LessThan14.IN7
+frame_pixel[10] => g~0.DATAA
 frame_pixel[10] => LessThan15.IN6
 frame_pixel[10] => LessThan14.IN6
 frame_pixel[11] => LessThan17.IN10
@@ -157,12 +217,15 @@ frame_pixel[11] => LessThan12.IN10
 frame_pixel[12] => LessThan17.IN9
 frame_pixel[12] => LessThan13.IN9
 frame_pixel[12] => LessThan12.IN9
+frame_pixel[13] => r~2.DATAA
 frame_pixel[13] => LessThan17.IN8
 frame_pixel[13] => LessThan13.IN8
 frame_pixel[13] => LessThan12.IN8
+frame_pixel[14] => r~1.DATAA
 frame_pixel[14] => LessThan17.IN7
 frame_pixel[14] => LessThan13.IN7
 frame_pixel[14] => LessThan12.IN7
+frame_pixel[15] => r~0.DATAA
 frame_pixel[15] => LessThan17.IN6
 frame_pixel[15] => LessThan13.IN6
 frame_pixel[15] => LessThan12.IN6
@@ -194,7 +257,7 @@ y[8] <= y[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 led <= ledd.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ov7670_top|frame_buffer:fb
+|ov7670_top|new_top:top|frame_buffer:fb
 data[0] => altsyncram:altsyncram_component.data_a[0]
 data[1] => altsyncram:altsyncram_component.data_a[1]
 data[2] => altsyncram:altsyncram_component.data_a[2]
@@ -262,7 +325,7 @@ q[14] <= altsyncram:altsyncram_component.q_b[14]
 q[15] <= altsyncram:altsyncram_component.q_b[15]
 
 
-|ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component
+|ov7670_top|new_top:top|frame_buffer:fb|altsyncram:altsyncram_component
 wren_a => altsyncram_cmk1:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -378,7 +441,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated
+|ov7670_top|new_top:top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated
 address_a[0] => altsyncram_nhs1:altsyncram1.address_b[0]
 address_a[1] => altsyncram_nhs1:altsyncram1.address_b[1]
 address_a[2] => altsyncram_nhs1:altsyncram1.address_b[2]
@@ -447,7 +510,7 @@ wren_a => altsyncram_nhs1:altsyncram1.clocken1
 wren_a => altsyncram_nhs1:altsyncram1.wren_b
 
 
-|ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1
+|ov7670_top|new_top:top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1
 address_a[0] => ram_block2a0.PORTAADDR
 address_a[0] => ram_block2a1.PORTAADDR
 address_a[0] => ram_block2a2.PORTAADDR
@@ -4096,7 +4159,7 @@ wren_a => decode_9oa:decode3.enable
 wren_b => decode_9oa:decode4.enable
 
 
-|ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode3
+|ov7670_top|new_top:top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode3
 data[0] => w_anode874w[1].IN1
 data[0] => w_anode894w[1].IN1
 data[0] => w_anode914w[1].IN1
@@ -4127,7 +4190,7 @@ eq[6] <= w_anode924w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode934w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4
+|ov7670_top|new_top:top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4
 data[0] => w_anode874w[1].IN1
 data[0] => w_anode894w[1].IN1
 data[0] => w_anode914w[1].IN1
@@ -4158,7 +4221,7 @@ eq[6] <= w_anode924w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode934w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a
+|ov7670_top|new_top:top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a
 data[0] => w_anode874w[1].IN1
 data[0] => w_anode894w[1].IN1
 data[0] => w_anode914w[1].IN1
@@ -4189,7 +4252,7 @@ eq[6] <= w_anode924w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode934w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b
+|ov7670_top|new_top:top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b
 data[0] => w_anode874w[1].IN1
 data[0] => w_anode894w[1].IN1
 data[0] => w_anode914w[1].IN1
@@ -4220,7 +4283,7 @@ eq[6] <= w_anode924w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode934w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|mux_8kb:mux5
+|ov7670_top|new_top:top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|mux_8kb:mux5
 result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
 result[1] <= result_node[1].DB_MAX_OUTPUT_PORT_TYPE
 result[2] <= result_node[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -4239,7 +4302,7 @@ result[14] <= result_node[14].DB_MAX_OUTPUT_PORT_TYPE
 result[15] <= result_node[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ov7670_top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|mux_8kb:mux6
+|ov7670_top|new_top:top|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|mux_8kb:mux6
 result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
 result[1] <= result_node[1].DB_MAX_OUTPUT_PORT_TYPE
 result[2] <= result_node[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -4258,7 +4321,7 @@ result[14] <= result_node[14].DB_MAX_OUTPUT_PORT_TYPE
 result[15] <= result_node[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ov7670_top|ov7670_capture:capture
+|ov7670_top|new_top:top|ov7670_capture:capture
 pclk => num[31].CLK
 pclk => num[30].CLK
 pclk => num[29].CLK
@@ -4438,7 +4501,7 @@ led <= led~reg0.DB_MAX_OUTPUT_PORT_TYPE
 we <= we~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ov7670_top|ov7670_controller:controller
+|ov7670_top|new_top:top|ov7670_controller:controller
 clk => ov7670_registers:Inst_ov7670_registers.clk
 clk => sys_clk.CLK
 clk => i2c_sender:Inst_i2c_sender.clk
@@ -4451,7 +4514,7 @@ pwdn <= <GND>
 xclk <= sys_clk.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ov7670_top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender
+|ov7670_top|new_top:top|ov7670_controller:controller|i2c_sender:Inst_i2c_sender
 clk => taken~reg0.CLK
 clk => sioc~reg0.CLK
 clk => data_sr[31].CLK
@@ -4628,7 +4691,7 @@ value[6] => data_sr~22.DATAB
 value[7] => data_sr~21.DATAB
 
 
-|ov7670_top|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers
+|ov7670_top|new_top:top|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers
 clk => address[7].CLK
 clk => address[6].CLK
 clk => address[5].CLK

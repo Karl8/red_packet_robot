@@ -23,7 +23,7 @@ entity vga is
 	  finished    : out STD_LOGIC;
 	  x           : out STD_LOGIC_VECTOR(8 downto 0);
 	  y           : out STD_LOGIC_VECTOR(8 downto 0);
-	  led         : out STD_LOGIC;
+	  led         : out STD_LOGIC
     );
 end vga;
 
