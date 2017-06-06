@@ -95,8 +95,7 @@ architecture Behavioral of ov7670_top is
       mode        : in  STD_LOGIC_VECTOR(1 downto 0); 
 	  finished    : out STD_LOGIC;
 	  x           : out STD_LOGIC_VECTOR(8 downto 0);
-	  y           : out STD_LOGIC_VECTOR(8 downto 0);
-	  led         : out STD_LOGIC    
+	  y           : out STD_LOGIC_VECTOR(8 downto 0)
       );
    END COMPONENT;
    
@@ -136,8 +135,7 @@ btn_debounce: debounce PORT MAP(
       mode        => mode, 
 	  finished    => finished,
 	  x           => x,
-	  y           => y,
-	  led         => led
+	  y           => y
    );
 
 fb : frame_buffer

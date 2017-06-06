@@ -32,6 +32,7 @@ begin
             case state is
                 when s_idle =>
                     mode <= "00";
+                    mode_cnt := "00";
                     if btn = '0' then state <= s_cam; mode_cnt := "01"; 
                     else state <= s_idle; end if;
                 when s_cam =>
@@ -42,7 +43,7 @@ begin
                     act <= '1';
                     if act_finished = '1' then
                         act <= '0';
-                        if mode_cnt = "11" then
+                        if mode_cnt = "10" then
                             state <= s_idle;
                         else state <= s_cam; mode_cnt := std_logic_vector(unsigned(mode_cnt) + 1); end if;
                     end if;

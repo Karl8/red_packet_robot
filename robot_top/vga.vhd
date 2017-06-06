@@ -22,8 +22,7 @@ entity vga is
       mode        : in  STD_LOGIC_VECTOR(1 downto 0); 
 	  finished    : out STD_LOGIC;
 	  x           : out STD_LOGIC_VECTOR(8 downto 0);
-	  y           : out STD_LOGIC_VECTOR(8 downto 0);
-	  led         : out STD_LOGIC
+	  y           : out STD_LOGIC_VECTOR(8 downto 0)
     );
 end vga;
 
@@ -56,7 +55,6 @@ architecture Behavioral of vga is
    shared variable lastv : integer := 0;
    
    
-   signal ledd: std_logic;
    signal clk25: std_logic := '0';
 begin
    frame_addr <= std_logic_vector(address(15 downto 1));
@@ -68,7 +66,6 @@ begin
 	end process;
    process(clk25)
    begin
-      led <= ledd;
       if rising_edge(clk25) then
          -- Count the lines and rows      
          if hCounter = hMaxCount-1 then
@@ -123,10 +120,9 @@ begin
 			if mode /= "00" then
 				if cog = '0' then 
 					cog <= '1';
-				else
+				elsif cnt >= 100 then
 					cog <= '0';
 					finished <= '1';
-					ledd <= not ledd;
 				end if;
 			end if;
 					
@@ -146,17 +142,24 @@ begin
 		end if;
          
          if blank = '0' then
-            if hCounter <= lasth + 3 and hCounter >= lasth - 3 and vCounter <= lastv + 3 and vCounter >= lastv - 3 then
+            if hCounter = 50 or hCounter = 100 or hCounter = 150 or hCounter = 200 or hCounter = 250 or hCounter = 300 or vCounter = 50 or vCounter = 100 or vCounter = 150 then
+				r  <= (others => '1');
+				g  <= (others => '1');
+				b  <= (others => '1');
+			
+            elsif hCounter <= lasth + 3 and hCounter >= lasth - 3 and vCounter <= lastv + 3 and vCounter >= lastv - 3 then
               r  <= (others => '0');
               g  <= (others => '1');
               b  <= (others => '0');
-			elsif mode = "01" and unsigned(frame_pixel(15 downto 11)) < 28 and unsigned(frame_pixel(15 downto 11)) > 22 and  unsigned(frame_pixel(10 downto 6)) > 24 and unsigned(frame_pixel(10 downto 6)) < 30 and unsigned(frame_pixel(4 downto 0)) > 25 then
-				count := count + 1;
-				if (count >= 5) then
-					hSum := hSum + hCounter;
-					vSum := vSum + vCounter;
-					cnt := cnt + 1;
-				end if;
+			elsif unsigned(frame_pixel(15 downto 11)) < 28 and unsigned(frame_pixel(15 downto 11)) > 22 and  unsigned(frame_pixel(10 downto 6)) > 24 and unsigned(frame_pixel(10 downto 6)) < 30 and unsigned(frame_pixel(4 downto 0)) > 25 then
+				--if mode = "01" then
+					count := count + 1;
+					if (count >= 5) then
+						hSum := hSum + hCounter;
+						vSum := vSum + vCounter;
+						cnt := cnt + 1;
+					end if;
+				--end if; 
 				r  <= (others => '1');
 				g  <= (others => '0');
 				b  <= (others => '0');

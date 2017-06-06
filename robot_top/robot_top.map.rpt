@@ -1,5 +1,5 @@
 Analysis & Synthesis report for robot_top
-Mon Jun 05 23:31:55 2017
+Tue Jun 06 12:16:35 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -13,26 +13,28 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
   5. Analysis & Synthesis Resource Usage Summary
   6. Analysis & Synthesis Resource Utilization by Entity
   7. Analysis & Synthesis RAM Summary
-  8. State Machine - |robot_top|logic:lg|state
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Registers Packed Into Inferred Megafunctions
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated
- 15. Source assignments for ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1
- 16. Source assignments for ov7670_top:cam|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_4vv:auto_generated
- 17. Parameter Settings for User Entity Instance: ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component
- 18. Parameter Settings for Inferred Entity Instance: ov7670_top:cam|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0
- 19. Parameter Settings for Inferred Entity Instance: ov7670_top:cam|vga:Inst_vga|lpm_divide:Div1
- 20. Parameter Settings for Inferred Entity Instance: ov7670_top:cam|vga:Inst_vga|lpm_divide:Div0
- 21. altsyncram Parameter Settings by Entity Instance
- 22. Port Connectivity Checks: "logic:lg"
- 23. Port Connectivity Checks: "ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender"
- 24. Port Connectivity Checks: "ov7670_top:cam|ov7670_controller:controller"
- 25. Port Connectivity Checks: "ov7670_top:cam|ov7670_capture:capture"
- 26. Port Connectivity Checks: "ov7670_top:cam"
- 27. Analysis & Synthesis Messages
+  8. State Machine - |robot_top|action:arm|state
+  9. State Machine - |robot_top|action:arm|transfer:tran|state
+ 10. State Machine - |robot_top|logic:lg|state
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Registers Packed Into Inferred Megafunctions
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated
+ 17. Source assignments for ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1
+ 18. Source assignments for ov7670_top:cam|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_4vv:auto_generated
+ 19. Parameter Settings for User Entity Instance: ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component
+ 20. Parameter Settings for User Entity Instance: action:arm|transfer:tran
+ 21. Parameter Settings for Inferred Entity Instance: ov7670_top:cam|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0
+ 22. Parameter Settings for Inferred Entity Instance: ov7670_top:cam|vga:Inst_vga|lpm_divide:Div1
+ 23. Parameter Settings for Inferred Entity Instance: ov7670_top:cam|vga:Inst_vga|lpm_divide:Div0
+ 24. altsyncram Parameter Settings by Entity Instance
+ 25. Port Connectivity Checks: "ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender"
+ 26. Port Connectivity Checks: "ov7670_top:cam|ov7670_controller:controller"
+ 27. Port Connectivity Checks: "ov7670_top:cam|ov7670_capture:capture"
+ 28. Port Connectivity Checks: "ov7670_top:cam"
+ 29. Analysis & Synthesis Messages
 
 
 
@@ -58,15 +60,15 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 05 23:31:55 2017    ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 06 12:16:35 2017    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; robot_top                                ;
 ; Top-level Entity Name              ; robot_top                                ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 3,563                                    ;
-;     Total combinational functions  ; 3,523                                    ;
-;     Dedicated logic registers      ; 461                                      ;
-; Total registers                    ; 461                                      ;
+; Total logic elements               ; 4,003                                    ;
+;     Total combinational functions  ; 3,963                                    ;
+;     Dedicated logic registers      ; 681                                      ;
+; Total registers                    ; 681                                      ;
 ; Total pins                         ; 35                                       ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 462,848                                  ;
@@ -179,6 +181,9 @@ applicable agreement for further details.
 ; i2c_sender.vhd                   ; yes             ; Auto-Found VHDL File              ; D:/code/vhdl/red_packet_robot/robot_top/i2c_sender.vhd             ;
 ; ov7670_registers.vhd             ; yes             ; Auto-Found VHDL File              ; D:/code/vhdl/red_packet_robot/robot_top/ov7670_registers.vhd       ;
 ; logic.vhd                        ; yes             ; Auto-Found VHDL File              ; D:/code/vhdl/red_packet_robot/robot_top/logic.vhd                  ;
+; action.vhd                       ; yes             ; Auto-Found VHDL File              ; D:/code/vhdl/red_packet_robot/robot_top/action.vhd                 ;
+; baud.vhd                         ; yes             ; Auto-Found VHDL File              ; D:/code/vhdl/red_packet_robot/robot_top/baud.vhd                   ;
+; transfer.vhd                     ; yes             ; Auto-Found VHDL File              ; D:/code/vhdl/red_packet_robot/robot_top/transfer.vhd               ;
 ; db/altsyncram_4vv.tdf            ; yes             ; Auto-Generated Megafunction       ; D:/code/vhdl/red_packet_robot/robot_top/db/altsyncram_4vv.tdf      ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                      ; d:/altera/90/quartus/libraries/megafunctions/lpm_divide.tdf        ;
 ; abs_divider.inc                  ; yes             ; Megafunction                      ; d:/altera/90/quartus/libraries/megafunctions/abs_divider.inc       ;
@@ -197,28 +202,28 @@ applicable agreement for further details.
 +---------------------------------------------+-----------------------------------+
 ; Resource                                    ; Usage                             ;
 +---------------------------------------------+-----------------------------------+
-; Estimated Total logic elements              ; 3,563                             ;
+; Estimated Total logic elements              ; 4,003                             ;
 ;                                             ;                                   ;
-; Total combinational functions               ; 3523                              ;
+; Total combinational functions               ; 3963                              ;
 ; Logic element usage by number of LUT inputs ;                                   ;
-;     -- 4 input functions                    ; 1377                              ;
-;     -- 3 input functions                    ; 1615                              ;
-;     -- <=2 input functions                  ; 531                               ;
+;     -- 4 input functions                    ; 1547                              ;
+;     -- 3 input functions                    ; 1623                              ;
+;     -- <=2 input functions                  ; 793                               ;
 ;                                             ;                                   ;
 ; Logic elements by mode                      ;                                   ;
-;     -- normal mode                          ; 1791                              ;
-;     -- arithmetic mode                      ; 1732                              ;
+;     -- normal mode                          ; 2072                              ;
+;     -- arithmetic mode                      ; 1891                              ;
 ;                                             ;                                   ;
-; Total registers                             ; 461                               ;
-;     -- Dedicated logic registers            ; 461                               ;
+; Total registers                             ; 681                               ;
+;     -- Dedicated logic registers            ; 681                               ;
 ;     -- I/O registers                        ; 0                                 ;
 ;                                             ;                                   ;
 ; I/O pins                                    ; 35                                ;
 ; Total memory bits                           ; 462848                            ;
 ; Maximum fan-out node                        ; ov7670_top:cam|vga:Inst_vga|clk25 ;
-; Maximum fan-out                             ; 297                               ;
-; Total fan-out                               ; 16102                             ;
-; Average fan-out                             ; 3.88                              ;
+; Maximum fan-out                             ; 312                               ;
+; Total fan-out                               ; 18078                             ;
+; Average fan-out                             ; 3.76                              ;
 +---------------------------------------------+-----------------------------------+
 
 
@@ -227,36 +232,39 @@ applicable agreement for further details.
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                      ; Library Name ;
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |robot_top                                        ; 3523 (0)          ; 461 (0)      ; 462848      ; 0            ; 0       ; 0         ; 35   ; 0            ; |robot_top                                                                                                                                               ; work         ;
-;    |logic:lg|                                     ; 11 (11)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|logic:lg                                                                                                                                      ; work         ;
-;    |ov7670_top:cam|                               ; 3512 (1)          ; 454 (1)      ; 462848      ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam                                                                                                                                ; work         ;
+; |robot_top                                        ; 3963 (0)          ; 681 (0)      ; 462848      ; 0            ; 0       ; 0         ; 35   ; 0            ; |robot_top                                                                                                                                               ; work         ;
+;    |action:arm|                                   ; 417 (179)         ; 204 (87)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|action:arm                                                                                                                                    ; work         ;
+;       |baud:bd|                                   ; 75 (75)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|action:arm|baud:bd                                                                                                                            ; work         ;
+;       |transfer:tran|                             ; 163 (163)         ; 84 (84)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|action:arm|transfer:tran                                                                                                                      ; work         ;
+;    |logic:lg|                                     ; 13 (13)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|logic:lg                                                                                                                                      ; work         ;
+;    |ov7670_top:cam|                               ; 3533 (1)          ; 469 (1)      ; 462848      ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam                                                                                                                                ; work         ;
 ;       |debounce:btn_debounce|                     ; 32 (32)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|debounce:btn_debounce                                                                                                          ; work         ;
-;       |frame_buffer:fb|                           ; 87 (0)            ; 6 (0)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|frame_buffer:fb                                                                                                                ; work         ;
-;          |altsyncram:altsyncram_component|        ; 87 (0)            ; 6 (0)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component                                                                                ; work         ;
-;             |altsyncram_cmk1:auto_generated|      ; 87 (0)            ; 6 (0)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated                                                 ; work         ;
-;                |altsyncram_nhs1:altsyncram1|      ; 87 (0)            ; 6 (6)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1                     ; work         ;
+;       |frame_buffer:fb|                           ; 84 (0)            ; 6 (0)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|frame_buffer:fb                                                                                                                ; work         ;
+;          |altsyncram:altsyncram_component|        ; 84 (0)            ; 6 (0)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component                                                                                ; work         ;
+;             |altsyncram_cmk1:auto_generated|      ; 84 (0)            ; 6 (0)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated                                                 ; work         ;
+;                |altsyncram_nhs1:altsyncram1|      ; 84 (0)            ; 6 (6)        ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1                     ; work         ;
 ;                   |decode_9oa:decode4|            ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode4  ; work         ;
 ;                   |decode_9oa:decode_a|           ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_a ; work         ;
 ;                   |decode_9oa:decode_b|           ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|decode_9oa:decode_b ; work         ;
-;                   |mux_8kb:mux5|                  ; 63 (63)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|mux_8kb:mux5        ; work         ;
+;                   |mux_8kb:mux5|                  ; 60 (60)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|mux_8kb:mux5        ; work         ;
 ;       |ov7670_capture:capture|                    ; 24 (24)           ; 43 (43)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|ov7670_capture:capture                                                                                                         ; work         ;
 ;       |ov7670_controller:controller|              ; 102 (1)           ; 82 (1)       ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|ov7670_controller:controller                                                                                                   ; work         ;
 ;          |i2c_sender:Inst_i2c_sender|             ; 88 (88)           ; 73 (73)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender                                                                        ; work         ;
 ;          |ov7670_registers:Inst_ov7670_registers| ; 13 (13)           ; 8 (8)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers                                                            ; work         ;
 ;             |altsyncram:Mux0_rtl_0|               ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0                                      ; work         ;
 ;                |altsyncram_4vv:auto_generated|    ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_4vv:auto_generated        ; work         ;
-;       |vga:Inst_vga|                              ; 3266 (902)        ; 297 (297)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga                                                                                                                   ; work         ;
-;          |lpm_divide:Div0|                        ; 1181 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div0                                                                                                   ; work         ;
-;             |lpm_divide_nto:auto_generated|       ; 1181 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated                                                                     ; work         ;
-;                |abs_divider_4dg:divider|          ; 1181 (33)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider                                             ; work         ;
+;       |vga:Inst_vga|                              ; 3290 (910)        ; 312 (312)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga                                                                                                                   ; work         ;
+;          |lpm_divide:Div0|                        ; 1189 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div0                                                                                                   ; work         ;
+;             |lpm_divide_nto:auto_generated|       ; 1189 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated                                                                     ; work         ;
+;                |abs_divider_4dg:divider|          ; 1189 (41)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider                                             ; work         ;
 ;                   |alt_u_div_k5f:divider|         ; 1085 (1082)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider                       ; work         ;
 ;                      |add_sub_lkc:add_sub_0|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|add_sub_lkc:add_sub_0 ; work         ;
 ;                      |add_sub_mkc:add_sub_1|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|add_sub_mkc:add_sub_1 ; work         ;
 ;                   |lpm_abs_0s9:my_abs_den|        ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|lpm_abs_0s9:my_abs_den                      ; work         ;
 ;                   |lpm_abs_0s9:my_abs_num|        ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|lpm_abs_0s9:my_abs_num                      ; work         ;
-;          |lpm_divide:Div1|                        ; 1183 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div1                                                                                                   ; work         ;
-;             |lpm_divide_nto:auto_generated|       ; 1183 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div1|lpm_divide_nto:auto_generated                                                                     ; work         ;
-;                |abs_divider_4dg:divider|          ; 1183 (33)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider                                             ; work         ;
+;          |lpm_divide:Div1|                        ; 1191 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div1                                                                                                   ; work         ;
+;             |lpm_divide_nto:auto_generated|       ; 1191 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div1|lpm_divide_nto:auto_generated                                                                     ; work         ;
+;                |abs_divider_4dg:divider|          ; 1191 (41)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider                                             ; work         ;
 ;                   |alt_u_div_k5f:divider|         ; 1085 (1082)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider                       ; work         ;
 ;                      |add_sub_lkc:add_sub_0|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|add_sub_lkc:add_sub_0 ; work         ;
 ;                      |add_sub_mkc:add_sub_1|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|add_sub_mkc:add_sub_1 ; work         ;
@@ -274,6 +282,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ALTSYNCRAM              ; AUTO ; True Dual Port ; 32768        ; 16           ; 32768        ; 16           ; 524288 ; None                         ;
 ; ov7670_top:cam|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0|altsyncram_4vv:auto_generated|ALTSYNCRAM ; AUTO ; ROM            ; 256          ; 16           ; --           ; --           ; 4096   ; robot_top.robot_top0.rtl.mif ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------+
+; State Machine - |robot_top|action:arm|state                                           ;
++--------------+-------------+--------------+--------------+-------------+--------------+
+; Name         ; state.s_end ; state.s_wait ; state.s_tran ; state.s_cal ; state.s_idle ;
++--------------+-------------+--------------+--------------+-------------+--------------+
+; state.s_idle ; 0           ; 0            ; 0            ; 0           ; 0            ;
+; state.s_cal  ; 0           ; 0            ; 0            ; 1           ; 1            ;
+; state.s_tran ; 0           ; 0            ; 1            ; 0           ; 1            ;
+; state.s_wait ; 0           ; 1            ; 0            ; 0           ; 1            ;
+; state.s_end  ; 1           ; 0            ; 0            ; 0           ; 1            ;
++--------------+-------------+--------------+--------------+-------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |robot_top|action:arm|transfer:tran|state                                  ;
++---------------+--------------+---------------+--------------+---------------+--------------+
+; Name          ; state.x_stop ; state.x_shift ; state.x_wait ; state.x_start ; state.x_idle ;
++---------------+--------------+---------------+--------------+---------------+--------------+
+; state.x_idle  ; 0            ; 0             ; 0            ; 0             ; 0            ;
+; state.x_start ; 0            ; 0             ; 0            ; 1             ; 1            ;
+; state.x_wait  ; 0            ; 0             ; 1            ; 0             ; 1            ;
+; state.x_shift ; 0            ; 1             ; 0            ; 0             ; 1            ;
+; state.x_stop  ; 1            ; 0             ; 0            ; 0             ; 1            ;
++---------------+--------------+---------------+--------------+---------------+--------------+
 
 
 Encoding Type:  One-Hot
@@ -301,9 +337,13 @@ Encoding Type:  One-Hot
 ; ov7670_top:cam|ov7670_capture:capture|dout[3]                                     ; Merged with ov7670_top:cam|ov7670_capture:capture|hold_red[0]   ;
 ; ov7670_top:cam|ov7670_capture:capture|dout[2]                                     ; Merged with ov7670_top:cam|ov7670_capture:capture|hold_green[2] ;
 ; ov7670_top:cam|ov7670_capture:capture|dout[1]                                     ; Merged with ov7670_top:cam|ov7670_capture:capture|hold_green[1] ;
+; action:arm|buf2[0..6]                                                             ; Merged with action:arm|buf2[7]                                  ;
+; action:arm|buf3[0..7]                                                             ; Merged with action:arm|buf2[7]                                  ;
+; action:arm|buf4[0..7]                                                             ; Merged with action:arm|buf2[7]                                  ;
+; action:arm|buf2[7]                                                                ; Stuck at VCC due to stuck port data_in                          ;
 ; ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[0] ; Stuck at VCC due to stuck port data_in                          ;
 ; ov7670_top:cam|vga:Inst_vga|address[16]                                           ; Lost fanout                                                     ;
-; Total Number of Removed Registers = 10                                            ;                                                                 ;
+; Total Number of Removed Registers = 34                                            ;                                                                 ;
 +-----------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 
@@ -312,12 +352,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 461   ;
-; Number of registers using Synchronous Clear  ; 54    ;
-; Number of registers using Synchronous Load   ; 112   ;
-; Number of registers using Asynchronous Clear ; 7     ;
+; Total registers                              ; 681   ;
+; Number of registers using Synchronous Clear  ; 86    ;
+; Number of registers using Synchronous Load   ; 144   ;
+; Number of registers using Asynchronous Clear ; 117   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 117   ;
+; Number of registers using Clock Enable       ; 225   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -327,9 +367,11 @@ Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                  ; Fan out ;
 +------------------------------------------------------------------------------------+---------+
+; action:arm|transfer:tran|txds                                                      ; 2       ;
 ; ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|divider[0]  ; 4       ;
-; ov7670_top:cam|vga:Inst_vga|blank                                                  ; 44      ;
+; ov7670_top:cam|vga:Inst_vga|blank                                                  ; 12      ;
 ; ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[31] ; 1       ;
+; action:arm|transfer:tran|txd_done                                                  ; 7       ;
 ; ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[30] ; 1       ;
 ; ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[29] ; 1       ;
 ; ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[28] ; 1       ;
@@ -360,7 +402,7 @@ Encoding Type:  One-Hot
 ; ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[3]  ; 1       ;
 ; ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[2]  ; 1       ;
 ; ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[1]  ; 1       ;
-; Total number of inverted registers = 33                                            ;         ;
+; Total number of inverted registers = 35                                            ;         ;
 +------------------------------------------------------------------------------------+---------+
 
 
@@ -393,19 +435,25 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------+
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |robot_top|ov7670_top:cam|ov7670_capture:capture|address[0]                                   ;
-; 5:1                ; 31 bits   ; 93 LEs        ; 31 LEs               ; 62 LEs                 ; Yes        ; |robot_top|ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[14] ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |robot_top|ov7670_top:cam|ov7670_capture:capture|address[11]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |robot_top|action:arm|transfer:tran|cnt[0]                                                    ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |robot_top|action:arm|buf1[4]                                                                 ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 31 LEs               ; 62 LEs                 ; Yes        ; |robot_top|ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[19] ;
 ; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |robot_top|ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|divider[7]  ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |robot_top|ov7670_top:cam|vga:Inst_vga|count[3]                                               ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 18 LEs               ; 9 LEs                  ; Yes        ; |robot_top|ov7670_top:cam|vga:Inst_vga|b[2]                                                   ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |robot_top|ov7670_top:cam|vga:Inst_vga|cnt[17]                                                ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |robot_top|logic:lg|mode_cnt[1]                                                               ;
-; 5:1                ; 64 bits   ; 192 LEs       ; 64 LEs               ; 128 LEs                ; Yes        ; |robot_top|ov7670_top:cam|vga:Inst_vga|vSum[12]                                               ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; Yes        ; |robot_top|ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[22] ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |robot_top|ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[18] ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |robot_top|ov7670_top:cam|vga:Inst_vga|vCounter~53                                            ;
-; 3:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |robot_top|ov7670_top:cam|vga:Inst_vga|lasth~60                                               ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |robot_top|logic:lg|Selector1                                                                 ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |robot_top|action:arm|transfer:tran|xbitcnt[10]                                               ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |robot_top|ov7670_top:cam|vga:Inst_vga|count[31]                                              ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 27 LEs               ; 9 LEs                  ; Yes        ; |robot_top|ov7670_top:cam|vga:Inst_vga|g[0]                                                   ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |robot_top|ov7670_top:cam|vga:Inst_vga|cnt[13]                                                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |robot_top|action:arm|transfer:tran|buf[5]                                                    ;
+; 6:1                ; 64 bits   ; 256 LEs       ; 64 LEs               ; 192 LEs                ; Yes        ; |robot_top|ov7670_top:cam|vga:Inst_vga|hSum[31]                                               ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |robot_top|action:arm|transfer:tran|xcnt16[3]                                                 ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; Yes        ; |robot_top|ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[2]  ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |robot_top|ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|data_sr[10] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |robot_top|ov7670_top:cam|vga:Inst_vga|vCounter~52                                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |robot_top|action:arm|transfer:tran|state~6                                                   ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |robot_top|ov7670_top:cam|vga:Inst_vga|lasth~32                                               ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |robot_top|logic:lg|Selector3                                                                 ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |robot_top|action:arm|Selector36                                                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------+
 
 
@@ -492,6 +540,16 @@ Encoding Type:  One-Hot
 ; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                         ;
 ; CBXI_PARAMETER                     ; altsyncram_cmk1      ; Untyped                                         ;
 +------------------------------------+----------------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: action:arm|transfer:tran ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; framlent       ; 8     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -631,15 +689,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "logic:lg"                                                                           ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; act  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +----------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender" ;
 +----------+-------+----------+----------------------------------------------------------------------+
@@ -676,8 +725,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
-; x    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; y    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; led  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -687,20 +735,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Mon Jun 05 23:31:32 2017
+    Info: Processing started: Tue Jun 06 12:16:12 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off robot_top -c robot_top
 Warning: Using design file robot_top.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: robot_top-Behavioral
     Info: Found entity 1: robot_top
 Info: Elaborating entity "robot_top" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at robot_top.vhd(86): object "x" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at robot_top.vhd(87): object "y" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at robot_top.vhd(90): object "act" assigned a value but never read
 Warning: Using design file ov7670_top.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: ov7670_top-Behavioral
     Info: Found entity 1: ov7670_top
 Info: Elaborating entity "ov7670_top" for hierarchy "ov7670_top:cam"
-Warning (10036): Verilog HDL or VHDL warning at ov7670_top.vhd(110): object "config_finished" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at ov7670_top.vhd(22): used implicit default value for signal "led" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at ov7670_top.vhd(109): object "config_finished" assigned a value but never read
 Warning: Using design file debounce.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: debounce-Behavioral
     Info: Found entity 1: debounce
@@ -709,7 +755,6 @@ Warning: Using design file vga.vhd, which is not specified as a design file for 
     Info: Found design unit 1: vga-Behavioral
     Info: Found entity 1: vga
 Info: Elaborating entity "vga" for hierarchy "ov7670_top:cam|vga:Inst_vga"
-Warning (10492): VHDL Process Statement warning at vga.vhd(71): signal "ledd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning: Using design file frame_buffer.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: frame_buffer-SYN
     Info: Found entity 1: frame_buffer
@@ -769,6 +814,19 @@ Warning: Using design file logic.vhd, which is not specified as a design file fo
     Info: Found design unit 1: logic-behav
     Info: Found entity 1: logic
 Info: Elaborating entity "logic" for hierarchy "logic:lg"
+Warning: Using design file action.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: action-behave
+    Info: Found entity 1: action
+Info: Elaborating entity "action" for hierarchy "action:arm"
+Warning (10542): VHDL Variable Declaration warning at action.vhd(78): used initial value expression for variable "action_num" because variable was never assigned a value
+Warning: Using design file baud.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: baud-behave
+    Info: Found entity 1: baud
+Info: Elaborating entity "baud" for hierarchy "action:arm|baud:bd"
+Warning: Using design file transfer.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: transfer-behave
+    Info: Found entity 1: transfer
+Info: Elaborating entity "transfer" for hierarchy "action:arm|transfer:tran"
 Warning: Synthesized away the following node(s):
     Warning: Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a5"
@@ -842,21 +900,28 @@ Info: Found 1 design units, including 1 entities, in source file db/add_sub_mkc.
 Info: Found 1 design units, including 1 entities, in source file db/lpm_abs_0s9.tdf
     Info: Found entity 1: lpm_abs_0s9
 Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "OV7670_RESET" is stuck at VCC
     Warning (13410): Pin "OV7670_PWDN" is stuck at GND
+Critical Warning: Ignored Power-Up Level option on the following registers
+    Critical Warning: Register action:arm|baud:bd|cnt[31] will power up to Low
+    Critical Warning: Register action:arm|baud:bd|cnt[0] will power up to Low
 Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
     Info: Register "ov7670_top:cam|ov7670_capture:capture|dout[5]" lost all its fanouts during netlist optimizations.
     Info: Register "ov7670_top:cam|vga:Inst_vga|address[16]" lost all its fanouts during netlist optimizations.
-Info: Implemented 3855 device resources after synthesis - the final resource count might be different
+Warning: Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "af"
+Info: Implemented 4301 device resources after synthesis - the final resource count might be different
     Info: Implemented 16 input pins
     Info: Implemented 18 output pins
     Info: Implemented 1 bidirectional pins
-    Info: Implemented 3692 logic cells
+    Info: Implemented 4138 logic cells
     Info: Implemented 128 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 50 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 56 warnings
     Info: Peak virtual memory: 298 megabytes
-    Info: Processing ended: Mon Jun 05 23:31:55 2017
+    Info: Processing ended: Tue Jun 06 12:16:35 2017
     Info: Elapsed time: 00:00:23
     Info: Total CPU time (on all processors): 00:00:23
 

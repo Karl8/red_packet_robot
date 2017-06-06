@@ -10,6 +10,7 @@ entity robot_top is
     Port ( 
       clk100        : in    STD_LOGIC;
       reset			: in	std_logic;
+      -- camera
       OV7670_SIOC  : out   STD_LOGIC;
       OV7670_SIOD  : inout STD_LOGIC;
       OV7670_RESET : out   STD_LOGIC;
@@ -20,19 +21,24 @@ entity robot_top is
       OV7670_XCLK  : out   STD_LOGIC;
       OV7670_D     : in    STD_LOGIC_VECTOR(7 downto 0);
 
-      
       vga_red      : out   STD_LOGIC_VECTOR(2 downto 0);
       vga_green    : out   STD_LOGIC_VECTOR(2 downto 0);
       vga_blue     : out   STD_LOGIC_VECTOR(2 downto 0);
       vga_hsync    : out   STD_LOGIC;
       vga_vsync    : out   STD_LOGIC;
-      
+	  -- logic
       btn			: in std_logic;
-      
+      -- action
+	  txd			: out std_logic;
+      -- test
+      led_m1		: out std_logic;
+      led_m2		: out std_logic;
+      af			: in std_logic;
       
       -- RUBBISH
       TMDled          : out    STD_LOGIC;
        TMDbtn           : in    STD_LOGIC
+       
     );
 end robot_top;
 
@@ -77,7 +83,19 @@ component logic is
         m_cnt			: out std_logic_vector(1 downto 0)
     );
 end component;
-   
+  
+component action is
+	port(
+		clk				: in std_logic;
+		reset 			: in std_logic;
+		x				: in std_logic_vector(8 downto 0);
+		y				: in std_logic_vector(8 downto 0);
+		act				: in std_logic;
+		txd				: out std_logic;
+		finished		: out std_logic
+	);
+	end component action;
+	
 	signal mode        	: STD_LOGIC_VECTOR(1 downto 0); 
 	signal x           	: STD_LOGIC_VECTOR(8 downto 0);
 	signal y           	: STD_LOGIC_VECTOR(8 downto 0);
@@ -87,6 +105,11 @@ end component;
 	
 	signal  m_cnt		: std_logic_vector(1 downto 0);
 begin
+	led_m1 <= m_cnt(0);
+	led_m2 <= m_cnt(1);
+	--act_finished <= not af;
+
+
 	cam: ov7670_top
 		port map(
 	  clk100       	=> clk100,
@@ -122,5 +145,15 @@ begin
 		mode			=> mode,
 		act				=> act,
 		m_cnt			=> m_cnt
+	);
+	
+	arm : action port map(
+		clk				=> clk100,
+		reset			=> reset,
+		x				=> x,
+		y				=> y,
+		act				=> act,
+		txd				=> txd,
+		finished		=> act_finished
 	);
 end Behavioral;

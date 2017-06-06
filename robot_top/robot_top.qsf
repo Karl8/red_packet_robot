@@ -87,3 +87,4 @@ set_location_assignment PIN_AD5 -to af
 set_location_assignment PIN_N2 -to clk100
 set_location_assignment PIN_AC7 -to led_m1
 set_location_assignment PIN_AB8 -to led_m2
+set_location_assignment PIN_M2 -to txd

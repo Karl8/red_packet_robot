@@ -31,7 +31,7 @@ entity ov7670_top is
 	  y           : out STD_LOGIC_VECTOR(8 downto 0);
       btn           : in    STD_LOGIC
     );
-end new_top;
+end ov7670_top;
 
 architecture Behavioral of ov7670_top is
 
