@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Tue Jun 06 12:16:35 2017
+Analysis & Synthesis Status : Successful - Thu Jun 08 21:02:14 2017
 Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
 Revision Name : robot_top
 Top-level Entity Name : robot_top
 Family : Cyclone II
-Total logic elements : 4,003
-    Total combinational functions : 3,963
-    Dedicated logic registers : 681
-Total registers : 681
+Total logic elements : 4,044
+    Total combinational functions : 4,003
+    Dedicated logic registers : 696
+Total registers : 696
 Total pins : 35
 Total virtual pins : 0
 Total memory bits : 462,848

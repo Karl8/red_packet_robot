@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 11.478 ns
+Actual Time    : 10.586 ns
 From           : reset
-To             : action:arm|buf0[0]
+To             : action:arm|wait_time[31]
 From Clock     : --
 To Clock       : clk100
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 20.670 ns
-From           : ov7670_top:cam|ov7670_controller:controller|i2c_sender:Inst_i2c_sender|busy_sr[19]
-To             : OV7670_SIOD
+Actual Time    : 19.094 ns
+From           : ov7670_top:cam|vga:Inst_vga|vga_blue[1]
+To             : vga_blue[1]
 From Clock     : clk100
 To Clock       : --
 Failed Paths   : 0
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 1.062 ns
-From           : TMDbtn
-To             : ov7670_top:cam|debounce:btn_debounce|c[12]
+Actual Time    : -1.211 ns
+From           : reset
+To             : action:arm|transfer:tran|buf[1]
 From Clock     : --
 To Clock       : clk100
 Failed Paths   : 0
@@ -35,9 +35,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clk100'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 4.75 MHz ( period = 210.710 ns )
+Actual Time    : 4.85 MHz ( period = 206.300 ns )
 From           : ov7670_top:cam|vga:Inst_vga|cnt[31]
-To             : ov7670_top:cam|vga:Inst_vga|cnt[0]
+To             : ov7670_top:cam|vga:Inst_vga|cnt[22]
 From Clock     : clk100
 To Clock       : clk100
 Failed Paths   : 0
@@ -46,8 +46,8 @@ Type           : Clock Setup: 'OV7670_PCLK'
 Slack          : N/A
 Required Time  : None
 Actual Time    : Restricted to 163.03 MHz ( period = 6.134 ns )
-From           : ov7670_top:cam|ov7670_capture:capture|address[12]
-To             : ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a25~portb_address_reg11
+From           : ov7670_top:cam|ov7670_capture:capture|address[14]
+To             : ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a104~portb_address_reg11
 From Clock     : OV7670_PCLK
 To Clock       : OV7670_PCLK
 Failed Paths   : 0
@@ -60,17 +60,17 @@ From           : action:arm|buf0[0]
 To             : action:arm|transfer:tran|buf[0]
 From Clock     : clk100
 To Clock       : clk100
-Failed Paths   : 285
+Failed Paths   : 147
 
 Type           : Clock Hold: 'OV7670_PCLK'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : ov7670_top:cam|ov7670_capture:capture|hold_red[4]
-To             : ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a119~portb_datain_reg0
+From           : ov7670_top:cam|ov7670_capture:capture|dout[10]
+To             : ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component|altsyncram_cmk1:auto_generated|altsyncram_nhs1:altsyncram1|ram_block2a90~portb_datain_reg0
 From Clock     : OV7670_PCLK
 To Clock       : OV7670_PCLK
-Failed Paths   : 4
+Failed Paths   : 71
 
 Type           : Total number of failed paths
 Slack          : 
@@ -80,7 +80,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 289
+Failed Paths   : 218
 
 --------------------------------------------------------------------------------------
 

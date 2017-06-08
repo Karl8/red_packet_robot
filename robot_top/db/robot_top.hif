@@ -19,6 +19,102 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
+robot_top
+# storage
+db|robot_top.(0).cnf
+db|robot_top.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+robot_top.vhd
+2816f7436b6b6a2fbda030f9e0e3a01e
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
+}
+# lmf
+..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+ov7670_top
+# storage
+db|robot_top.(1).cnf
+db|robot_top.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+ov7670_top.vhd
+a4c5b21d89dd2b1e9c0b15a479a6254
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(ov7670_d)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(vga_red)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(vga_green)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(vga_blue)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(mode)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(x)
+8 downto 0
+PARAMETER_STRING
+USR
+ constraint(y)
+8 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+ov7670_top:cam
+}
+# lmf
+..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
 debounce
 # storage
 db|robot_top.(2).cnf
@@ -44,6 +140,73 @@ ON
 }
 # hierarchies {
 ov7670_top:cam|debounce:btn_debounce
+}
+# lmf
+..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+vga
+# storage
+db|robot_top.(3).cnf
+db|robot_top.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vga.vhd
+8c4f10d6dfaa434ff6bb5018e38b9b55
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(vga_red)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(vga_green)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(vga_blue)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(frame_addr)
+14 downto 0
+PARAMETER_STRING
+USR
+ constraint(frame_pixel)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(mode)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(x)
+8 downto 0
+PARAMETER_STRING
+USR
+ constraint(y)
+8 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+ov7670_top:cam|vga:Inst_vga
 }
 # lmf
 ..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
@@ -512,24 +675,24 @@ address_a0
 3
 }
 # include_file {
-..|..|..|..|altera|90|quartus|libraries|megafunctions|altdpram.inc
-99d442b5b66c88db4daf94d99c6e4e77
+..|..|..|..|altera|90|quartus|libraries|megafunctions|altrom.inc
+d4e3a69a331d3a99d3281790d99a1ebd
 ..|..|..|..|altera|90|quartus|libraries|megafunctions|altqpram.inc
 74e08939f96a7ea8e7a4d59a5b01fe7
+..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
+..|..|..|..|altera|90|quartus|libraries|megafunctions|altram.inc
+e66a83eccf6717bed97c99d891ad085
+..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_mux.inc
+c22bfd353214c01495b560fc34e47d79
+..|..|..|..|altera|90|quartus|libraries|megafunctions|a_rdenreg.inc
+60d229340bc3c24acb0a137b4849830
+..|..|..|..|altera|90|quartus|libraries|megafunctions|altdpram.inc
+99d442b5b66c88db4daf94d99c6e4e77
 ..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_decode.inc
 bd0e2f5e01c1bd360461dceb53d48
 ..|..|..|..|altera|90|quartus|libraries|megafunctions|stratix_ram_block.inc
 2263a3bdfffeb150af977ee13902f70
-..|..|..|..|altera|90|quartus|libraries|megafunctions|altrom.inc
-d4e3a69a331d3a99d3281790d99a1ebd
-..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|altera|90|quartus|libraries|megafunctions|a_rdenreg.inc
-60d229340bc3c24acb0a137b4849830
-..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_mux.inc
-c22bfd353214c01495b560fc34e47d79
-..|..|..|..|altera|90|quartus|libraries|megafunctions|altram.inc
-e66a83eccf6717bed97c99d891ad085
 }
 # hierarchies {
 ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component
@@ -1754,10 +1917,112 @@ ov7670_top:cam|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registe
 
 # end
 # entity
+logic
+# storage
+db|robot_top.(15).cnf
+db|robot_top.(15).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+logic.vhd
+1fe6c8169ac60c523a9348935db9ee9
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(mode)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(m_cnt)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+logic:lg
+}
+# lmf
+..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+transfer
+# storage
+db|robot_top.(18).cnf
+db|robot_top.(18).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+transfer.vhd
+f298db9a6fd609a124bd3455bec6e
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+framlent
+8
+PARAMETER_SIGNED_DEC
+DEF
+ constraint(buf0)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(buf1)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(buf2)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(buf3)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(buf4)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+action:arm|transfer:tran
+}
+# lmf
+..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
 altsyncram
 # storage
-db|robot_top.(16).cnf
-db|robot_top.(16).cnf
+db|robot_top.(19).cnf
+db|robot_top.(19).cnf
 # case_insensitive
 # source_file
 ..|..|..|..|altera|90|quartus|libraries|megafunctions|altsyncram.tdf
@@ -2043,24 +2308,24 @@ address_a0
 3
 }
 # include_file {
-..|..|..|..|altera|90|quartus|libraries|megafunctions|a_rdenreg.inc
-60d229340bc3c24acb0a137b4849830
-..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|altera|90|quartus|libraries|megafunctions|stratix_ram_block.inc
-2263a3bdfffeb150af977ee13902f70
 ..|..|..|..|altera|90|quartus|libraries|megafunctions|altrom.inc
 d4e3a69a331d3a99d3281790d99a1ebd
-..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_decode.inc
-bd0e2f5e01c1bd360461dceb53d48
 ..|..|..|..|altera|90|quartus|libraries|megafunctions|altqpram.inc
 74e08939f96a7ea8e7a4d59a5b01fe7
-..|..|..|..|altera|90|quartus|libraries|megafunctions|altdpram.inc
-99d442b5b66c88db4daf94d99c6e4e77
+..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 ..|..|..|..|altera|90|quartus|libraries|megafunctions|altram.inc
 e66a83eccf6717bed97c99d891ad085
 ..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_mux.inc
 c22bfd353214c01495b560fc34e47d79
+..|..|..|..|altera|90|quartus|libraries|megafunctions|a_rdenreg.inc
+60d229340bc3c24acb0a137b4849830
+..|..|..|..|altera|90|quartus|libraries|megafunctions|altdpram.inc
+99d442b5b66c88db4daf94d99c6e4e77
+..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_decode.inc
+bd0e2f5e01c1bd360461dceb53d48
+..|..|..|..|altera|90|quartus|libraries|megafunctions|stratix_ram_block.inc
+2263a3bdfffeb150af977ee13902f70
 }
 # macro_sequence
 
@@ -2068,8 +2333,8 @@ c22bfd353214c01495b560fc34e47d79
 # entity
 altsyncram_4vv
 # storage
-db|robot_top.(17).cnf
-db|robot_top.(17).cnf
+db|robot_top.(20).cnf
+db|robot_top.(20).cnf
 # case_insensitive
 # source_file
 db|altsyncram_4vv.tdf
@@ -2162,8 +2427,8 @@ robot_top.robot_top0.rtl.mif
 # entity
 lpm_divide
 # storage
-db|robot_top.(18).cnf
-db|robot_top.(18).cnf
+db|robot_top.(21).cnf
+db|robot_top.(21).cnf
 # case_insensitive
 # source_file
 ..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_divide.tdf
@@ -2518,10 +2783,10 @@ denom0
 3
 }
 # include_file {
-..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
 ..|..|..|..|altera|90|quartus|libraries|megafunctions|sign_div_unsign.inc
 c1e17922387cb5d0c88d7fb673544bb4
+..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 ..|..|..|..|altera|90|quartus|libraries|megafunctions|abs_divider.inc
 cdfefd53e136b3a8e541899b82db37d
 }
@@ -2531,8 +2796,8 @@ cdfefd53e136b3a8e541899b82db37d
 # entity
 lpm_divide_nto
 # storage
-db|robot_top.(19).cnf
-db|robot_top.(19).cnf
+db|robot_top.(22).cnf
+db|robot_top.(22).cnf
 # case_insensitive
 # source_file
 db|lpm_divide_nto.tdf
@@ -2834,8 +3099,8 @@ denom0
 # entity
 abs_divider_4dg
 # storage
-db|robot_top.(20).cnf
-db|robot_top.(20).cnf
+db|robot_top.(23).cnf
+db|robot_top.(23).cnf
 # case_insensitive
 # source_file
 db|abs_divider_4dg.tdf
@@ -3233,8 +3498,8 @@ denominator0
 # entity
 alt_u_div_k5f
 # storage
-db|robot_top.(21).cnf
-db|robot_top.(21).cnf
+db|robot_top.(24).cnf
+db|robot_top.(24).cnf
 # case_insensitive
 # source_file
 db|alt_u_div_k5f.tdf
@@ -3632,8 +3897,8 @@ denominator0
 # entity
 add_sub_lkc
 # storage
-db|robot_top.(22).cnf
-db|robot_top.(22).cnf
+db|robot_top.(25).cnf
+db|robot_top.(25).cnf
 # case_insensitive
 # source_file
 db|add_sub_lkc.tdf
@@ -3659,8 +3924,8 @@ cout
 # entity
 add_sub_mkc
 # storage
-db|robot_top.(23).cnf
-db|robot_top.(23).cnf
+db|robot_top.(26).cnf
+db|robot_top.(26).cnf
 # case_insensitive
 # source_file
 db|add_sub_mkc.tdf
@@ -3695,8 +3960,8 @@ cout
 # entity
 lpm_abs_0s9
 # storage
-db|robot_top.(24).cnf
-db|robot_top.(24).cnf
+db|robot_top.(27).cnf
+db|robot_top.(27).cnf
 # case_insensitive
 # source_file
 db|lpm_abs_0s9.tdf
@@ -3900,457 +4165,10 @@ data0
 
 # end
 # entity
-altsyncram
-# storage
-db|robot_top.(25).cnf
-db|robot_top.(25).cnf
-# case_insensitive
-# source_file
-..|..|..|..|altera|90|quartus|libraries|megafunctions|altsyncram.tdf
-3514e215aa7b20abd3414f7dd9c98ab7
-7
-# user_parameter {
-BYTE_SIZE_BLOCK
-8
-PARAMETER_UNKNOWN
-DEF
-AUTO_CARRY_CHAINS
-ON
-AUTO_CARRY
-USR
-IGNORE_CARRY_BUFFERS
-OFF
-IGNORE_CARRY
-USR
-AUTO_CASCADE_CHAINS
-ON
-AUTO_CASCADE
-USR
-IGNORE_CASCADE_BUFFERS
-OFF
-IGNORE_CASCADE
-USR
-WIDTH_BYTEENA
-1
-PARAMETER_UNKNOWN
-DEF
-OPERATION_MODE
-ROM
-PARAMETER_UNKNOWN
-USR
-WIDTH_A
-16
-PARAMETER_UNKNOWN
-USR
-WIDTHAD_A
-8
-PARAMETER_UNKNOWN
-USR
-NUMWORDS_A
-256
-PARAMETER_UNKNOWN
-USR
-OUTDATA_REG_A
-UNREGISTERED
-PARAMETER_UNKNOWN
-USR
-ADDRESS_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-INDATA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_B
-1
-PARAMETER_UNKNOWN
-DEF
-WIDTHAD_B
-1
-PARAMETER_UNKNOWN
-DEF
-NUMWORDS_B
-1
-PARAMETER_UNKNOWN
-DEF
-INDATA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_WRADDRESS_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-RDCONTROL_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-ADDRESS_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_REG_B
-UNREGISTERED
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-INDATA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-ADDRESS_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-RDCONTROL_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_BYTEENA_A
-1
-PARAMETER_UNKNOWN
-DEF
-WIDTH_BYTEENA_B
-1
-PARAMETER_UNKNOWN
-DEF
-RAM_BLOCK_TYPE
-AUTO
-PARAMETER_UNKNOWN
-USR
-BYTE_SIZE
-8
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_MIXED_PORTS
-DONT_CARE
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_PORT_A
-NEW_DATA_NO_NBE_READ
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_PORT_B
-NEW_DATA_NO_NBE_READ
-PARAMETER_UNKNOWN
-DEF
-INIT_FILE
-robot_top.robot_top0.rtl.mif
-PARAMETER_UNKNOWN
-USR
-INIT_FILE_LAYOUT
-PORT_A
-PARAMETER_UNKNOWN
-DEF
-MAXIMUM_DEPTH
-0
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_INPUT_A
-NORMAL
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_INPUT_B
-NORMAL
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_OUTPUT_A
-NORMAL
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_OUTPUT_B
-NORMAL
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_CORE_A
-USE_INPUT_CLKEN
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_CORE_B
-USE_INPUT_CLKEN
-PARAMETER_UNKNOWN
-DEF
-ENABLE_ECC
-FALSE
-PARAMETER_UNKNOWN
-DEF
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-CBXI_PARAMETER
-altsyncram_4vv
-PARAMETER_UNKNOWN
-USR
-}
-# used_port {
-q_a9
--1
-3
-q_a8
--1
-3
-q_a7
--1
-3
-q_a6
--1
-3
-q_a5
--1
-3
-q_a4
--1
-3
-q_a3
--1
-3
-q_a2
--1
-3
-q_a15
--1
-3
-q_a14
--1
-3
-q_a13
--1
-3
-q_a12
--1
-3
-q_a11
--1
-3
-q_a10
--1
-3
-q_a1
--1
-3
-q_a0
--1
-3
-clock0
--1
-3
-address_a7
--1
-1
-address_a6
--1
-1
-address_a5
--1
-1
-address_a4
--1
-1
-address_a3
--1
-1
-address_a2
--1
-1
-address_a1
--1
-1
-address_a0
--1
-1
-}
-# include_file {
-..|..|..|..|altera|90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|altera|90|quartus|libraries|megafunctions|stratix_ram_block.inc
-2263a3bdfffeb150af977ee13902f70
-..|..|..|..|altera|90|quartus|libraries|megafunctions|altrom.inc
-d4e3a69a331d3a99d3281790d99a1ebd
-..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_decode.inc
-bd0e2f5e01c1bd360461dceb53d48
-..|..|..|..|altera|90|quartus|libraries|megafunctions|altqpram.inc
-74e08939f96a7ea8e7a4d59a5b01fe7
-..|..|..|..|altera|90|quartus|libraries|megafunctions|altdpram.inc
-99d442b5b66c88db4daf94d99c6e4e77
-..|..|..|..|altera|90|quartus|libraries|megafunctions|altram.inc
-e66a83eccf6717bed97c99d891ad085
-..|..|..|..|altera|90|quartus|libraries|megafunctions|lpm_mux.inc
-c22bfd353214c01495b560fc34e47d79
-..|..|..|..|altera|90|quartus|libraries|megafunctions|a_rdenreg.inc
-60d229340bc3c24acb0a137b4849830
-}
-# macro_sequence
-
-# end
-# entity
-logic
-# storage
-db|robot_top.(15).cnf
-db|robot_top.(15).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-logic.vhd
-1fe6c8169ac60c523a9348935db9ee9
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(mode)
-1 downto 0
-PARAMETER_STRING
-USR
- constraint(m_cnt)
-1 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-logic:lg
-}
-# lmf
-..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-baud
-# storage
-db|robot_top.(27).cnf
-db|robot_top.(27).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-baud.vhd
-f011701cf2ff6b37a2c9a2a7f4e80
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-action:arm|baud:bd
-}
-# lmf
-..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-transfer
-# storage
-db|robot_top.(28).cnf
-db|robot_top.(28).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-transfer.vhd
-f298db9a6fd609a124bd3455bec6e
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-framlent
-8
-PARAMETER_SIGNED_DEC
-DEF
- constraint(buf0)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(buf1)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(buf2)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(buf3)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(buf4)
-7 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-action:arm|transfer:tran
-}
-# lmf
-..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
 action
 # storage
-db|robot_top.(26).cnf
-db|robot_top.(26).cnf
+db|robot_top.(16).cnf
+db|robot_top.(16).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -4358,7 +4176,7 @@ ON
 # case_insensitive
 # source_file
 action.vhd
-8712a6cbe54578e4509e43485831e58
+ddc59d6a89c81174b4602c10b7aba13f
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -4390,85 +4208,18 @@ action:arm
 
 # end
 # entity
-vga
+baud
 # storage
-db|robot_top.(3).cnf
-db|robot_top.(3).cnf
+db|robot_top.(17).cnf
+db|robot_top.(17).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-vga.vhd
-8c4f10d6dfaa434ff6bb5018e38b9b55
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(vga_red)
-2 downto 0
-PARAMETER_STRING
-USR
- constraint(vga_green)
-2 downto 0
-PARAMETER_STRING
-USR
- constraint(vga_blue)
-2 downto 0
-PARAMETER_STRING
-USR
- constraint(frame_addr)
-14 downto 0
-PARAMETER_STRING
-USR
- constraint(frame_pixel)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(mode)
-1 downto 0
-PARAMETER_STRING
-USR
- constraint(x)
-8 downto 0
-PARAMETER_STRING
-USR
- constraint(y)
-8 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-ov7670_top:cam|vga:Inst_vga
-}
-# lmf
-..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-robot_top
-# storage
-db|robot_top.(0).cnf
-db|robot_top.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-robot_top.vhd
-2816f7436b6b6a2fbda030f9e0e3a01e
+baud.vhd
+f011701cf2ff6b37a2c9a2a7f4e80
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -4481,70 +4232,7 @@ AUTO_ROM_RECOGNITION
 ON
 }
 # hierarchies {
-|
-}
-# lmf
-..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-ov7670_top
-# storage
-db|robot_top.(1).cnf
-db|robot_top.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-ov7670_top.vhd
-a4c5b21d89dd2b1e9c0b15a479a6254
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(ov7670_d)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(vga_red)
-2 downto 0
-PARAMETER_STRING
-USR
- constraint(vga_green)
-2 downto 0
-PARAMETER_STRING
-USR
- constraint(vga_blue)
-2 downto 0
-PARAMETER_STRING
-USR
- constraint(mode)
-1 downto 0
-PARAMETER_STRING
-USR
- constraint(x)
-8 downto 0
-PARAMETER_STRING
-USR
- constraint(y)
-8 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-ov7670_top:cam
+action:arm|baud:bd
 }
 # lmf
 ..|..|..|..|altera|90|quartus|lmf|maxplus2.lmf

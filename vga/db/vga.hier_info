@@ -1,0 +1,27 @@
+|vga
+red_in[0] => red_out[0].DATAIN
+red_in[1] => red_out[1].DATAIN
+red_in[2] => red_out[2].DATAIN
+green_in[0] => green_out[0].DATAIN
+green_in[1] => green_out[1].DATAIN
+green_in[2] => green_out[2].DATAIN
+blue_in[0] => blue_out[0].DATAIN
+blue_in[1] => blue_out[1].DATAIN
+blue_in[2] => blue_out[2].DATAIN
+hs_in => hs_out.DATAIN
+vs_in => vs_out.DATAIN
+red_out[0] <= red_in[0].DB_MAX_OUTPUT_PORT_TYPE
+red_out[1] <= red_in[1].DB_MAX_OUTPUT_PORT_TYPE
+red_out[2] <= red_in[2].DB_MAX_OUTPUT_PORT_TYPE
+green_out[0] <= green_in[0].DB_MAX_OUTPUT_PORT_TYPE
+green_out[1] <= green_in[1].DB_MAX_OUTPUT_PORT_TYPE
+green_out[2] <= green_in[2].DB_MAX_OUTPUT_PORT_TYPE
+blue_out[0] <= blue_in[0].DB_MAX_OUTPUT_PORT_TYPE
+blue_out[1] <= blue_in[1].DB_MAX_OUTPUT_PORT_TYPE
+blue_out[2] <= blue_in[2].DB_MAX_OUTPUT_PORT_TYPE
+hs_out <= hs_in.DB_MAX_OUTPUT_PORT_TYPE
+vs_out <= vs_in.DB_MAX_OUTPUT_PORT_TYPE
+btn_in => btn_out.DATAIN
+btn_out <= btn_in.DB_MAX_OUTPUT_PORT_TYPE
+
+

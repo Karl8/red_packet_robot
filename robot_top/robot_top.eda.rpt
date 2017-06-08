@@ -1,5 +1,5 @@
 EDA Netlist Writer report for robot_top
-Tue Jun 06 12:17:43 2017
+Thu Jun 08 21:03:32 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Jun 06 12:17:43 2017 ;
+; EDA Netlist Writer Status ; Successful - Thu Jun 08 21:03:32 2017 ;
 ; Revision Name             ; robot_top                             ;
 ; Top-level Entity Name     ; robot_top                             ;
 ; Family                    ; Cyclone II                            ;
@@ -66,14 +66,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+------------------------+
 
 
-+-------------------------------------------------------------------------------+
-; Simulation Generated Files                                                    ;
-+-------------------------------------------------------------------------------+
-; Generated Files                                                               ;
-+-------------------------------------------------------------------------------+
-; D:/code/vhdl/red_packet_robot/robot_top/simulation/modelsim/robot_top.vho     ;
-; D:/code/vhdl/red_packet_robot/robot_top/simulation/modelsim/robot_top_vhd.sdo ;
-+-------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                         ;
++------------------------------------------------------------------------------------+
+; Generated Files                                                                    ;
++------------------------------------------------------------------------------------+
+; D:/code/vhdl/red_packet_robot/robot_top/simulation/modelsim/robot_top.vho          ;
+; D:/code/vhdl/red_packet_robot/robot_top/simulation/modelsim/robot_top_fast.vho     ;
+; D:/code/vhdl/red_packet_robot/robot_top/simulation/modelsim/robot_top_vhd.sdo      ;
+; D:/code/vhdl/red_packet_robot/robot_top/simulation/modelsim/robot_top_vhd_fast.sdo ;
++------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -82,13 +84,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II EDA Netlist Writer
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Tue Jun 06 12:17:41 2017
+    Info: Processing started: Thu Jun 08 21:03:29 2017
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off robot_top -c robot_top
-Info: Generated files "robot_top.vho" and "robot_top_vhd.sdo" in directory "D:/code/vhdl/red_packet_robot/robot_top/simulation/modelsim/" for EDA simulation tool
+Info: Generated files "robot_top.vho", "robot_top_fast.vho", "robot_top_vhd.sdo" and "robot_top_vhd_fast.sdo" in directory "D:/code/vhdl/red_packet_robot/robot_top/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 227 megabytes
-    Info: Processing ended: Tue Jun 06 12:17:44 2017
+    Info: Peak virtual memory: 238 megabytes
+    Info: Processing ended: Thu Jun 08 21:03:32 2017
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
 
 

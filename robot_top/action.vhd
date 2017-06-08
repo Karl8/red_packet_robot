@@ -38,7 +38,7 @@ architecture behave of action is
     	);
     end component;
 
-    type states is (s_idle, s_cal, s_tran, s_wait, s_end);
+    type states is (s_idle, s_reset, s_cal, s_tran, s_wait, s_end);
     signal state        : states := s_idle;
 
     signal bclk         : std_logic;
@@ -50,6 +50,7 @@ architecture behave of action is
     signal cmd          : std_logic := '0';
     signal txd_done     : std_logic;
 
+	signal isreset		: std_logic := '0';
 
 begin
     bd : baud
@@ -78,6 +79,7 @@ begin
         variable action_num : integer := 1;
     begin
         if reset = '0' then
+            isreset <= '1';
             state <= s_idle;
             cnt := 0;
             finished <= '0';
@@ -86,9 +88,51 @@ begin
                 when s_idle =>
                     cnt := 0;
                     finished <= '0';
-                    if act = '1' then state <= s_cal;
+                    if isreset = '1' then
+						state <= s_reset;
+                    elsif act = '1' then state <= s_cal;
                     else state <= s_idle; end if;
+                when s_reset =>
+                    --reeset...
+                    action_num := 5;    
+                    if cnt = 0 then
+                        buf0 <= "11111111";
+                        buf1 <= "00000010";
+                        buf2 <= "00000101";
+                        buf3 <= "00001000";
+                        buf4 <= "00001000";
+                    elsif cnt = 1 then
+                        buf0 <= "11111111";
+                        buf1 <= "00000010";
+                        buf2 <= "00000100";
+                        buf3 <= "01101101";
+                        buf4 <= "00000101";
+                    elsif cnt = 2 then
+                        buf0 <= "11111111";
+                        buf1 <= "00000010";
+                        buf2 <= "00000011";
+                        buf3 <= "11011100";
+                        buf4 <= "00000101";
+                    elsif cnt = 3 then
+                        buf0 <= "11111111";
+                        buf1 <= "00000010";
+                        buf2 <= "00000010";
+                        buf3 <= "00000011";
+                        buf4 <= "11101000";
+                    elsif cnt = 4 then
+                        buf0 <= "11111111";
+                        buf1 <= "00000010";
+                        buf2 <= "00000001";
+                        buf3 <= "10110000";
+                        buf4 <= "00000100";
+                    end if;
+                    cmd <= '1';
+                    if txd_done = '0' then
+                        cmd <= '0';
+                        state <= s_tran;
+                    end if;
                 when s_cal =>
+					action_num := 1;
                     --calculating...
                     if cnt = 0 then
                         buf0 <= x(7 downto 0);
@@ -121,12 +165,18 @@ begin
                     end if;
                 when s_wait =>
                     wait_time := wait_time + 1;
-                    if wait_time >= 100000000 then
+                    if wait_time >= 200000000 then
                         wait_time := 0;
-                        if cnt < action_num then state <= s_cal;
+                        if cnt < action_num then
+							if isreset = '1' then
+								state <= s_reset;
+							else
+								state <= s_cal;
+							end if;
                         else state <= s_end; finished <= '1'; end if;
                     end if;
                 when s_end =>
+					if isreset = '1' then isreset <= '0'; state <= s_idle; end if;
                     if act = '0' then state <= s_idle; end if;
                 when others =>
                     state <= s_idle;
