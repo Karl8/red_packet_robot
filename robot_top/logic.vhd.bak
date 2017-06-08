@@ -32,6 +32,7 @@ begin
             case state is
                 when s_idle =>
                     mode <= "00";
+                    mode_cnt := "00";
                     if btn = '0' then state <= s_cam; mode_cnt := "01"; 
                     else state <= s_idle; end if;
                 when s_cam =>

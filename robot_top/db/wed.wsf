@@ -118,7 +118,7 @@ VECTOR("D:/code/vhdl/red_packet_robot/robot_top/db/robot_top.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "OV7670_SIOC";
+		SIGNAL = "OV7670_SIOD~result";
 		INDEX = 10;
 		FORMAT = E;
 		SCALE = 1;
@@ -126,7 +126,7 @@ VECTOR("D:/code/vhdl/red_packet_robot/robot_top/db/robot_top.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "OV7670_SIOD~result";
+		SIGNAL = "OV7670_SIOC";
 		INDEX = 11;
 		FORMAT = E;
 		SCALE = 1;

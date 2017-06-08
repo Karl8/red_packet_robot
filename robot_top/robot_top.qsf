@@ -64,7 +64,6 @@ set_location_assignment PIN_A20 -to OV7670_D[0]
 set_location_assignment PIN_B19 -to OV7670_HREF
 set_location_assignment PIN_A18 -to OV7670_PCLK
 set_location_assignment PIN_C19 -to OV7670_PWDN
-set_location_assignment PIN_C17 -to OV7670_RESET
 set_location_assignment PIN_D14 -to OV7670_SIOC
 set_location_assignment PIN_D19 -to OV7670_SIOD
 set_location_assignment PIN_B18 -to OV7670_VSYNC
@@ -87,5 +86,6 @@ set_location_assignment PIN_AD5 -to af
 set_location_assignment PIN_N2 -to clk100
 set_location_assignment PIN_AC7 -to led_m1
 set_location_assignment PIN_AB8 -to led_m2
-set_location_assignment PIN_M2 -to txd
-set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_location_assignment PIN_C17 -to txd
+set_global_assignment -name SIMULATION_MODE TIMING
+set_global_assignment -name VHDL_FILE constant.vhd

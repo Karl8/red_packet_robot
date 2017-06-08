@@ -10,7 +10,7 @@ entity logic is
         act_finished    : in std_logic;
         btn             : in std_logic;
         mode            : out std_logic_vector(1 downto 0);
-        act             : out std_logic;
+        act             : out std_logic := '0';
         m_cnt			: out std_logic_vector(1 downto 0)
     );
 end entity logic;

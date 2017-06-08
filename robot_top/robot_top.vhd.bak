@@ -30,13 +30,13 @@ entity robot_top is
       btn			: in std_logic;
       -- action
 	  txd			: out std_logic;
+	  txd2			: out std_logic;
       -- test
       led_m1		: out std_logic;
       led_m2		: out std_logic;
       af			: in std_logic;
       
       -- RUBBISH
-      TMDled          : out    STD_LOGIC;
        TMDbtn           : in    STD_LOGIC
        
     );
@@ -103,13 +103,14 @@ component action is
 	signal act_finished : std_logic;
 	signal act			: std_logic;
 	
-	signal  m_cnt		: std_logic_vector(1 downto 0);
+	signal m_cnt		: std_logic_vector(1 downto 0);
+	signal txdd			: std_logic;
 begin
 	led_m1 <= m_cnt(0);
 	led_m2 <= m_cnt(1);
 	--act_finished <= not af;
-
-
+	txd <= txdd;
+	txd2 <= txdd;
 	cam: ov7670_top
 		port map(
 	  clk100       	=> clk100,
@@ -123,7 +124,6 @@ begin
       OV7670_XCLK   => OV7670_XCLK,
       OV7670_D      => OV7670_D,
 
-      led           => TMDled,
       vga_red       => vga_red,
       vga_green     => vga_green,
       vga_blue      => vga_blue,
@@ -153,7 +153,7 @@ begin
 		x				=> x,
 		y				=> y,
 		act				=> act,
-		txd				=> txd,
+		txd				=> txdd,
 		finished		=> act_finished
 	);
 end Behavioral;
