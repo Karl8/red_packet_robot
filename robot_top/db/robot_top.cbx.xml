@@ -1,9 +1,24 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="robot_top">
-		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_cmk1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult5|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_pah.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_3ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult6|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_pah.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult8|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_5ch.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|ov7670_top:cam|ov7670_controller:controller|ov7670_registers:Inst_ov7670_registers|altsyncram:Mux0_rtl_0" CBX_FILE_NAME="altsyncram_4vv.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_7ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_2ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult5|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_4ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult7|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_1ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_2ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_7ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult6|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_4ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult8|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_1ch.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_nto.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_3ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult7|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_5ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|action:arm|lpm_mult:Mult9|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_2ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|ov7670_top:cam|frame_buffer:fb|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_cmk1.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|robot_top|ov7670_top:cam|vga:Inst_vga|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_nto.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

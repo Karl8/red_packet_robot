@@ -1,5 +1,5 @@
 Assembler report for robot_top
-Fri Jun 09 09:43:38 2017
+Fri Jun 09 14:37:38 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Jun 09 09:43:38 2017 ;
+; Assembler Status      ; Successful - Fri Jun 09 14:37:38 2017 ;
 ; Revision Name         ; robot_top                             ;
 ; Top-level Entity Name ; robot_top                             ;
 ; Family                ; Cyclone II                            ;
@@ -92,8 +92,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                        ;
 +----------------+----------------------------------------------------------------+
 ; Device         ; EP2C70F672C8                                                   ;
-; JTAG usercode  ; 0x009BD17A                                                     ;
-; Checksum       ; 0x009BD17A                                                     ;
+; JTAG usercode  ; 0x00A08303                                                     ;
+; Checksum       ; 0x00A08303                                                     ;
 +----------------+----------------------------------------------------------------+
 
 
@@ -104,8 +104,8 @@ applicable agreement for further details.
 +--------------------+------------------------------------------------------------+
 ; Device             ; EPCS16                                                     ;
 ; JTAG usercode      ; 0x00000000                                                 ;
-; Checksum           ; 0x18108519                                                 ;
-; Compression Ratio  ; 3                                                          ;
+; Checksum           ; 0x1807FCE2                                                 ;
+; Compression Ratio  ; 2                                                          ;
 +--------------------+------------------------------------------------------------+
 
 
@@ -115,13 +115,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Fri Jun 09 09:43:33 2017
+    Info: Processing started: Fri Jun 09 14:37:33 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off robot_top -c robot_top
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 374 megabytes
-    Info: Processing ended: Fri Jun 09 09:43:38 2017
+    Info: Peak virtual memory: 375 megabytes
+    Info: Processing ended: Fri Jun 09 14:37:38 2017
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 

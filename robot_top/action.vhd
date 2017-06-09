@@ -178,7 +178,7 @@ begin
                     if act = '1' then state <= s_cal;
                     else state <= s_idle; end if;
                 when s_cal =>  
-                    action_num := 15;
+                    action_num := 9;
                     if wait_time = 0 then
                       if cnt = 0 then
                         buf0 <= "11111111";
@@ -204,82 +204,45 @@ begin
                         buf2 <= "00000010";
                         buf3 <= arm2_l;
                         buf4 <= arm2_h;
+                    
+                        
+                        
                     elsif cnt = 4 then
                         buf0 <= "11111111";
                         buf1 <= "00000010";
-                        buf2 <= "00000001";
-                        buf3 <= arm1_l;
-                        buf4 <= arm1_h;
-                    
-                        
+                        buf2 <= "00000101";
+                        buf3 <= degree_to_arm(cal_2(x,y))(7 downto 0);
+                        buf4 <= degree_to_arm(cal_2(x,y))(15 downto 8);                  
                         
                     elsif cnt = 5 then
                         buf0 <= "11111111";
                         buf1 <= "00000010";
-                        buf2 <= "00000101";
-                        buf3 <= degree_to_arm(cal_2(xx,yy))(7 downto 0);
-                        buf4 <= degree_to_arm(cal_2(xx,yy))(15 downto 8);                  
-                        
+                        buf2 <= "00000100";
+                        buf3 <= degree_to_arm(cal_1(x,y)-adjust(y))(7 downto 0);
+                        buf4 <= degree_to_arm(cal_1(x,y)-adjust(y))(15 downto 8);
                     elsif cnt = 6 then
                         buf0 <= "11111111";
                         buf1 <= "00000010";
-                        buf2 <= "00000100";
-                        buf3 <= degree_to_arm(cal_1(xx,yy)-adjust(yy))(7 downto 0);
-                        buf4 <= degree_to_arm(cal_1(xx,yy)-adjust(yy))(15 downto 8);
-                    elsif cnt = 7 then
-                        buf0 <= "11111111";
-                        buf1 <= "00000010";
                         buf2 <= "00000011";
-                        buf3 <= degree_to_arm(cal_0(xx,yy)+adjust(yy))(7 downto 0);
-                        buf4 <= degree_to_arm(cal_0(xx,yy)+adjust(yy))(15 downto 8);
-                    elsif cnt = 8 then    --click
+                        buf3 <= degree_to_arm(cal_0(x,y)+adjust(y))(7 downto 0);
+                        buf4 <= degree_to_arm(cal_0(x,y)+adjust(y))(15 downto 8);
+                    elsif cnt = 7 then    --click
                         buf0 <= "11111111";
                         buf1 <= "00000010";
                         buf2 <= "00000010";
                         buf3 <= arm2_l_click;
                         buf4 <= arm2_h_click;
-                    elsif cnt = 9 then
+                    elsif cnt = 8 then
                         buf0 <= "11111111";
                         buf1 <= "00000010";
                         buf2 <= "00000010";
                         buf3 <= arm2_l;
                         buf4 <= arm2_h;
                     
-                    elsif cnt = 10 then
-                        buf0 <= "11111111";
-                        buf1 <= "00000010";
-                        buf2 <= "00000101";
-                        buf3 <= arm5_l;
-                        buf4 <= arm5_h;
-                    elsif cnt = 11 then
-                        buf0 <= "11111111";
-                        buf1 <= "00000010";
-                        buf2 <= "00000100";
-                        buf3 <= arm4_l;
-                        buf4 <= arm4_h;
-                    elsif cnt = 12 then
-                        buf0 <= "11111111";
-                        buf1 <= "00000010";
-                        buf2 <= "00000011";
-                        buf3 <= arm3_l;
-                        buf4 <= arm3_h;
-                    elsif cnt = 13 then
-                        buf0 <= "11111111";
-                        buf1 <= "00000010";
-                        buf2 <= "00000010";
-                        buf3 <= arm2_l;
-                        buf4 <= arm2_h;
-                    elsif cnt = 14 then
-                        buf0 <= "11111111";
-                        buf1 <= "00000010";
-                        buf2 <= "00000001";
-                        buf3 <= arm1_l;
-                        buf4 <= arm1_h;
-                    end if;
- 
+					end if;
                     end if;
 					wait_time := wait_time + 1;
-                    if wait_time >= 50000 then
+                    if wait_time >= 30000 then
 						cmd <= '1';
 						if txd_done = '0' then
 							cmd <= '0';
