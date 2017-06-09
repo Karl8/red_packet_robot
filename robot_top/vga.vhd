@@ -151,25 +151,25 @@ begin
               r  <= (others => '0');
               g  <= (others => '1');
               b  <= (others => '0');
-			elsif unsigned(frame_pixel(15 downto 11)) < 28 and unsigned(frame_pixel(15 downto 11)) > 22 and  unsigned(frame_pixel(10 downto 6)) > 24 and unsigned(frame_pixel(10 downto 6)) < 30 and unsigned(frame_pixel(4 downto 0)) > 25 then
-				--if mode = "01" then
-					count := count + 1;
-					if (count >= 5) then
-						hSum := hSum + hCounter;
-						vSum := vSum + vCounter;
-						cnt := cnt + 1;
-					end if;
-				--end if; 
-				r  <= (others => '1');
-				g  <= (others => '0');
-				b  <= (others => '0');
-			elsif mode = "10" and unsigned(frame_pixel(15 downto 11)) >= 29 then
+            elsif mode = "10" and unsigned(frame_pixel(15 downto 11)) >= 29 and unsigned(frame_pixel(10 downto 6)) >= 30 and unsigned(frame_pixel(4 downto 0)) > 25 then
 				count := count + 1;
 				if (count >= 5) then
 					hSum := hSum + hCounter;
 					vSum := vSum + vCounter;
 					cnt := cnt + 1;
 				end if;
+				r  <= (others => '1');
+				g  <= (others => '0');
+				b  <= (others => '0');
+			elsif unsigned(frame_pixel(15 downto 11)) < 29 and unsigned(frame_pixel(15 downto 11)) > 22 and  unsigned(frame_pixel(10 downto 6)) > 20 and unsigned(frame_pixel(10 downto 6)) < 30 and unsigned(frame_pixel(4 downto 0)) > 20 then
+				if mode = "01" then
+					count := count + 1;
+					if (count >= 5) then
+						hSum := hSum + hCounter;
+						vSum := vSum + vCounter;
+						cnt := cnt + 1;
+					end if;
+				end if; 
 				r  <= (others => '1');
 				g  <= (others => '0');
 				b  <= (others => '0');

@@ -15,8 +15,6 @@ entity action is
         --cmd         : in std_logic;
         finished    : out std_logic
     );
-
-
 function degree_to_arm(sita:in std_logic_vector) return std_logic_vector is
         variable div:std_logic_vector(7 downto 0):="01011001";
         variable add:std_logic_vector(15 downto 0):="0000000111110100";
@@ -40,10 +38,10 @@ function cal_0(x,y:in std_logic_vector) return std_logic_vector is
  begin
   if(x>=idle_x)then
   a:=(x-idle_x)*div;
-  ans:=idle_sita_0-(a(13 downto 6));
+  ans:=idle_sita_0+(a(13 downto 6));
   else
   a:=(idle_x-x)*div;
-  ans:=idle_sita_0+(a(13 downto 6));
+  ans:=idle_sita_0-(a(13 downto 6));
   end if;
        return ans;
    end function;
@@ -57,10 +55,10 @@ function cal_1(x,y:in std_logic_vector) return std_logic_vector is
  begin
   if(x>=idle_x)then
   a:=(x-idle_x)*div;
-  ans:=(a(16 downto 9))+idle_sita_1;
+  ans:=idle_sita_1-(a(16 downto 9));
   else
   a:=(idle_x-x)*div;
-  ans:=idle_sita_1-(a(16 downto 9));
+  ans:=idle_sita_1+(a(16 downto 9));
   end if;      
        return ans;
    end function;
@@ -75,10 +73,10 @@ function cal_2(x,y:in std_logic_vector) return std_logic_vector is
  begin
   if(y>=idle_y)then
   a:=(y-idle_y)*div;
-  ans:=("0"&a(12 downto 6))+idle_sita_2;
+  ans:=idle_sita_2-("0"&a(12 downto 6));
   else
   a:=(idle_y-y)*div;
-  ans:=idle_sita_2-("0"&a(12 downto 6));  
+  ans:=idle_sita_2+("0"&a(12 downto 6));  
   end if;
   return ans;
   end function;
@@ -100,6 +98,7 @@ function adjust(y :in std_logic_vector) return std_logic_vector is
   end if;
   return ans;
   end function;
+  
 end action;
 
 architecture behave of action is
@@ -113,20 +112,20 @@ architecture behave of action is
 
     component transfer is
         Port(
-    		bclkt				: in std_logic;
-    		resett				: in std_logic;
-    		xmit_cmd_p			: in std_logic;
-    		buf0				: in std_logic_vector(7 downto 0);
-            buf1				: in std_logic_vector(7 downto 0);
-            buf2				: in std_logic_vector(7 downto 0);
-            buf3				: in std_logic_vector(7 downto 0);
-            buf4				: in std_logic_vector(7 downto 0);
-    		txd					: out std_logic;
-    		txd_done			: out std_logic
-    	);
+            bclkt               : in std_logic;
+            resett              : in std_logic;
+            xmit_cmd_p          : in std_logic;
+            buf0                : in std_logic_vector(7 downto 0);
+            buf1                : in std_logic_vector(7 downto 0);
+            buf2                : in std_logic_vector(7 downto 0);
+            buf3                : in std_logic_vector(7 downto 0);
+            buf4                : in std_logic_vector(7 downto 0);
+            txd                 : out std_logic;
+            txd_done            : out std_logic
+        );
     end component;
 
-    type states is (s_idle, s_reset, s_cal, s_tran, s_wait, s_end);
+    type states is (s_idle, s_cal, s_tran, s_wait, s_end);
     signal state        : states := s_idle;
 
     signal bclk         : std_logic;
@@ -138,8 +137,8 @@ architecture behave of action is
     signal cmd          : std_logic := '0';
     signal txd_done     : std_logic;
 
-	signal isreset		: std_logic := '0';
-
+    signal xx           : std_logic_vector(8 downto 0) := '0'&idle_x;
+    signal yy           : std_logic_vector(8 downto 0) := '0'&idle_y;
 begin
     bd : baud
     port map(
@@ -164,10 +163,9 @@ begin
     process(clk, reset, act)
         variable cnt        : integer := 0;
         variable wait_time  : integer := 0;
-        variable action_num : integer := 1;
+        variable action_num : integer := 4;
     begin
         if reset = '0' then
-            isreset <= '1';
             state <= s_idle;
             cnt := 0;
             finished <= '0';
@@ -176,53 +174,13 @@ begin
                 when s_idle =>
                     cnt := 0;
                     finished <= '0';
-                    if isreset = '1' then
-						state <= s_reset;
-                    elsif act = '1' then state <= s_cal;
+                    wait_time := 0;
+                    if act = '1' then state <= s_cal;
                     else state <= s_idle; end if;
-                when s_reset =>
-                    --reeset...
-                    action_num := 5;    
-                    if cnt = 0 then
-                        buf0 <= "11111111";
-                        buf1 <= "00000010";
-                        buf2 <= "00000101";
-                        buf3 <= "00001000";
-                        buf4 <= "00001000";
-                    elsif cnt = 1 then
-                        buf0 <= "11111111";
-                        buf1 <= "00000010";
-                        buf2 <= "00000100";
-                        buf3 <= "01101101";
-                        buf4 <= "00000101";
-                    elsif cnt = 2 then
-                        buf0 <= "11111111";
-                        buf1 <= "00000010";
-                        buf2 <= "00000011";
-                        buf3 <= "11011100";
-                        buf4 <= "00000101";
-                    elsif cnt = 3 then
-                        buf0 <= "11111111";
-                        buf1 <= "00000010";
-                        buf2 <= "00000010";
-                        buf3 <= "11101000";
-                        buf4 <= "00000011";
-                    elsif cnt = 4 then
-                        buf0 <= "11111111";
-                        buf1 <= "00000010";
-                        buf2 <= "00000001";
-                        buf3 <= "10110000";
-                        buf4 <= "00000100";
-                    end if;
-                    cmd <= '1';
-                    if txd_done = '0' then
-                        cmd <= '0';
-                        state <= s_tran;
-                    end if;
-                when s_cal =>
-					action_num := 15;
-                    --calculating...
-                    if cnt = 0 then
+                when s_cal =>  
+                    action_num := 15;
+                    if wait_time = 0 then
+                      if cnt = 0 then
                         buf0 <= "11111111";
                         buf1 <= "00000010";
                         buf2 <= "00000101";
@@ -251,26 +209,29 @@ begin
                         buf1 <= "00000010";
                         buf2 <= "00000001";
                         buf3 <= arm1_l;
-                        buf4 <= arm1_h;    
+                        buf4 <= arm1_h;
+                    
+                        
+                        
                     elsif cnt = 5 then
                         buf0 <= "11111111";
                         buf1 <= "00000010";
                         buf2 <= "00000101";
-                        buf3 <= degree_to_arm(cal_2(x,y))(7 downto 0);
-                        buf4 <= degree_to_arm(cal_2(x,y))(15 downto 8);                  
+                        buf3 <= degree_to_arm(cal_2(xx,yy))(7 downto 0);
+                        buf4 <= degree_to_arm(cal_2(xx,yy))(15 downto 8);                  
                         
                     elsif cnt = 6 then
                         buf0 <= "11111111";
                         buf1 <= "00000010";
-                        buf2 <= "00000011";
-                        buf3 <= degree_to_arm(cal_1(x,y)-adjust(y))(7 downto 0);
-                        buf4 <= degree_to_arm(cal_1(x,y)-adjust(y))(15 downto 8);
+                        buf2 <= "00000100";
+                        buf3 <= degree_to_arm(cal_1(xx,yy)-adjust(yy))(7 downto 0);
+                        buf4 <= degree_to_arm(cal_1(xx,yy)-adjust(yy))(15 downto 8);
                     elsif cnt = 7 then
                         buf0 <= "11111111";
                         buf1 <= "00000010";
-                        buf2 <= "00000010";
-                        buf3 <= degree_to_arm(cal_0(x,y)+adjust(y))(7 downto 0);
-                        buf4 <= degree_to_arm(cal_0(x,y)+adjust(y))(15 downto 8);
+                        buf2 <= "00000011";
+                        buf3 <= degree_to_arm(cal_0(xx,yy)+adjust(yy))(7 downto 0);
+                        buf4 <= degree_to_arm(cal_0(xx,yy)+adjust(yy))(15 downto 8);
                     elsif cnt = 8 then    --click
                         buf0 <= "11111111";
                         buf1 <= "00000010";
@@ -315,11 +276,17 @@ begin
                         buf3 <= arm1_l;
                         buf4 <= arm1_h;
                     end if;
-                    cmd <= '1';
-                    if txd_done = '0' then
-                        cmd <= '0';
-                        state <= s_tran;
+ 
                     end if;
+					wait_time := wait_time + 1;
+                    if wait_time >= 50000 then
+						cmd <= '1';
+						if txd_done = '0' then
+							cmd <= '0';
+							state <= s_tran;
+							wait_time := 0;
+						end if;
+					end if;
                 when s_tran =>
                     if txd_done = '1' then
                         cnt := cnt + 1;
@@ -327,18 +294,12 @@ begin
                     end if;
                 when s_wait =>
                     wait_time := wait_time + 1;
-                    if wait_time >= 200000000 then
+                    if wait_time >= 100000000 then
                         wait_time := 0;
-                        if cnt < action_num then
-							if isreset = '1' then
-								state <= s_reset;
-							else
-								state <= s_cal;
-							end if;
+                        if cnt < action_num then state <= s_cal;
                         else state <= s_end; finished <= '1'; end if;
                     end if;
                 when s_end =>
-					if isreset = '1' then isreset <= '0'; state <= s_idle; end if;
                     if act = '0' then state <= s_idle; end if;
                 when others =>
                     state <= s_idle;

@@ -1,16 +1,16 @@
-Fitter Status : Successful - Thu Jun 08 23:09:16 2017
+Fitter Status : Successful - Fri Jun 09 09:43:15 2017
 Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
 Revision Name : robot_top
 Top-level Entity Name : robot_top
 Family : Cyclone II
 Device : EP2C70F672C8
 Timing Models : Final
-Total logic elements : 4,529 / 68,416 ( 7 % )
-    Total combinational functions : 4,492 / 68,416 ( 7 % )
-    Dedicated logic registers : 687 / 68,416 ( 1 % )
-Total registers : 687
+Total logic elements : 4,049 / 68,416 ( 6 % )
+    Total combinational functions : 4,012 / 68,416 ( 6 % )
+    Dedicated logic registers : 665 / 68,416 ( < 1 % )
+Total registers : 665
 Total pins : 35 / 422 ( 8 % )
 Total virtual pins : 0
-Total memory bits : 462,848 / 1,152,000 ( 40 % )
+Total memory bits : 495,616 / 1,152,000 ( 43 % )
 Embedded Multiplier 9-bit elements : 0 / 300 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )

@@ -1,12 +1,11 @@
 
 State Machine - |robot_top|action:arm|state
-Name state.s_end state.s_wait state.s_tran state.s_cal state.s_reset state.s_idle 
-state.s_idle 0 0 0 0 0 0 
-state.s_reset 0 0 0 0 1 1 
-state.s_cal 0 0 0 1 0 1 
-state.s_tran 0 0 1 0 0 1 
-state.s_wait 0 1 0 0 0 1 
-state.s_end 1 0 0 0 0 1 
+Name state.s_end state.s_wait state.s_tran state.s_cal state.s_idle 
+state.s_idle 0 0 0 0 0 
+state.s_cal 0 0 0 1 1 
+state.s_tran 0 0 1 0 1 
+state.s_wait 0 1 0 0 1 
+state.s_end 1 0 0 0 1 
 
 State Machine - |robot_top|action:arm|transfer:tran|state
 Name state.x_stop state.x_shift state.x_wait state.x_start state.x_idle 

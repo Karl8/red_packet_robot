@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Jun 09 08:00:14 2017
+Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
+Revision Name : action2
+Top-level Entity Name : action2
+Family : Cyclone II
+Total logic elements : 413
+    Total combinational functions : 413
+    Dedicated logic registers : 195
+Total registers : 195
+Total pins : 21
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

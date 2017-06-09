@@ -80,12 +80,12 @@ set_location_assignment PIN_R3 -to vga_red[1]
 set_location_assignment PIN_R2 -to vga_red[0]
 set_location_assignment PIN_U4 -to vga_vsync
 set_location_assignment PIN_AE5 -to btn
-set_location_assignment PIN_AD4 -to reset
+set_location_assignment PIN_AD5 -to reset
 set_global_assignment -name MISC_FILE "D:/code/vhdl/red_packet_robot/robot_top/robot_top.dpf"
-set_location_assignment PIN_AD5 -to af
 set_location_assignment PIN_N2 -to clk100
 set_location_assignment PIN_AC7 -to led_m1
 set_location_assignment PIN_AB8 -to led_m2
 set_location_assignment PIN_C17 -to txd
 set_global_assignment -name SIMULATION_MODE TIMING
 set_global_assignment -name VHDL_FILE constant.vhd
+set_location_assignment PIN_AD7 -to 
